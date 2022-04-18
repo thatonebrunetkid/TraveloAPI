@@ -27,6 +27,6 @@ namespace Persistence
             return base.SaveChangesAsync(cancellationToken);
         }
 
-        public DbSet<User> User { get; set; }
+        public DbSet<Users> Users { get; set; }
     }
 }

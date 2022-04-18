@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.UserTypes.Handlers.Queries
 {
-    public class GetUserDetailsHandler : IRequestHandler<GetUserDetailsRequest, UserDTO>
+    public class GetUserDetailsHandler : IRequestHandler<GetUserDetailsRequest, UserNoIDDTO>
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
@@ -24,14 +24,14 @@ namespace Application.Features.UserTypes.Handlers.Queries
             _mapper = mapper;
         }
 
-        public async Task<UserDTO> Handle(GetUserDetailsRequest request, CancellationToken cancellationToken)
+        public async Task<UserNoIDDTO> Handle(GetUserDetailsRequest request, CancellationToken cancellationToken)
         {
             var user = await _userRepository.Get(request.Id);
 
             if (user == null)
                 throw new NotFoundException(nameof(user), request.Id);
 
-            return _mapper.Map<UserDTO>(user);
+            return _mapper.Map<UserNoIDDTO>(user);
         }
     }
 }

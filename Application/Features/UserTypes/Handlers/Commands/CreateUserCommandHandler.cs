@@ -37,7 +37,7 @@ namespace Application.Features.UserTypes.Handlers.Commands
                 response.Errors = validatorResult.Errors.Select(q => q.ErrorMessage).ToList();
             }
 
-            var user = _mapper.Map<User>(new User()
+            var user = _mapper.Map<Users>(new Users()
             {
                 Name = request.createUserDto.Name,
                 Surname = request.createUserDto.Surname,
@@ -51,7 +51,7 @@ namespace Application.Features.UserTypes.Handlers.Commands
 
             response.Success = true;
             response.Message = "Creation Successful";
-            response.Id = user.Id;
+            response.Id = user.UserId;
 
             return response;
         }

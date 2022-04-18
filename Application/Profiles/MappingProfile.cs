@@ -13,7 +13,8 @@ namespace Application.Profiles
     {
         public MappingProfile()
         {
-            CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<Users, UserDTO>().ReverseMap();
+            CreateMap<Users, UserNoIDDTO>().ReverseMap();
         }
     }
 }

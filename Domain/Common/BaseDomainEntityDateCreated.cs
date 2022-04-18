@@ -8,7 +8,6 @@ namespace Domain.Common
 {
     public abstract class BaseDomainEntityDateCreated
     {
-        public int Id { get; set; }
-        public DateTime DateCreated { get; set; }
+        public DateTime DateCreated { get; set; } = DateTime.Now;
     }
 }

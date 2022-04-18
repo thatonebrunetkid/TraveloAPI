@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs.User
 {
-    public class UserDTO : BaseDto
+    public class UserDTO
     {
+        public int UserId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string? PhoneNumber { get; set; }

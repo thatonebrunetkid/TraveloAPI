@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.UserTypes.Requests
 {
-    public class GetUserDetailsRequest : IRequest<UserDTO>
+    public class GetUserDetailsRequest : IRequest<UserNoIDDTO>
     { 
         public int Id { get; set; }
     }

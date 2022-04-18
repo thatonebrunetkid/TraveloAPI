@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    public class UserRepository : GenericRepository<Users>, IUserRepository
     {
         private readonly TraveloDbContext _dbContext;
 
@@ -18,16 +18,16 @@ namespace Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<User> GetById(int id)
+        public async Task<Users> GetById(int id)
         {
-            var user = await _dbContext.User
-                 .FirstOrDefaultAsync(x => x.Id == id);
+            var user = await _dbContext.Users
+                 .FirstOrDefaultAsync(x => x.UserId == id);
             return user;
         }
 
-        async Task<List<User>> IUserRepository.GetAll()
+        async Task<List<Users>> IUserRepository.GetAll()
         {
-            var users = await _dbContext.User.ToListAsync();
+            var users = await _dbContext.Users.ToListAsync();
             return users;
         }
     }

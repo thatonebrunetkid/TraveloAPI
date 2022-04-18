@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Persistence.Contracts
 {
-    internal class IUserRequestRepository
+    internal class IUsersRequestRepository
     {
     }
 }

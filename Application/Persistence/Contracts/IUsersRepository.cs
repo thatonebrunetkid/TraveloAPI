@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace Application.Persistence.Contracts
 {
     //repozytorium dla danego entity
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IUserRepository : IGenericRepository<Users>
     {
-        public Task<List<User>> GetAll();
-        public Task<User> GetById(int id);
+        public Task<List<Users>> GetAll();
+        public Task<Users> GetById(int id);
     }
 }

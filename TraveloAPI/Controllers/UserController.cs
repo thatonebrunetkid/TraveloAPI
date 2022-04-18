@@ -28,10 +28,10 @@ namespace TraveloAPI.Controllers
         }
 
         [Route("GetUser")]
-        [HttpGet]
-        public async Task<ActionResult<UserDTO>> GetUser([FromBody] GetUserDetailsRequest request)
+        [HttpGet()]
+        public async Task<ActionResult<UserNoIDDTO>> GetUser([FromQuery] int id)
         {
-            var user = await _mediator.Send(request);
+            var user = await _mediator.Send(new GetUserDetailsRequest { Id = id});
             return Ok(user);
         }
 
