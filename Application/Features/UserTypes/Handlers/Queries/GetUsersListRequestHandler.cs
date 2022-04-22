@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.UserTypes.Handlers.Queries
 {
-    public class GetUsersListRequestHandler : IRequestHandler<GetUsersListRequest, List<UserDTO>>
+    public class GetUsersListRequestHandler : IRequestHandler<GetUsersListRequest, List<AllSusersDto>>
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
@@ -22,10 +22,10 @@ namespace Application.Features.UserTypes.Handlers.Queries
             _userRepository = userRepository;
             _mapper = mapper;
         }
-        public async Task<List<UserDTO>> Handle(GetUsersListRequest request, CancellationToken cancellationToken)
+        public async Task<List<AllSusersDto>> Handle(GetUsersListRequest request, CancellationToken cancellationToken)
         {
             var users = await _userRepository.GetAll();
-            return _mapper.Map<List<UserDTO>>(users);
+            return _mapper.Map<List<AllSusersDto>>(users);
         }
     }
 }

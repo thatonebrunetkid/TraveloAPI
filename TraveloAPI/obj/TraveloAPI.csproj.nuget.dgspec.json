@@ -153,7 +153,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -165,6 +169,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.27.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

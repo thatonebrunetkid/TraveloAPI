@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Nowy folder\IIS Publishes</_PublishTargetUrl>
+    <History>True|2022-04-22T20:55:48.4057721Z;True|2022-04-22T22:49:24.7858746+02:00;True|2022-04-22T22:45:16.1918617+02:00;True|2022-04-22T22:20:16.4910275+02:00;True|2022-04-22T22:19:05.9550346+02:00;True|2022-04-21T00:06:05.6803694+02:00;</History>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="connectionString">
+      <Value>Data Source=localhost%3bInitial Catalog=TraveloDb%3bIntegrated Security=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Persistence.TraveloDbContext">
+      <Value>Data Source=localhost%3bInitial Catalog=TraveloDb%3bIntegrated Security=True</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

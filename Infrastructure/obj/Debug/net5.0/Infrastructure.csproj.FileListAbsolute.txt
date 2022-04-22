@@ -10,3 +10,8 @@ D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\obj\Debug\ne
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\obj\Debug\net5.0\refint\Infrastructure.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\bin\Debug\net5.0\Application.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\bin\Debug\net5.0\Domain.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\bin\Debug\net5.0\Application.pdb
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\bin\Debug\net5.0\Domain.pdb
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CopyComplete

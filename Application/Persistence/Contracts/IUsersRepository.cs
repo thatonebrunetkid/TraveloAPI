@@ -12,5 +12,8 @@ namespace Application.Persistence.Contracts
     {
         public Task<List<Users>> GetAll();
         public Task<Users> GetById(int id);
+        public bool CheckEmail(string email);
+        public Task<System.Net.HttpStatusCode> RefreshPassword(string email, string password);
+
     }
 }

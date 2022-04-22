@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.UserTypes.Requests
 {
-    public class GetUsersListRequest : IRequest<List<UserDTO>>
+    public class GetUsersListRequest : IRequest<List<AllSusersDto>>
     {
 
     }

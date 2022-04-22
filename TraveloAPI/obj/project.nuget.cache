@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tzFNiDbufDQLE5nvSBFDLQkwatI67CNhUs9wKBvZGu55GCXWEpUUwApDzTTM0yyBZQr6dpsI9AbkVxCJzrA7wQ==",
+  "dgSpecHash": "sBaTSW1nu3BkP4nGCW8jXbAVYkNJ0JecslrA0go9/F4U6hulVF/VB6PS3TR8G4J7oz1UMttuBgM58RIf8gHfaw==",
   "success": true,
   "projectFilePath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\TraveloAPI\\TraveloAPI.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,8 @@
     "C:\\Users\\mateu\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\sendgrid\\9.27.0\\sendgrid.9.27.0.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\starkbank-ecdsa\\1.3.3\\starkbank-ecdsa.1.3.3.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",

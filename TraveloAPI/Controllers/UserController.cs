@@ -1,6 +1,7 @@
 ﻿using Application.DTOs.User;
 using Application.Features.UserTypes.Requests;
 using Application.Features.UserTypes.Requests.User.Commands;
+using Application.Features.UserTypes.Requests.User.Queries;
 using Application.Persistence.Contracts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,15 +20,22 @@ namespace TraveloAPI.Controllers
             _mediator = mediator;
         }
 
-        [Route("GetAll")]
+        [Route("HEALTH")]
         [HttpGet]
-        public async Task<ActionResult<List<UserDTO>>> Get()
+        public ActionResult Health()
+        {
+            return Ok("Service is up");
+        }
+
+        [Route("GET/ALL")]
+        [HttpGet]
+        public async Task<ActionResult<List<AllSusersDto>>> Get()
         {
             var users = await _mediator.Send(new GetUsersListRequest());
             return users;
         }
 
-        [Route("GetUser")]
+        [Route("GET/DETAILS")]
         [HttpGet()]
         public async Task<ActionResult<UserNoIDDTO>> GetUser([FromQuery] int id)
         {
@@ -35,7 +43,7 @@ namespace TraveloAPI.Controllers
             return Ok(user);
         }
 
-        [Route("AddUser")]
+        [Route("ADD")]
         [HttpPost]
         public async Task<ActionResult> AddUser([FromBody] CreateUserDto user)
         {
@@ -43,5 +51,25 @@ namespace TraveloAPI.Controllers
             var response = await _mediator.Send(command);
             return Ok(response);
         }
+
+        [Route("RefreshPasswordGet")]
+        [HttpPost]
+        public async Task<System.Net.HttpStatusCode> GetRefreshPasswordLink([FromBody] RefreshPasswordGetDTO email)
+        {
+            var result = await _mediator.Send(new GetRefreshLinkRequest { Email = email.Email });
+            return result;
+        }
+
+        [Route("RefreshPasswordSet")]
+        [HttpPost()]
+        public async Task<System.Net.HttpStatusCode> SetRefreshPassword([FromBody] RefreshPasswordCommandRequest request)
+        {
+            var result = await _mediator.Send(new RefreshPasswordCommandRequest { Email = request.Email, Password = request.Password });
+            return result;
+        }
+
+
+
+
     }
 }

@@ -77,3 +77,5 @@ D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\ref\TraveloAPI.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Debug\net5.0\Humanizer.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Debug\net5.0\SendGrid.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Debug\net5.0\StarkbankEcdsa.dll
