@@ -28,5 +28,7 @@ namespace Persistence
         }
 
         public DbSet<Users> Users { get; set; }
+        public DbSet<Travels> Travels { get; set; }
+        public DbSet<Alerts> Alerts { get; set; }
     }
 }

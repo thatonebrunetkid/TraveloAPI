@@ -44,7 +44,6 @@ D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\System.Runtime.CompilerServices.Unsafe.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\System.Security.Cryptography.ProtectedData.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Microsoft.Data.SqlClient.SNI.dll
-D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Microsoft.Data.SqlClient.SNI.pdb
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Application.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Domain.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Infrastructure.dll
@@ -415,3 +414,7 @@ D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\mscorrc.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\ucrtbase.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\aspnetcorev2_inprocess.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Azure.Core.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Azure.Identity.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Release\net5.0\win-x64\Microsoft.Identity.Client.Extensions.Msal.dll

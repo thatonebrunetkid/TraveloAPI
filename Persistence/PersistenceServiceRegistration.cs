@@ -20,6 +20,8 @@ namespace Persistence
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITravelsRepository, TravelRepository>();
+            services.AddScoped<IAlertsRepository, AlertsRepository>();
 
             return services;
         }

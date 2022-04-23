@@ -38,3 +38,39 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220422230102_secondMigration')
+BEGIN
+    DROP TABLE [User];
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220422230102_secondMigration')
+BEGIN
+    CREATE TABLE [Users] (
+        [UserId] int NOT NULL IDENTITY,
+        [Name] nvarchar(max) NULL,
+        [Surname] nvarchar(max) NULL,
+        [PhoneNumber] nvarchar(max) NULL,
+        [Email] nvarchar(max) NULL,
+        [Password] nvarchar(max) NULL,
+        [PasswordDateUpdated] datetime2 NOT NULL,
+        [LastLogin] datetime2 NULL,
+        [DateCreated] datetime2 NOT NULL,
+        CONSTRAINT [PK_Users] PRIMARY KEY ([UserId])
+    );
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20220422230102_secondMigration')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20220422230102_secondMigration', N'5.0.16');
+END;
+GO
+
+COMMIT;
+GO
+
