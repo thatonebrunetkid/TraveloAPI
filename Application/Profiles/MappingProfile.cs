@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Alerts;
+using Application.DTOs.Countries;
 using Application.DTOs.Travel;
 using Application.DTOs.User;
 using AutoMapper;
@@ -22,10 +23,14 @@ namespace Application.Profiles
             #endregion Users
             #region Travels
             CreateMap<Travels, AllTravelsDTO>().ReverseMap();
+            CreateMap<Travels, AddNewTravelDto>().ReverseMap();
             #endregion Travels
             #region Alerts
             CreateMap<Alerts, AlertDto>().ReverseMap();
             #endregion Alerts
+            #region Countries
+            CreateMap<Countries, CountriesDto>().ReverseMap();
+            #endregion Countries
         }
     }
 }

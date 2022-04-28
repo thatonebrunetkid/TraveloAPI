@@ -22,6 +22,11 @@ namespace Persistence
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITravelsRepository, TravelRepository>();
             services.AddScoped<IAlertsRepository, AlertsRepository>();
+            services.AddScoped<ICountriesRepository, CountriesRepository>();
+            services.AddScoped<IExpenseRepository, ExpenseRepository>();
+            services.AddScoped<ISpotRepository, SpotRepository>();
+            services.AddScoped<IOweSinglePaymentRepository, OweSinglePaymentRepository>();
+            services.AddScoped<IVisitDateRepository, VisitDateRepository>();
 
             return services;
         }

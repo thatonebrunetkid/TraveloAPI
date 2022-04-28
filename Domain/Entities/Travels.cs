@@ -16,13 +16,15 @@ namespace Domain.Entities
         public string Destination { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public bool IdFav { get; set; }
+        public string HotelName { get; set; }
+        public bool? IdFav { get; set; }
         public string Note { get; set; }
         public int ParticipatNumber { get; set; }
         public Decimal PlannedBudget { get; set; }
-        public string LinkUrl { get; set; }
-        public DateTime LinkExpirationDate { get; set; }
+        public string? LinkUrl { get; set; }
+        public DateTime? LinkExpirationDate { get; set; }
         public DateTime CreatedDate { get; set; }
+        public int CountryId { get; set; }
         public int UserId { get; set; }
     }
 }

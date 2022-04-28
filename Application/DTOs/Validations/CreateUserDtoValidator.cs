@@ -26,7 +26,8 @@ namespace Application.DTOs.Validations
             RuleFor(p => p.Email)
                 .NotEmpty().WithMessage("{PropertyName} is required")
                 .NotNull().WithMessage("{PropertyName} cannot be null")
-                .MaximumLength(30).WithMessage("{PropertyName} cannot be longer than 30 signs");
+                .MaximumLength(30).WithMessage("{PropertyName} cannot be longer than 30 signs")
+                .EmailAddress().WithMessage("Invalid email adress"); 
             RuleFor(p => p.Password)
                 .NotEmpty().WithMessage("{PropertyName} is required")
                 .NotNull().WithMessage("{PropertyName} cannot be null")

@@ -57,7 +57,7 @@ namespace TraveloAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TraveloAPI v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection(); //wylaczenie koniecznosci posiadania certyfikatu przez maszyne aws
 
             app.UseRouting();
 

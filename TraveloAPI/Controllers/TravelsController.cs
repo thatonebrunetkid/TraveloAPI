@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Travel;
+using Application.Features.TravelTypes.Requests.Travel.Commands;
 using Application.Features.UserTypes.Requests.Travel.Queries;
 using Domain.Entities;
 using MediatR;
@@ -25,6 +26,15 @@ namespace TraveloAPI.Controllers
         {
             var Travels = await _Mediator.Send(new GetTravelListRequest { UserId = UserId});
             return Ok(Travels);
+        }
+
+        [Route("ADD")]
+        [HttpPost]
+        public async Task<ActionResult> AddNew([FromBody] AddNewTravelDto Travel)
+        {
+            var command = new AddNewTravelRequest { AddNewTravelDto = Travel };
+            var response = await _Mediator.Send(command);
+            return Ok(response);
         }
     }
 }

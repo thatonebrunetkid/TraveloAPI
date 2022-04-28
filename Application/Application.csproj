@@ -27,8 +27,16 @@
   <ItemGroup>
     <Folder Include="Features\AlertsTypes\Handlers\Commands\" />
     <Folder Include="Features\AlertsTypes\Requests\Commands\" />
-    <Folder Include="Features\TravelTypes\Handlers\Commands\" />
-    <Folder Include="Features\TravelTypes\Requests\Travel\Commands\" />
+    <Folder Include="Features\Expense\Handlers\Commands\" />
+    <Folder Include="Features\Expense\Handlers\Queries\" />
+    <Folder Include="Features\Expense\Requests\Queries\" />
+    <Folder Include="Features\OweSignlePayment\Requests\Queries\" />
+    <Folder Include="Features\Spot\Handlers\Commands\" />
+    <Folder Include="Features\Spot\Handlers\Queries\" />
+    <Folder Include="Features\Spot\Requests\Queries\" />
+    <Folder Include="Features\VisitDate\Handlers\Commands\" />
+    <Folder Include="Features\VisitDate\Handlers\Queries\" />
+    <Folder Include="Features\VisitDate\Requests\Commands\" />
   </ItemGroup>
 
 </Project>

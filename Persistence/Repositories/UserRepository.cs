@@ -35,12 +35,8 @@ namespace Persistence.Repositories
         {
             try
             {
-                var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
-                user.Password = password;
-                user.PasswordDateUpdated = DateTime.Now;
-
-                _dbContext.Update(user);
-                _dbContext.SaveChanges();
+                await _dbContext.Database.ExecuteSqlRawAsync($"exec dbo.RecoveryPasswordChange '{email}', '{password}'");
+                await _dbContext.SaveChangesAsync();
                 return HttpStatusCode.OK;
             }catch(Exception)
             {

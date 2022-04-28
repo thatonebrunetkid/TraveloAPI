@@ -30,5 +30,10 @@ namespace Persistence
         public DbSet<Users> Users { get; set; }
         public DbSet<Travels> Travels { get; set; }
         public DbSet<Alerts> Alerts { get; set; }
+        public DbSet<Countries> Countries { get; set; }
+        public DbSet<VisitDate> VisitDate { get; set; }
+        public DbSet<Spot> Spot { get; set; }
+        public DbSet<Expense> Expense { get; set; }
+        public DbSet<OweSinglePayment> OweSinglePayment { get; set; }
     }
 }
