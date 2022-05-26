@@ -24,16 +24,10 @@ namespace TraveloAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<AlertDto>>> GetAllAlerts()
         {
-            return await _Mediator.Send(new GetAllAlertsRequest());
+            var Alerts = await _Mediator.Send(new GetAllAlertsRequest());
+            if (Alerts.Count == 0) return NoContent();
+            return Alerts;
           
         }
-
-        [Route("GET/DETAILS")]
-        [HttpGet]
-        public async Task<ActionResult<AlertDto>> GetAlertDetails([FromQuery] int AlertId)
-        {
-            return await _Mediator.Send(new GetAlertDetailsRequest { AlertId = AlertId });
-        }
-
     }
 }

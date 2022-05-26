@@ -10,7 +10,7 @@ namespace Application.Persistence.Contracts
     public interface ITravelsRepository : IGenericRepository<Travels>
     {
         Task<List<Travels>> GetAllTravelsAsync(int UserId);
-        Task<Travels> GetTravelByIdAsync(int TravelId);
-        
+        Task<List<Travels>> GetTravelsForCurrentMonth(int userId);
+        Task<Travels> GetCurrentTravel(int UserId);        
     }
 }

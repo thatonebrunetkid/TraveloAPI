@@ -18,14 +18,9 @@ namespace Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<Alerts> GetAlertById(int id)
+        public async Task<List<Alerts>> GetAlertsByCountry(int countryId)
         {
-            return await _dbContext.Alerts.FirstOrDefaultAsync(x => x.AlertId == id);
-        }
-
-        public Task<List<Alerts>> GetAlertsPackage(List<int> alertsIds)
-        {
-            throw new NotImplementedException();
+            return await _dbContext.Alerts.Where(e => e.CountryId == countryId).ToListAsync();
         }
 
         public async Task<List<Alerts>> GetAllAlerts()

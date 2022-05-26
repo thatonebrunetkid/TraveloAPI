@@ -16,7 +16,7 @@ namespace Persistence
         public static IServiceCollection ConfigurePersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<TraveloDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("connectionString")));
+                options.UseSqlServer(configuration.GetConnectionString("AzureConnectionString")));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
@@ -27,6 +27,7 @@ namespace Persistence
             services.AddScoped<ISpotRepository, SpotRepository>();
             services.AddScoped<IOweSinglePaymentRepository, OweSinglePaymentRepository>();
             services.AddScoped<IVisitDateRepository, VisitDateRepository>();
+            services.AddScoped<ISystemNotificationsRepository, SystemNotificationsRepository>();
 
             return services;
         }

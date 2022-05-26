@@ -23,15 +23,17 @@ namespace Application.Features.TravelTypes.Handlers.Commands
         private readonly ISpotRepository _SpotRepository;
         private readonly IExpenseRepository _ExpenseRepository;
         private readonly IOweSinglePaymentRepository _OweSinglePaymentRepository;
+        private readonly ICountriesRepository _CountriesRepository;
         private readonly IMapper _Mapper;
 
-        public AddNewTravelHandler(ITravelsRepository TravelRepository, IMapper Mapper, IVisitDateRepository VisitDateRepository, ISpotRepository SpotRepository, IExpenseRepository ExpenseRepository, IOweSinglePaymentRepository OweSignlePaymentRepository)
+        public AddNewTravelHandler(ITravelsRepository TravelRepository, IMapper Mapper, IVisitDateRepository VisitDateRepository, ISpotRepository SpotRepository, IExpenseRepository ExpenseRepository, IOweSinglePaymentRepository OweSignlePaymentRepository, ICountriesRepository countriesRepository)
         {
             _TravelRepository = TravelRepository;
             _VisitDateRepository = VisitDateRepository;
             _SpotRepository = SpotRepository;
             _ExpenseRepository = ExpenseRepository;
             _OweSinglePaymentRepository = OweSignlePaymentRepository;
+            _CountriesRepository = countriesRepository;
             _Mapper = Mapper;
         }
 
@@ -48,6 +50,7 @@ namespace Application.Features.TravelTypes.Handlers.Commands
                 response.Errors = validatorResult.Errors.Select(q => q.ErrorMessage).ToList();
             }
 
+            var CountryId = _CountriesRepository.GetCountryIdByName(request.AddNewTravelDto.Destination);
             var Travel = _Mapper.Map<Travels>(new Travels()
             {
                 Name = request.AddNewTravelDto.Name,
@@ -62,8 +65,9 @@ namespace Application.Features.TravelTypes.Handlers.Commands
                 LinkExpirationDate = null,
                 CreatedDate = DateTime.Now,
                 UserId = request.AddNewTravelDto.UserId,
-                CountryId = request.AddNewTravelDto.CountryId,
+                CountryId = CountryId.Result.CountryId
             });
+
             Travel = await _TravelRepository.Add(Travel);
 
             var VisitDate = _Mapper.Map<Domain.Entities.VisitDate>(new Domain.Entities.VisitDate()

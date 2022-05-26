@@ -19,18 +19,13 @@ namespace TraveloAPI.Controllers
             _Mediator = Mediator;
         }
 
-        [Route("GET/ALL")]
+        [Route("GET/COUNTRIES/SEARCH")]
         [HttpGet]
-        public async Task<ActionResult<List<Countries>>> GetAllCountries()
+        public async Task<ActionResult<List<GetCountriesNamesRequestDto>>> CountriesSearch([FromQuery] string phrase)
         {
-            return await _Mediator.Send(new GetAllCountriesRequest());
-        }
-
-        [Route("GET/DEATILS")]
-        [HttpGet]
-        public async Task<ActionResult<CountriesDto>> GetCountryDetails([FromQuery] int id)
-        {
-            return await _Mediator.Send(new GetCountryDetailsRequest { CountryId = id });
+            var names = await _Mediator.Send(new GetCountriesNamesRequest { Phrase = phrase });
+            if (names.Count == 0) return NoContent();
+            return names;
         }
     }
 }

@@ -10,7 +10,8 @@ namespace Application.Persistence.Contracts
 {
     public interface ICountriesRepository : IGenericRepository<Countries>
     {
-        Task<List<Countries>> GetAll();
-        Task<Countries> GetCountryDetails(int id);
+        Task<Countries> GetCountryIdByName(string name);
+        Task<List<Countries>> GetCountriesNamesList(string phrase);
+        Task<Countries> GetCountryInfo(int countryId);
     }
 }

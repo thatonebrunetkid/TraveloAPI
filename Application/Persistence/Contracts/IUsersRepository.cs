@@ -10,7 +10,6 @@ namespace Application.Persistence.Contracts
     //repozytorium dla danego entity
     public interface IUserRepository : IGenericRepository<Users>
     {
-        public Task<List<Users>> GetAll();
         public Task<Users> GetById(int id);
         public bool CheckEmail(string email);
         public Task<System.Net.HttpStatusCode> RefreshPassword(string email, string password);

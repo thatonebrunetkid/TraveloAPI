@@ -1,6 +1,7 @@
 ﻿using Application.DTOs.Countries;
 using Application.Persistence.Contracts;
 using Domain.Entities;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,15 +20,19 @@ namespace Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<Countries> GetCountryDetails(int id)
+        public async Task<Countries> GetCountryIdByName(string name)
         {
-            var countries = await _dbContext.Countries.FirstOrDefaultAsync(x => x.CountryId == id);
-            return countries;
+            return await _dbContext.Countries.FirstOrDefaultAsync(e => e.Name == name);
         }
 
-         async Task<List<Countries>> ICountriesRepository.GetAll()
+        public async Task<List<Countries>> GetCountriesNamesList(string phrase)
         {
-            return await _dbContext.Countries.ToListAsync();
+            return await _dbContext.Countries.FromSqlRaw($"exec dbo.FindCountry '{phrase}'").ToListAsync();
+        }
+
+        public async Task<Countries> GetCountryInfo(int countryId)
+        {
+            return await _dbContext.Countries.FirstAsync(e => e.CountryId == countryId);
         }
     }
 }

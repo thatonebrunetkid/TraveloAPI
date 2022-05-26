@@ -23,9 +23,18 @@ namespace Persistence.Repositories
             return await _dbContext.Travels.Where(x => x.UserId == UserId).ToListAsync();
         }
 
-        public Task<Travels> GetTravelByIdAsync(int TravelId)
+        public async Task<Travels> GetCurrentTravel(int UserId)
         {
-            throw new NotImplementedException();
+            var Travel = await _dbContext.Travels.FirstOrDefaultAsync(e => e.StartDate.Date <= DateTime.Now.Date && e.EndDate.Date >= DateTime.Now.Date && e.UserId == UserId);
+            if (Travel is null)
+                Travel = await _dbContext.Travels.FirstOrDefaultAsync(e => e.StartDate.Date > DateTime.Now.Date && e.UserId == UserId);
+            return Travel;
+        }
+
+        public async Task<List<Travels>> GetTravelsForCurrentMonth(int userId)
+        {
+            var Dates = await _dbContext.Travels.Where(e => e.StartDate.Month == DateTime.Now.Month && e.UserId == userId).ToListAsync();
+            return Dates;
         }
     }
 }

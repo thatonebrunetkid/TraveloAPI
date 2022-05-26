@@ -48,7 +48,6 @@ namespace Application.Features.UserTypes.Handlers.Commands
                 Email = request.createUserDto.Email,
                 Password = request.createUserDto.Password,
                 PasswordDateUpdated = DateTime.Now,
-                LastLogin = DateTime.Now
             });
             user = await _userRepository.Add(user);
 

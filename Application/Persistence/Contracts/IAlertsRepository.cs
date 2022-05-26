@@ -10,7 +10,6 @@ namespace Application.Persistence.Contracts
     public interface IAlertsRepository : IGenericRepository<Alerts>
     {
         Task<List<Alerts>> GetAllAlerts();
-        Task<Alerts> GetAlertById(int id);
-        Task<List<Alerts>> GetAlertsPackage(List<int> alertsIds);
+        Task<List<Alerts>> GetAlertsByCountry(int countryId);
     }
 }

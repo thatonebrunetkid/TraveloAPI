@@ -47,11 +47,5 @@ namespace Persistence.Repositories
                 return HttpStatusCode.InternalServerError;
             }
         }
-
-        async Task<List<Users>> IUserRepository.GetAll()
-        {
-            var users = await _dbContext.Users.ToListAsync();
-            return users;
-        }
     }
 }

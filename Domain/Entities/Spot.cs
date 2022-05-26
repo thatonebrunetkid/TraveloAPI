@@ -19,7 +19,5 @@ namespace Domain.Entities
         public string? FlatNo { get; set; }
         public string ZipCode { get; set; }
         public int TravelDateId { get; set; }
-
-
     }
 }

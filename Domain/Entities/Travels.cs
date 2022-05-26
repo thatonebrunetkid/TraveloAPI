@@ -12,6 +12,8 @@ namespace Domain.Entities
     {
         [Key]
         public int TravelId { get; set; }
+        public int UserId { get; set; }
+        public int CountryId { get; set; }
         public string Name { get; set; }
         public string Destination { get; set; }
         public DateTime StartDate { get; set; }
@@ -24,7 +26,5 @@ namespace Domain.Entities
         public string? LinkUrl { get; set; }
         public DateTime? LinkExpirationDate { get; set; }
         public DateTime CreatedDate { get; set; }
-        public int CountryId { get; set; }
-        public int UserId { get; set; }
     }
 }

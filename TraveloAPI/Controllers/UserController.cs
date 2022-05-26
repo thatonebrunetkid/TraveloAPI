@@ -27,14 +27,6 @@ namespace TraveloAPI.Controllers
             return Ok("Service is up");
         }
 
-        [Route("GET/ALL")]
-        [HttpGet]
-        public async Task<ActionResult<List<AllSusersDto>>> Get()
-        {
-            var users = await _mediator.Send(new GetUsersListRequest());
-            return users;
-        }
-
         [Route("GET/DETAILS")]
         [HttpGet()]
         public async Task<ActionResult<UserNoIDDTO>> GetUser([FromQuery] int id)

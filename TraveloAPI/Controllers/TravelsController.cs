@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Travel;
 using Application.Features.TravelTypes.Requests.Travel.Commands;
+using Application.Features.TravelTypes.Requests.Travel.Queries;
 using Application.Features.UserTypes.Requests.Travel.Queries;
 using Domain.Entities;
 using MediatR;
@@ -25,6 +26,8 @@ namespace TraveloAPI.Controllers
         public async Task<ActionResult<List<AllTravelsDTO>>> Get([FromQuery] int UserId)
         {
             var Travels = await _Mediator.Send(new GetTravelListRequest { UserId = UserId});
+            if(Travels == null)
+                return NotFound();
             return Ok(Travels);
         }
 
@@ -35,6 +38,33 @@ namespace TraveloAPI.Controllers
             var command = new AddNewTravelRequest { AddNewTravelDto = Travel };
             var response = await _Mediator.Send(command);
             return Ok(response);
+        }
+
+        [Route("GET/TRAVELS/DATES")]
+        [HttpGet]
+        public async Task<ActionResult<List<GetTravelDatesFromCurrentMonthDto>>> GetTravelsDatesFromCurrentMonth([FromQuery] int UserId)
+        {
+            var Dates = await _Mediator.Send(new GetTravelDatesFromCurrentMonthRequest() { UserId = UserId});
+            if (Dates.Count == 0) return NoContent();
+            return Ok(Dates);
+        }
+
+        [Route("DASHBOARD/GET/TRAVEL")]
+        [HttpGet]
+        public async Task<ActionResult<GetCurrentTravelInformationDto>> GetCurrentTravelInfo([FromQuery] int UserId)
+        {
+            var Travel = await _Mediator.Send(new GetCurrentTravelInformationRequest() { UserId = UserId});
+            if (Travel == null) return NotFound();
+            return Ok(Travel);
+        }
+
+        [Route("CALENDAR/GET/DATES")]
+        [HttpGet]
+        public async Task<ActionResult<List<GetTravelDatesFromCurrentMonthDto>>> GetAllTravelsDates([FromQuery] int UserId)
+        {
+            var Dates = await _Mediator.Send(new GetTravelDatesFromCurrentMonthRequest() { UserId = UserId });
+            if (Dates.Count == 0) return NoContent();
+            return Ok(Dates);
         }
     }
 }

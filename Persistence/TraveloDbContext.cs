@@ -35,5 +35,6 @@ namespace Persistence
         public DbSet<Spot> Spot { get; set; }
         public DbSet<Expense> Expense { get; set; }
         public DbSet<OweSinglePayment> OweSinglePayment { get; set; }
+        public DbSet<SystemNotifications> SystemNotifications { get; set; }
     }
 }

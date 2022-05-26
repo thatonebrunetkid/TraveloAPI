@@ -14,5 +14,6 @@ namespace Domain.Entities
         public string Content { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ValidDate { get; set; }
+        public int CountryId { get; set; }
     }
 }
