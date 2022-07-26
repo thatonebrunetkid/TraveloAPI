@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Application.Persistence.Contracts
 {
-    public interface ISystemNotificationsRepository : IGenericRepository<SystemNotifications>
+    public interface ISystemNotificationsRepository : IGenericRepository<SystemNotification>
     {
-        Task<List<SystemNotifications>> GetCurrentSystemNotifications();
+        Task<List<SystemNotification>> GetCurrentSystemNotifications();
     }
 }

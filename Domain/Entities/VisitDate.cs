@@ -11,9 +11,8 @@ namespace Domain.Entities
     {
         [Key]
         public int TravelDateId { get; set; }
-        public int TravelId { get; set; }
         public DateTime Date { get; set; }
         public string Title { get; set; }
-
+        public int TravelId { get; set; }
     }
 }

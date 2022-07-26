@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs.Travel
+namespace Application.DTOs.Countries
 {
-    public class GetTravelDetailsDto
+    public class CountriesISOCodesDto
     {
-
+        public string Code { get; set; }
     }
 }

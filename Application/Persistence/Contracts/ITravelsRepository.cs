@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Application.Persistence.Contracts
 {
-    public interface ITravelsRepository : IGenericRepository<Travels>
+    public interface ITravelsRepository : IGenericRepository<Travel>
     {
-        Task<List<Travels>> GetAllTravelsAsync(int UserId);
-        Task<List<Travels>> GetTravelsForCurrentMonth(int userId);
-        Task<Travels> GetCurrentTravel(int UserId);        
+        Task<List<Travel>> GetAllTravelsAsync(int UserId);
+        Task<List<Travel>> GetTravelsForCurrentMonth(int userId);
+        Task<Travel> GetCurrentTravel(int UserId);        
     }
 }

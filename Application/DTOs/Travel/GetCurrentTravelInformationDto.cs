@@ -13,6 +13,6 @@ namespace Application.DTOs.Travel
         public Decimal PlannedBudged { get; set; }
         public Decimal UsedBudget { get; set; }
         public string FlagUrl { get; set; }
-        public List<Domain.Entities.Alerts> CountryAlerts { get; set; }
+        public List<Domain.Entities.Alert> CountryAlerts { get; set; }
     }
 }

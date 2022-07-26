@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Travel;
+using Application.Features.TravelTypes.Requests.Queries;
 using Application.Features.TravelTypes.Requests.Travel.Queries;
 using Application.Persistence.Contracts;
 using AutoMapper;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.TravelTypes.Handlers.Queries
 {
-    public class GetAllTravelsDatesHandler : IRequestHandler<GetTravelDatesFromCurrentMonthRequest, List<GetTravelDatesFromCurrentMonthDto>>
+    public class GetAllTravelsDatesHandler : IRequestHandler<GetAllTravelDatesRequest, List<GetTravelDatesFromCurrentMonthDto>>
     {
         private readonly ITravelsRepository _TravelsRepository;
         private readonly IMapper _Mapper;
@@ -23,7 +24,7 @@ namespace Application.Features.TravelTypes.Handlers.Queries
             _Mapper = Mapper;
         }
 
-        public async Task<List<GetTravelDatesFromCurrentMonthDto>> Handle(GetTravelDatesFromCurrentMonthRequest request, CancellationToken cancellationToken)
+        public async Task<List<GetTravelDatesFromCurrentMonthDto>> Handle(GetAllTravelDatesRequest request, CancellationToken cancellationToken)
         {
             var Dates = await _TravelsRepository.GetAllTravelsAsync(request.UserId);
             return _Mapper.Map<List<GetTravelDatesFromCurrentMonthDto>>(Dates);

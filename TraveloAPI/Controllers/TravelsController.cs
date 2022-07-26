@@ -1,4 +1,5 @@
 ﻿using Application.DTOs.Travel;
+using Application.Features.TravelTypes.Requests.Queries;
 using Application.Features.TravelTypes.Requests.Travel.Commands;
 using Application.Features.TravelTypes.Requests.Travel.Queries;
 using Application.Features.UserTypes.Requests.Travel.Queries;
@@ -40,7 +41,7 @@ namespace TraveloAPI.Controllers
             return Ok(response);
         }
 
-        [Route("GET/TRAVELS/DATES")]
+        [Route("DASHBOARD/GET/CALENDAR")]
         [HttpGet]
         public async Task<ActionResult<List<GetTravelDatesFromCurrentMonthDto>>> GetTravelsDatesFromCurrentMonth([FromQuery] int UserId)
         {
@@ -49,7 +50,7 @@ namespace TraveloAPI.Controllers
             return Ok(Dates);
         }
 
-        [Route("DASHBOARD/GET/TRAVEL")]
+        [Route("DASHBOARD/GET/UPCOMINGTRAVEL")]
         [HttpGet]
         public async Task<ActionResult<GetCurrentTravelInformationDto>> GetCurrentTravelInfo([FromQuery] int UserId)
         {
@@ -62,7 +63,7 @@ namespace TraveloAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<GetTravelDatesFromCurrentMonthDto>>> GetAllTravelsDates([FromQuery] int UserId)
         {
-            var Dates = await _Mediator.Send(new GetTravelDatesFromCurrentMonthRequest() { UserId = UserId });
+            var Dates = await _Mediator.Send(new GetAllTravelDatesRequest() { UserId = UserId });
             if (Dates.Count == 0) return NoContent();
             return Ok(Dates);
         }

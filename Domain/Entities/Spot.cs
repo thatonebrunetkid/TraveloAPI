@@ -11,13 +11,13 @@ namespace Domain.Entities
     {
         [Key]
         public int SpotId { get; set; }
-        public int PlaceId { get; set; }
         public string Note { get; set; }
         public int Order { get; set; }
         public string Street { get; set; }
         public string BuildingNo { get; set; }
         public string? FlatNo { get; set; }
         public string ZipCode { get; set; }
-        public int TravelDateId { get; set; }
+        public int VisitDateId { get; set; }
+        public int ExpenseId { get; set; }
     }
 }

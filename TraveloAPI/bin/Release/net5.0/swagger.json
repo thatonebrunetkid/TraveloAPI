@@ -197,6 +197,37 @@
         }
       }
     },
+    "/api/Travels/CALENDAR/GET/DATES": {
+      "get": {
+        "tags": [
+          "Travels"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "UserId",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GetTravelDatesFromCurrentMonthDto"
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/User/HEALTH": {
       "get": {
         "tags": [
@@ -561,6 +592,13 @@
         "plannedBudged": {
           "format": "double",
           "type": "number"
+        },
+        "usedBudget": {
+          "format": "double",
+          "type": "number"
+        },
+        "flagUrl": {
+          "type": "string"
         },
         "countryAlerts": {
           "type": "array",

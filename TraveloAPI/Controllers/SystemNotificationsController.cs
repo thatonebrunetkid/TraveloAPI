@@ -20,7 +20,7 @@ namespace TraveloAPI.Controllers
 
         [Route("GET/ALL")]
         [HttpGet]
-        public async Task<ActionResult<List<SystemNotificationsDto>>> GetAllValidSystemNotifications()
+        public async Task<ActionResult<List<GetSystemNotificationsDto>>> GetAllValidSystemNotifications()
         {
             var Notifications = await _Mediator.Send(new GetSystemNotificationsRequest());
             if (Notifications.Count == 0) return NoContent();

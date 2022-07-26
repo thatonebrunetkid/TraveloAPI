@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.SystemNotifications.Handlers
 {
-    public class GetSystemNotificationsHandler : IRequestHandler<GetSystemNotificationsRequest, List<SystemNotificationsDto>>
+    public class GetSystemNotificationsHandler : IRequestHandler<GetSystemNotificationsRequest, List<GetSystemNotificationsDto>>
     {
         private readonly ISystemNotificationsRepository _SystemNotificationsRepository;
         private readonly IMapper _Mapper;
@@ -23,10 +23,10 @@ namespace Application.Features.SystemNotifications.Handlers
             _Mapper = Mapper;
         }
 
-        public async Task<List<SystemNotificationsDto>> Handle(GetSystemNotificationsRequest request, CancellationToken cancellationToken)
+        public async Task<List<GetSystemNotificationsDto>> Handle(GetSystemNotificationsRequest request, CancellationToken cancellationToken)
         {
             var Notifications = await _SystemNotificationsRepository.GetCurrentSystemNotifications();
-            return _Mapper.Map<List<SystemNotificationsDto>>(Notifications);
+            return _Mapper.Map<List<GetSystemNotificationsDto>>(Notifications);
         }
     }
 }

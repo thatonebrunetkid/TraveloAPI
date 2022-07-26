@@ -27,5 +27,13 @@ namespace TraveloAPI.Controllers
             if (names.Count == 0) return NoContent();
             return names;
         }
+
+        [Route("GET/COUNTRIES/MAP")]
+        [HttpGet]
+        public async Task<ActionResult<List<CountriesISOCodesDto>>> CountriesForMap([FromQuery] int userId)
+        {
+            var codes = await _Mediator.Send(new GetCountriesISOCodesForMapRequest { UserId = userId });
+            return codes;
+        }
     }
 }

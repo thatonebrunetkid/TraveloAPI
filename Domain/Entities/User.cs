@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class Users : BaseDomainEntityDateCreated
+    public class User : BaseDomainEntityDateCreated
     {
         [Key]
         public int UserId { get; set; }

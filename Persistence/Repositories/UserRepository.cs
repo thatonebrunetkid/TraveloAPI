@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class UserRepository : GenericRepository<Users>, IUserRepository
+    public class UserRepository : GenericRepository<User>, IUserRepository
     {
         private readonly TraveloDbContext _dbContext;
 
@@ -21,12 +21,12 @@ namespace Persistence.Repositories
 
         public bool CheckEmail(string email)
         {
-            return _dbContext.Users.Any(x => x.Email == email);
+            return _dbContext.User.Any(x => x.Email == email);
         }
 
-        public async Task<Users> GetById(int id)
+        public async Task<User> GetById(int id)
         {
-            var user = await _dbContext.Users
+            var user = await _dbContext.User
                  .FirstOrDefaultAsync(x => x.UserId == id);
             return user;
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.CountriesTypes.Requests.Queries
 {
-    public class GetCountryByNameRequest : IRequest<GetCountryIdByNameDto>
+    public class GetCountryByNameRequest : IRequest<GetCountryNameByIdDto>
     {
         public string CountryName { get; set; }
     }

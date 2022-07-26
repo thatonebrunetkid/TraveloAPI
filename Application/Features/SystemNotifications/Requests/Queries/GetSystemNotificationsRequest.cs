@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.SystemNotifications.Requests.Queries
 {
-    public class GetSystemNotificationsRequest : IRequest<List<SystemNotificationsDto>>
+    public class GetSystemNotificationsRequest : IRequest<List<GetSystemNotificationsDto>>
     {
     }
 }

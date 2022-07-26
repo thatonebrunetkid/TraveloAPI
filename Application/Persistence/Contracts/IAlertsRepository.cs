@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application.Persistence.Contracts
 {
-    public interface IAlertsRepository : IGenericRepository<Alerts>
+    public interface IAlertsRepository : IGenericRepository<Alert>
     {
-        Task<List<Alerts>> GetAllAlerts();
-        Task<List<Alerts>> GetAlertsByCountry(int countryId);
+        Task<List<Alert>> GetAllAlerts();
+        Task<List<Alert>> GetAlertsByCountry(int countryId);
     }
 }

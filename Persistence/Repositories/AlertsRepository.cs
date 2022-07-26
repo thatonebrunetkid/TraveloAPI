@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class AlertsRepository : GenericRepository<Alerts>, IAlertsRepository
+    public class AlertsRepository : GenericRepository<Alert>, IAlertsRepository
     {
         private readonly TraveloDbContext _dbContext;
 
@@ -18,14 +18,14 @@ namespace Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<List<Alerts>> GetAlertsByCountry(int countryId)
+        public async Task<List<Alert>> GetAlertsByCountry(int countryId)
         {
-            return await _dbContext.Alerts.Where(e => e.CountryId == countryId).ToListAsync();
+            return await _dbContext.Alert.Where(e => e.CountryId == countryId).ToListAsync();
         }
 
-        public async Task<List<Alerts>> GetAllAlerts()
+        public async Task<List<Alert>> GetAllAlerts()
         {
-            return await _dbContext.Alerts.ToListAsync();
+            return await _dbContext.Alert.ToListAsync();
         }
     }
 }

@@ -27,14 +27,14 @@ namespace Persistence
             return base.SaveChangesAsync(cancellationToken);
         }
 
-        public DbSet<Users> Users { get; set; }
-        public DbSet<Travels> Travels { get; set; }
-        public DbSet<Alerts> Alerts { get; set; }
-        public DbSet<Countries> Countries { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Travel> Travel { get; set; }
+        public DbSet<Alert> Alert { get; set; }
+        public DbSet<Country> Country { get; set; }
         public DbSet<VisitDate> VisitDate { get; set; }
         public DbSet<Spot> Spot { get; set; }
         public DbSet<Expense> Expense { get; set; }
         public DbSet<OweSinglePayment> OweSinglePayment { get; set; }
-        public DbSet<SystemNotifications> SystemNotifications { get; set; }
+        public DbSet<SystemNotification> SystemNotification { get; set; }
     }
 }

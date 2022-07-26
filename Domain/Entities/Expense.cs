@@ -12,7 +12,5 @@ namespace Domain.Entities
         [Key]
         public int ExpenseId { get; set; }
         public Decimal Cost { get; set; }
-        public int SpotId { get; set; }
-        public int TravelId { get; set; }
     }
 }

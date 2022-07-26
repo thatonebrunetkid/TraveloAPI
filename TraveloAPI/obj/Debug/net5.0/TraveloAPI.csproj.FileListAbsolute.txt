@@ -60,7 +60,6 @@ D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.AssemblyInfoInputs.cache
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.AssemblyInfo.cs
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.csproj.CoreCompileInputs.cache
-D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\scopedcss\bundle\TraveloAPI.styles.css
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\staticwebassets\TraveloAPI.StaticWebAssets.Manifest.cache
@@ -79,3 +78,4 @@ D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Debug\net5.0
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Debug\net5.0\Azure.Identity.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\bin\Debug\net5.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.MvcApplicationPartsAssemblyInfo.cs

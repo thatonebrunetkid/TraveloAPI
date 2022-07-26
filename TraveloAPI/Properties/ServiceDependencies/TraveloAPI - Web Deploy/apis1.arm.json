@@ -82,6 +82,7 @@
                 },
                 "virtualNetworkType": "None",
                 "certificates": null,
+                "enableClientCertificate": false,
                 "apiVersionConstraint": {
                   "minApiVersion": null
                 }
@@ -100,7 +101,7 @@
                 "apiRevision": "1",
                 "description": null,
                 "subscriptionRequired": true,
-                "serviceUrl": null,
+                "serviceUrl": "https://traveloapi.azurewebsites.net:80/",
                 "path": "",
                 "protocols": [
                   "https"

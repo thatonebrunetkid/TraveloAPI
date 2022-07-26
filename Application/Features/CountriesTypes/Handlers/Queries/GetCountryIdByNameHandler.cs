@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.CountriesTypes.Handlers.Queries
 {
-    public class GetCountryIdByNameHandler : IRequestHandler<GetCountryByNameRequest, GetCountryIdByNameDto>
+    public class GetCountryIdByNameHandler : IRequestHandler<GetCountryByNameRequest, GetCountryNameByIdDto>
     {
         private readonly ICountriesRepository _CountriesRepository;
         private readonly IMapper _Mapper;
@@ -19,12 +19,12 @@ namespace Application.Features.CountriesTypes.Handlers.Queries
             _CountriesRepository = CountriesRepository;
             _Mapper = Mapper;
         }
-        public async Task<GetCountryIdByNameDto> Handle(GetCountryByNameRequest request, CancellationToken cancellationToken)
+        public async Task<GetCountryNameByIdDto> Handle(GetCountryByNameRequest request, CancellationToken cancellationToken)
         {
             var CountryId = await _CountriesRepository.GetCountryIdByName(request.CountryName);
             if (CountryId == null)
                 throw new NotFoundException(nameof(CountryId), request.CountryName);
-            return _Mapper.Map<GetCountryIdByNameDto>(CountryId);
+            return _Mapper.Map<GetCountryNameByIdDto>(CountryId);
         }
     }
 }

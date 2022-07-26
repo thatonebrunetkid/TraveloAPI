@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Application.Persistence.Contracts
 {
-    public interface ICountriesRepository : IGenericRepository<Countries>
+    public interface ICountriesRepository : IGenericRepository<Country>
     {
-        Task<Countries> GetCountryIdByName(string name);
-        Task<List<Countries>> GetCountriesNamesList(string phrase);
-        Task<Countries> GetCountryInfo(int countryId);
+        Task<Country> GetCountryIdByName(string name);
+        Task<List<Country>> GetCountriesNamesList(string phrase);
+        Task<Country> GetCountryInfo(int countryId);
     }
 }

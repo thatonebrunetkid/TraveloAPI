@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class CountriesRepository : GenericRepository<Countries>, ICountriesRepository
+    public class CountriesRepository : GenericRepository<Country>, ICountriesRepository
     {
         private readonly TraveloDbContext _dbContext;
 
@@ -20,19 +20,19 @@ namespace Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<Countries> GetCountryIdByName(string name)
+        public async Task<Country> GetCountryIdByName(string name)
         {
-            return await _dbContext.Countries.FirstOrDefaultAsync(e => e.Name == name);
+            return await _dbContext.Country.FirstOrDefaultAsync(e => e.Name == name);
         }
 
-        public async Task<List<Countries>> GetCountriesNamesList(string phrase)
+        public async Task<List<Country>> GetCountriesNamesList(string phrase)
         {
-            return await _dbContext.Countries.FromSqlRaw($"exec dbo.FindCountry '{phrase}'").ToListAsync();
+            return await _dbContext.Country.FromSqlRaw($"exec dbo.FindCountry '{phrase}'").ToListAsync();
         }
 
-        public async Task<Countries> GetCountryInfo(int countryId)
+        public async Task<Country> GetCountryInfo(int countryId)
         {
-            return await _dbContext.Countries.FirstAsync(e => e.CountryId == countryId);
+            return await _dbContext.Country.FirstAsync(e => e.CountryId == countryId);
         }
     }
 }

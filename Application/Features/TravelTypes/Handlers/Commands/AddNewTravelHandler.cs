@@ -51,15 +51,15 @@ namespace Application.Features.TravelTypes.Handlers.Commands
             }
 
             var CountryId = _CountriesRepository.GetCountryIdByName(request.AddNewTravelDto.Destination);
-            var Travel = _Mapper.Map<Travels>(new Travels()
+            var Travel = _Mapper.Map<Travel>(new Travel()
             {
                 Name = request.AddNewTravelDto.Name,
                 Destination = request.AddNewTravelDto.Destination,
                 StartDate = request.AddNewTravelDto.StartDate,
                 EndDate = request.AddNewTravelDto.EndDate,
-                IdFav = null,
+                IsFav = null,
                 Note = request.AddNewTravelDto.Note,
-                ParticipatNumber = request.AddNewTravelDto.ParticipatNumber,
+                ParticipantNumber = request.AddNewTravelDto.ParticipatNumber,
                 PlannedBudget = request.AddNewTravelDto.PlannedBudget,
                 LinkUrl = null,
                 LinkExpirationDate = null,
@@ -82,14 +82,12 @@ namespace Application.Features.TravelTypes.Handlers.Commands
             {
                 var Spot = _Mapper.Map<Domain.Entities.Spot>(new Domain.Entities.Spot()
                 {
-                    PlaceId = 0,
                     Note = item.Note,
                     Order = item.Order,
                     Street = item.Street,
                     BuildingNo = item.BuildingNo,
                     FlatNo = item.FlatNo,
                     ZipCode = item.ZipCode,
-                    TravelDateId = VisitDate.TravelDateId
                 });
 
                 Spot = await _SpotRepository.Add(Spot);
@@ -97,8 +95,6 @@ namespace Application.Features.TravelTypes.Handlers.Commands
                 var Expense = _Mapper.Map<Domain.Entities.Expense>(new Domain.Entities.Expense()
                 {
                     Cost = item.Expense.Cost,
-                    SpotId = Spot.SpotId,
-                    TravelId = Travel.TravelId
                 });
 
                 Expense = await _ExpenseRepository.Add(Expense);

@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Countries
+    public class Country
     {
         [Key]
         public int CountryId { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
         public string Currency { get; set; }
-        public string CurrencyName { get; set; }
+        public int FlagId { get; set; }
+        public int ServicePhoneId { get; set; }
     }
 }

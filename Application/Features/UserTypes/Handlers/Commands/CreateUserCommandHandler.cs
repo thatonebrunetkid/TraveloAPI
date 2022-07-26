@@ -40,7 +40,7 @@ namespace Application.Features.UserTypes.Handlers.Commands
                 response.Errors = validatorResult.Errors.Select(q => q.ErrorMessage).ToList();
             }
 
-            var user = _mapper.Map<Users>(new Users()
+            var user = _mapper.Map<User>(new User()
             {
                 Name = request.createUserDto.Name,
                 Surname = request.createUserDto.Surname,

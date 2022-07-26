@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class SystemNotificationsRepository : GenericRepository<SystemNotifications>, ISystemNotificationsRepository
+    public class SystemNotificationsRepository : GenericRepository<SystemNotification>, ISystemNotificationsRepository
     {
         private readonly TraveloDbContext _DbContext;
 
@@ -18,9 +18,9 @@ namespace Persistence.Repositories
             _DbContext = dbContext;
         }
 
-        public async Task<List<SystemNotifications>> GetCurrentSystemNotifications()
+        public async Task<List<SystemNotification>> GetCurrentSystemNotifications()
         {
-            var Notifications = await _DbContext.SystemNotifications.Where(e => e.ValidDate >= DateTime.Now && e.CreatedDate <= DateTime.Now).ToListAsync();
+            var Notifications = await _DbContext.SystemNotification.Where(e => e.ValidDate >= DateTime.Now && e.CreatedDate <= DateTime.Now).ToListAsync();
             return Notifications;
         }
     }

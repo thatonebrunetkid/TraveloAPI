@@ -18,23 +18,24 @@ namespace Application.Profiles
         public MappingProfile()
         {
             #region Users
-            CreateMap<Users, UserDTO>().ReverseMap();
-            CreateMap<Users, UserNoIDDTO>().ReverseMap();
+            CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<User, UserNoIDDTO>().ReverseMap();
             #endregion Users
             #region Travels
-            CreateMap<Travels, AllTravelsDTO>().ReverseMap();
-            CreateMap<Travels, AddNewTravelDto>().ReverseMap();
-            CreateMap<Travels, GetTravelDatesFromCurrentMonthDto>().ReverseMap();
+            CreateMap<Travel, AllTravelsDTO>().ReverseMap();
+            CreateMap<Travel, AddNewTravelDto>().ReverseMap();
+            CreateMap<Travel, GetTravelDatesFromCurrentMonthDto>().ReverseMap();
             #endregion Travels
             #region Alerts
-            CreateMap<Alerts, AlertDto>().ReverseMap();
+            CreateMap<Alert, AlertDto>().ReverseMap();
             #endregion Alerts
             #region Countries
-            CreateMap<Countries, GetCountryIdByNameDto>().ReverseMap();
-            CreateMap<Countries, GetCountriesNamesRequestDto>().ReverseMap();
+            CreateMap<Country, GetCountryNameByIdDto>().ReverseMap();
+            CreateMap<Country, GetCountriesNamesRequestDto>().ReverseMap();
+            CreateMap<Country, CountriesISOCodesDto>().ReverseMap();
             #endregion Countries
             #region SystemNotifications
-            CreateMap<SystemNotifications, SystemNotificationsDto>().ReverseMap();
+            CreateMap<SystemNotification, GetSystemNotificationsDto>().ReverseMap();
             #endregion SystemNotifications
         }
     }
