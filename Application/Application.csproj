@@ -25,6 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Dictionary\Handlers\Commands\" />
+    <Folder Include="Features\Dictionary\Requests\Commands\" />
     <Folder Include="Features\Expense\Handlers\Commands\" />
     <Folder Include="Features\Expense\Handlers\Queries\" />
     <Folder Include="Features\Expense\Requests\Queries\" />

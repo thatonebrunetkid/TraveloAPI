@@ -36,5 +36,7 @@ namespace Persistence
         public DbSet<Expense> Expense { get; set; }
         public DbSet<OweSinglePayment> OweSinglePayment { get; set; }
         public DbSet<SystemNotification> SystemNotification { get; set; }
+        public DbSet<Dictionary> Dictionary { get; set; }
+        public DbSet<DictionaryWord> DictionaryWord { get; set; }
     }
 }

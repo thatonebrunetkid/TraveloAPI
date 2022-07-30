@@ -1,5 +1,6 @@
 ﻿using Application.DTOs.Alerts;
 using Application.DTOs.Countries;
+using Application.DTOs.Dictionary;
 using Application.DTOs.SystemNotofications;
 using Application.DTOs.Travel;
 using Application.DTOs.User;
@@ -37,6 +38,10 @@ namespace Application.Profiles
             #region SystemNotifications
             CreateMap<SystemNotification, GetSystemNotificationsDto>().ReverseMap();
             #endregion SystemNotifications
+            #region Dictionary
+            CreateMap<Dictionary, GetDictionaryDTO>().ReverseMap();
+            CreateMap<DictionaryWord, GetDictionaryWordDTO>().ReverseMap();
+            #endregion Dictionary
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Persistence
             services.AddScoped<IOweSinglePaymentRepository, OweSinglePaymentRepository>();
             services.AddScoped<IVisitDateRepository, VisitDateRepository>();
             services.AddScoped<ISystemNotificationsRepository, SystemNotificationsRepository>();
+            services.AddScoped<IDictionaryRepository, DictionaryRepository>();
 
             return services;
         }
