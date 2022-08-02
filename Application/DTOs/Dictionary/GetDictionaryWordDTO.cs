@@ -9,9 +9,9 @@ namespace Application.DTOs.Dictionary
 {
     public class GetDictionaryWordDTO
     {
-        [JsonPropertyName("translate")]
-        public string Word { get; set; }
         [JsonPropertyName("polish")]
+        public string Word { get; set; }
+        [JsonPropertyName("translate")]
         public string WordTranslated { get; set; }
     }
 }
