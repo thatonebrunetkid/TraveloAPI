@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace TraveloAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class DictionaryController : ControllerBase
     {
         private readonly IMediator _Mediator;
@@ -18,7 +18,7 @@ namespace TraveloAPI.Controllers
             _Mediator = Mediator;
         }
 
-        [Route("GET/ALL")]
+        [Route("Dictionaries")]
         [HttpGet]
         public async Task<ActionResult<GetDictionariesDTO>> GetAllDictionary()
         {

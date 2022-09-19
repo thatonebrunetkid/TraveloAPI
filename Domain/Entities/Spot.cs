@@ -19,5 +19,7 @@ namespace Domain.Entities
         public string ZipCode { get; set; }
         public int VisitDateId { get; set; }
         public int ExpenseId { get; set; }
+        public double CoordinateX { get; set; }
+        public double CoordinateY { get; set; }
     }
 }

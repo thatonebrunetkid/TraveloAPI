@@ -17,8 +17,8 @@ namespace Domain.Entities
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public bool? IsFav { get; set; }
-        public string Note { get; set; }
-        public int ParticipantNumber { get; set; }
+        public string? Note { get; set; }
+        public int? ParticipantNumber { get; set; }
         public Decimal PlannedBudget { get; set; }
         public string? LinkUrl { get; set; }
         public DateTime? LinkExpirationDate { get; set; }
@@ -26,5 +26,6 @@ namespace Domain.Entities
         public int UserId { get; set; }
         public int CountryId { get; set; }
         public string HotelName { get; set; }
+        public string PickedCurrency { get; set; }
     }
 }

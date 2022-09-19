@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace TraveloAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class AlertsController : ControllerBase
     {
         private readonly IMediator _Mediator;
@@ -20,7 +20,7 @@ namespace TraveloAPI.Controllers
         }
 
 
-        [Route("GET/ALL")]
+        [Route("All")]
         [HttpGet]
         public async Task<ActionResult<List<AlertDto>>> GetAllAlerts()
         {

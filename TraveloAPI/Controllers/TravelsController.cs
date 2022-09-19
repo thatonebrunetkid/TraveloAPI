@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace TraveloAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("{UserId}")]
     public class TravelsController : ControllerBase
     {
         private readonly IMediator _Mediator;
@@ -22,17 +22,17 @@ namespace TraveloAPI.Controllers
             _Mediator = Mediator;
         }
 
-        [Route("GET/ALL")]
+        [Route("Travels")]
         [HttpGet]
-        public async Task<ActionResult<List<AllTravelsDTO>>> Get([FromQuery] int UserId)
+        public async Task<ActionResult<List<AllTravelsDTO>>> Get(int UserId)
         {
-            var Travels = await _Mediator.Send(new GetTravelListRequest { UserId = UserId});
-            if(Travels == null)
+            var Travels = await _Mediator.Send(new GetTravelListRequest { UserId = UserId });
+            if (Travels == null)
                 return NotFound();
             return Ok(Travels);
         }
 
-        [Route("ADD")]
+        [Route("Travels/New")]
         [HttpPost]
         public async Task<ActionResult> AddNew([FromBody] AddNewTravelDto Travel)
         {
@@ -41,27 +41,27 @@ namespace TraveloAPI.Controllers
             return Ok(response);
         }
 
-        [Route("DASHBOARD/GET/CALENDAR")]
+        [Route("Travels/Dashboard/Calendar")]
         [HttpGet]
-        public async Task<ActionResult<List<GetTravelDatesFromCurrentMonthDto>>> GetTravelsDatesFromCurrentMonth([FromQuery] int UserId)
+        public async Task<ActionResult<List<GetTravelDatesFromCurrentMonthDto>>> GetTravelsDatesFromCurrentMonth(int UserId)
         {
-            var Dates = await _Mediator.Send(new GetTravelDatesFromCurrentMonthRequest() { UserId = UserId});
+            var Dates = await _Mediator.Send(new GetTravelDatesFromCurrentMonthRequest() { UserId = UserId });
             if (Dates.Count == 0) return NoContent();
             return Ok(Dates);
         }
 
-        [Route("DASHBOARD/GET/UPCOMINGTRAVEL")]
+        [Route("Travels/Upcoming")]
         [HttpGet]
-        public async Task<ActionResult<GetCurrentTravelInformationDto>> GetCurrentTravelInfo([FromQuery] int UserId)
+        public async Task<ActionResult<GetCurrentTravelInformationDto>> GetCurrentTravelInfo(int UserId)
         {
-            var Travel = await _Mediator.Send(new GetCurrentTravelInformationRequest() { UserId = UserId});
+            var Travel = await _Mediator.Send(new GetCurrentTravelInformationRequest() { UserId = UserId });
             if (Travel == null) return NotFound();
             return Ok(Travel);
         }
 
-        [Route("CALENDAR/GET/DATES")]
+        [Route("Travels/Calendar")]
         [HttpGet]
-        public async Task<ActionResult<List<GetTravelDatesFromCurrentMonthDto>>> GetAllTravelsDates([FromQuery] int UserId)
+        public async Task<ActionResult<List<GetTravelDatesFromCurrentMonthDto>>> GetAllTravelsDates(int UserId)
         {
             var Dates = await _Mediator.Send(new GetAllTravelDatesRequest() { UserId = UserId });
             if (Dates.Count == 0) return NoContent();

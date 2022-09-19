@@ -11,7 +11,8 @@ namespace Domain.Entities
     {
         [Key]
         public int CountryId { get; set; }
-        public string Code { get; set; }
+        public string CodeABC { get; set; }
+        public string CodeAB { get; set; }
         public string Name { get; set; }
         public string Currency { get; set; }
         public int FlagId { get; set; }

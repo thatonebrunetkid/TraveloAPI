@@ -18,7 +18,7 @@ namespace TraveloAPI.Controllers
             _Mediator = Mediator;
         }
 
-        [Route("GET/ALL")]
+        [Route("Notifications")]
         [HttpGet]
         public async Task<ActionResult<List<GetSystemNotificationsDto>>> GetAllValidSystemNotifications()
         {

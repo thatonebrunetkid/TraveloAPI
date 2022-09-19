@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace TraveloAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class CountriesController : ControllerBase
     {
         private readonly IMediator _Mediator;
@@ -19,18 +19,18 @@ namespace TraveloAPI.Controllers
             _Mediator = Mediator;
         }
 
-        [Route("GET/COUNTRIES/SEARCH")]
+        [Route("Search/{phrase}")]
         [HttpGet]
-        public async Task<ActionResult<List<GetCountriesNamesRequestDto>>> CountriesSearch([FromQuery] string phrase)
+        public async Task<ActionResult<List<GetCountriesNamesRequestDto>>> CountriesSearch(string phrase)
         {
             var names = await _Mediator.Send(new GetCountriesNamesRequest { Phrase = phrase });
             if (names.Count == 0) return NoContent();
             return names;
         }
 
-        [Route("GET/COUNTRIES/MAP")]
+        [Route("{userId}/Map")]
         [HttpGet]
-        public async Task<ActionResult<List<CountriesISOCodesDto>>> CountriesForMap([FromQuery] int userId)
+        public async Task<ActionResult<List<CountriesISOCodesDto>>> CountriesForMap(int userId)
         {
             var codes = await _Mediator.Send(new GetCountriesISOCodesForMapRequest { UserId = userId });
             return codes;

@@ -1,4 +1,5 @@
-﻿using Application.DTOs.Travel;
+﻿using Application.DTOs.Alerts;
+using Application.DTOs.Travel;
 using Application.Features.TravelTypes.Requests.Travel.Queries;
 using Application.Persistence.Contracts;
 using AutoMapper;
@@ -40,7 +41,7 @@ namespace Application.Features.TravelTypes.Handlers.Queries
                 Currency = Country.Currency,
                 PlannedBudged = Travel.PlannedBudget,
                 FlagUrl = "https://www.someflagapi.com/someflag",
-                CountryAlerts = Alerts
+                CountryAlerts = _Mapper.Map<List<AlertDto>>(Alerts)
             };
         }
     }

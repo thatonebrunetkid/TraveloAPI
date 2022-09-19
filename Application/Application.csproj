@@ -36,6 +36,10 @@
     <Folder Include="Features\VisitDate\Handlers\Commands\" />
     <Folder Include="Features\VisitDate\Handlers\Queries\" />
     <Folder Include="Features\VisitDate\Requests\Commands\" />
+    <Folder Include="DTOs\Payment\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="DTOs\Payment\" />
+  </ItemGroup>
 </Project>

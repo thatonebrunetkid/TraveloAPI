@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.DTOs.Alerts;
 
 namespace Application.DTOs.Travel
 {
@@ -13,6 +14,6 @@ namespace Application.DTOs.Travel
         public Decimal PlannedBudged { get; set; }
         public Decimal UsedBudget { get; set; }
         public string FlagUrl { get; set; }
-        public List<Domain.Entities.Alert> CountryAlerts { get; set; }
+        public List<AlertDto> CountryAlerts { get; set; }
     }
 }

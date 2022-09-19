@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace TraveloAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -20,22 +20,22 @@ namespace TraveloAPI.Controllers
             _mediator = mediator;
         }
 
-        [Route("HEALTH")]
+        [Route("Health")]
         [HttpGet]
         public ActionResult Health()
         {
             return Ok("Service is up");
         }
 
-        [Route("GET/DETAILS")]
-        [HttpGet()]
-        public async Task<ActionResult<UserNoIDDTO>> GetUser([FromQuery] int id)
+        [Route("{UserId}/Details")]
+        [HttpGet]
+        public async Task<ActionResult<UserNoIDDTO>> GetUser(int UserId)
         {
-            var user = await _mediator.Send(new GetUserDetailsRequest { Id = id});
+            var user = await _mediator.Send(new GetUserDetailsRequest { Id =UserId});
             return Ok(user);
         }
 
-        [Route("ADD")]
+        [Route("New")]
         [HttpPost]
         public async Task<ActionResult> AddUser([FromBody] CreateUserDto user)
         {
@@ -44,7 +44,7 @@ namespace TraveloAPI.Controllers
             return Ok(response);
         }
 
-        [Route("RefreshPasswordGet")]
+        [Route("RefreshPasswordInitialize")]
         [HttpPost]
         public async Task<System.Net.HttpStatusCode> GetRefreshPasswordLink([FromBody] RefreshPasswordGetDTO email)
         {
@@ -52,7 +52,7 @@ namespace TraveloAPI.Controllers
             return result;
         }
 
-        [Route("RefreshPasswordSet")]
+        [Route("RefreshPasswordExecute")]
         [HttpPost()]
         public async Task<System.Net.HttpStatusCode> SetRefreshPassword([FromBody] RefreshPasswordCommandRequest request)
         {
