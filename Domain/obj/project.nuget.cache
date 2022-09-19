@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sqZZFscF1n5YvTznOa3BQhAmwTYf4rT6MKJTJ2MfoAQPYDxLgSoaPCNTs5QbZbhvmWdkVJQTlLQ8IMOMh2JM4Q==",
+  "dgSpecHash": "SsRPLua7S/hCr8Aoz4aAL13j9Q/OnKsyVTaJuuVEgoN9BPRLlGdosPVgn8oyiLfCu1t9Q9J7Pt4YxwmxOVQ2JA==",
   "success": true,
-  "projectFilePath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/mateuszaugustyniak/traveloapi/Domain/Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/mateuszaugustyniak/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/mateuszaugustyniak/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

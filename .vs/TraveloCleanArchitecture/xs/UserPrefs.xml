@@ -1,0 +1,71 @@
+﻿<Properties StartupConfiguration="{64240C03-C259-4D78-8AA8-DF85555F9F8B}|Default">
+  <MonoDevelop.Ide.ItemProperties.src.API.TraveloAPI PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TraveloCleanArchitecture" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="API" expanded="True">
+                <Node name="TraveloAPI" expanded="True">
+                  <Node name="Dependencies" expanded="True">
+                    <Node name="PackageDependencies" expanded="True" />
+                  </Node>
+                  <Node name="Controllers" expanded="True" />
+                  <Node name="Properties" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Application" expanded="True">
+                <Node name="Application" expanded="True">
+                  <Node name="Dependencies" expanded="True">
+                    <Node name="PackageDependencies" expanded="True" />
+                  </Node>
+                  <Node name="DTOs" expanded="True">
+                    <Node name="Alerts" expanded="True" />
+                    <Node name="Travel" expanded="True" />
+                    <Node name="User" expanded="True" />
+                  </Node>
+                  <Node name="Features" expanded="True">
+                    <Node name="AlertsTypes" expanded="True">
+                      <Node name="Handlers" expanded="True">
+                        <Node name="Queries" expanded="True" />
+                      </Node>
+                    </Node>
+                    <Node name="TravelTypes" expanded="True">
+                      <Node name="Handlers" expanded="True">
+                        <Node name="Queries" expanded="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                  <Node name="Persistence" expanded="True">
+                    <Node name="Contracts" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Core" expanded="True">
+                <Node name="Domain" expanded="True">
+                  <Node name="Entities" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Infrastructure" expanded="True">
+                <Node name="Infrastructure" expanded="True" />
+                <Node name="Persistence" expanded="True">
+                  <Node name="Repositories" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
