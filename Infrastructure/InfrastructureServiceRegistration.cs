@@ -1,6 +1,6 @@
-﻿using Application.Models;
-using Application.Persistence.Contracts;
-using Infrastructure.Mail;
+﻿using Application.Common;
+using Application.Models;
+using Infrastructure.Email;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;

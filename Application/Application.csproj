@@ -1,45 +1,26 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
+  </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.4.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
-    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
+    <Folder Include="AlertTypes\Handlers\Commands\" />
+    <Folder Include="ContryTypes\Handlers\Commadns\" />
+    <Folder Include="Flag\Queries\" />
+    <Folder Include="TravelTypes\Commands\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Dictionary\Handlers\Commands\" />
-    <Folder Include="Features\Dictionary\Requests\Commands\" />
-    <Folder Include="Features\Expense\Handlers\Commands\" />
-    <Folder Include="Features\Expense\Handlers\Queries\" />
-    <Folder Include="Features\Expense\Requests\Queries\" />
-    <Folder Include="Features\Spot\Handlers\Commands\" />
-    <Folder Include="Features\Spot\Handlers\Queries\" />
-    <Folder Include="Features\Spot\Requests\Queries\" />
-    <Folder Include="Features\VisitDate\Handlers\Commands\" />
-    <Folder Include="Features\VisitDate\Handlers\Queries\" />
-    <Folder Include="Features\VisitDate\Requests\Commands\" />
-    <Folder Include="DTOs\Payment\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="DTOs\Payment\" />
-  </ItemGroup>
 </Project>

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application.DTOs.Payment;
+﻿using Domain.Payment.DTO;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Net;
+using System.Threading.Tasks;
 
 namespace TraveloAPI.Controllers
 {
@@ -12,9 +9,10 @@ namespace TraveloAPI.Controllers
     [Route("[controller]")]
     public class PaymentController : Controller
     {
+
         [Route("Initialize")]
         [HttpPost]
-        public async Task<ActionResult> AuthorisePayment([FromBody] PaymentDTO request) 
+        public async Task<ActionResult> InitializePayment([FromBody] PaymentDTO request)
         {
             if (request.BlikCode == "" || request.TargetPhoneNumber == "") return BadRequest();
 
@@ -26,4 +24,3 @@ namespace TraveloAPI.Controllers
 
     }
 }
-

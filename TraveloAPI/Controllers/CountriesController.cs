@@ -1,6 +1,5 @@
-﻿using Application.DTOs.Countries;
-using Application.Features.CountriesTypes.Requests.Queries;
-using Domain.Entities;
+﻿using Application.ContryTypes.Handlers.Queries;
+using Domain.Country.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -12,28 +11,27 @@ namespace TraveloAPI.Controllers
     [Route("[controller]")]
     public class CountriesController : ControllerBase
     {
-        private readonly IMediator _Mediator;
+        private readonly IMediator Mediator;
 
         public CountriesController(IMediator Mediator)
         {
-            _Mediator = Mediator;
+            this.Mediator = Mediator;
         }
 
         [Route("Search/{phrase}")]
         [HttpGet]
-        public async Task<ActionResult<List<GetCountriesNamesRequestDto>>> CountriesSearch(string phrase)
+        public async Task<ActionResult<List<CountryNameDTO>>> GetCountriesList(string phrase)
         {
-            var names = await _Mediator.Send(new GetCountriesNamesRequest { Phrase = phrase });
-            if (names.Count == 0) return NoContent();
+            var names = await Mediator.Send(new GetCountriesNamesQuerieRequest { Phrase = phrase });
+            if (names.Count == 0) return NotFound();
             return names;
         }
 
-        [Route("{userId}/Map")]
+        [Route("{UserId}/Map")]
         [HttpGet]
-        public async Task<ActionResult<List<CountriesISOCodesDto>>> CountriesForMap(int userId)
+        public async Task<ActionResult<List<CountryISOCodeDTO>>> GetTravelsForMap(int UserId)
         {
-            var codes = await _Mediator.Send(new GetCountriesISOCodesForMapRequest { UserId = userId });
-            return codes;
+            return await Mediator.Send(new GetCountriesForMapQuerieRequest { UserId = UserId });
         }
     }
 }

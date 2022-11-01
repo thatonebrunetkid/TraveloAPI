@@ -1,6 +1,5 @@
-﻿using Application.DTOs.Alerts;
-using Application.Features.AlertsTypes.Requests.Queries;
-using Domain.Entities;
+﻿using Application.AlertTypes.Handlers.Queries;
+using Domain.Alert.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -12,22 +11,21 @@ namespace TraveloAPI.Controllers
     [Route("[controller]")]
     public class AlertsController : ControllerBase
     {
-        private readonly IMediator _Mediator;
+        private readonly IMediator Mediator;
 
         public AlertsController(IMediator Mediator)
         {
-            _Mediator = Mediator;
+            this.Mediator = Mediator;
         }
-
 
         [Route("All")]
         [HttpGet]
-        public async Task<ActionResult<List<AlertDto>>> GetAllAlerts()
+        public async Task<ActionResult<List<AllAlertsDTO>>> GetAllAlerts()
         {
-            var Alerts = await _Mediator.Send(new GetAllAlertsRequest());
-            if (Alerts.Count == 0) return NoContent();
-            return Alerts;
-          
+            var alerts = await Mediator.Send(new GetAllAlertsQuerieRequest());
+            if (alerts.Count == 0) return NotFound();
+            return alerts;
         }
+
     }
 }

@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SsRPLua7S/hCr8Aoz4aAL13j9Q/OnKsyVTaJuuVEgoN9BPRLlGdosPVgn8oyiLfCu1t9Q9J7Pt4YxwmxOVQ2JA==",
+  "dgSpecHash": "mRzdTrDfWZsONVkEEnfzOmKuGaONfzs8oCP7ys0Bj8TmFg8K0g1M9RtB99zUMfp5+v+BY9x51FonqAhag42J1Q==",
   "success": true,
-  "projectFilePath": "/Users/mateuszaugustyniak/traveloapi/Domain/Domain.csproj",
+  "projectFilePath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "/Users/mateuszaugustyniak/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "/Users/mateuszaugustyniak/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+    "C:\\Users\\mateu\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,11 +1,9 @@
-﻿using Application.DTOs.User;
-using Application.Features.UserTypes.Requests;
-using Application.Features.UserTypes.Requests.User.Commands;
-using Application.Features.UserTypes.Requests.User.Queries;
-using Application.Persistence.Contracts;
+﻿using Application.UserTypes.Handlers.Commands;
+using Application.UserTypes.Handlers.Queries;
+using Domain.User.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace TraveloAPI.Controllers
@@ -14,54 +12,45 @@ namespace TraveloAPI.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly IMediator _mediator;
-        public UserController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        private readonly IMediator Mediator;
 
-        [Route("Health")]
-        [HttpGet]
-        public ActionResult Health()
+        public UserController(IMediator Mediator)
         {
-            return Ok("Service is up");
-        }
-
-        [Route("{UserId}/Details")]
-        [HttpGet]
-        public async Task<ActionResult<UserNoIDDTO>> GetUser(int UserId)
-        {
-            var user = await _mediator.Send(new GetUserDetailsRequest { Id =UserId});
-            return Ok(user);
+            this.Mediator = Mediator;
         }
 
         [Route("New")]
         [HttpPost]
-        public async Task<ActionResult> AddUser([FromBody] CreateUserDto user)
+        public async Task<ActionResult> AddUser([FromBody] CreateUserDTO user)
         {
-            var command = new CreateUserCommand { createUserDto = user };
-            var response = await _mediator.Send(command);
+            var command = new CreateUserCommandRequest { CreateUserDTO = user };
+            var response = await Mediator.Send(command);
             return Ok(response);
         }
 
         [Route("RefreshPasswordInitialize")]
         [HttpPost]
-        public async Task<System.Net.HttpStatusCode> GetRefreshPasswordLink([FromBody] RefreshPasswordGetDTO email)
+        public async Task<HttpStatusCode> RefreshPasswordInitialize([FromBody] RefreshPasswordInitializeDTO request)
         {
-            var result = await _mediator.Send(new GetRefreshLinkRequest { Email = email.Email });
+            var result = await Mediator.Send(new RefreshPasswordInitializeRequest { Email = request.Email });
             return result;
         }
 
         [Route("RefreshPasswordExecute")]
-        [HttpPost()]
-        public async Task<System.Net.HttpStatusCode> SetRefreshPassword([FromBody] RefreshPasswordCommandRequest request)
+        [HttpPost]
+        public async Task<HttpStatusCode> RefreshPasswordExecute([FromBody] RegreshPasswordExecuteDTO request)
         {
-            var result = await _mediator.Send(new RefreshPasswordCommandRequest { Email = request.Email, Password = request.Password });
+            var result = await Mediator.Send(new RefreshPasswordExecuteCommandRequest { Email = request.Email, Password = request.Password });
             return result;
         }
 
-
-
-
+        [Route("{UserId}")]
+        [HttpGet]
+        public async Task<ActionResult<GetUserDataDTO>> GetUserData(int UserId)
+        {
+            var result = await Mediator.Send(new GetUserDataQuerieRequest { UserId = UserId });
+            if (result is null) return NotFound();
+            return Ok(result);
+        }
     }
 }

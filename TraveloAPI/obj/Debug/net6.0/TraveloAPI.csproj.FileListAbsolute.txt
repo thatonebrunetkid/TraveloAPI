@@ -1,0 +1,7 @@
+D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net6.0\TraveloAPI.csproj.AssemblyReference.cache
+D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net6.0\TraveloAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net6.0\TraveloAPI.AssemblyInfoInputs.cache
+D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net6.0\TraveloAPI.AssemblyInfo.cs
+D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net6.0\TraveloAPI.csproj.CoreCompileInputs.cache
+D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net6.0\TraveloAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net6.0\TraveloAPI.MvcApplicationPartsAssemblyInfo.cache

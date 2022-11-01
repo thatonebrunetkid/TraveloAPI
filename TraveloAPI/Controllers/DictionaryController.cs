@@ -1,8 +1,7 @@
-﻿using Application.DTOs.Dictionary;
-using Application.Features.Dictionary.Requests.Queries;
+﻿using Application.DictionaryTypes.Handlers.Queries;
+using Domain.Dictionary.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace TraveloAPI.Controllers
@@ -11,21 +10,20 @@ namespace TraveloAPI.Controllers
     [Route("[controller]")]
     public class DictionaryController : ControllerBase
     {
-        private readonly IMediator _Mediator;
+        private readonly IMediator Mediator;
 
         public DictionaryController(IMediator Mediator)
         {
-            _Mediator = Mediator;
+            this.Mediator = Mediator;
         }
 
         [Route("Dictionaries")]
         [HttpGet]
-        public async Task<ActionResult<GetDictionariesDTO>> GetAllDictionary()
+        public async Task<ActionResult<GetDictionariesDTO>> GetAllDictionaries()
         {
-            var Dictionaries = await _Mediator.Send(new GetDictionaryRequest());
-            if (Dictionaries.Dictionaries.Count == 0) return NoContent();
+            var Dictionaries = await Mediator.Send(new GetDictionariesQuerieRequest());
+            if (Dictionaries.Dictionaries.Count == 0 || Dictionaries.Dictionaries == null) return NotFound();
             return Ok(Dictionaries);
         }
     }
-
 }

@@ -1,33 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mateuszaugustyniak/traveloapi/Application/Application.csproj": {}
+    "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj": {}
   },
   "projects": {
-    "/Users/mateuszaugustyniak/traveloapi/Application/Application.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mateuszaugustyniak/traveloapi/Application/Application.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "/Users/mateuszaugustyniak/traveloapi/Application/Application.csproj",
-        "packagesPath": "/Users/mateuszaugustyniak/.nuget/packages/",
-        "outputPath": "/Users/mateuszaugustyniak/traveloapi/Application/obj/",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/mateuszaugustyniak/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/mateuszaugustyniak/traveloapi/Domain/Domain.csproj": {
-                "projectPath": "/Users/mateuszaugustyniak/traveloapi/Domain/Domain.csproj"
+              "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj"
               }
             }
           }
@@ -42,25 +49,25 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[11.0.0, )"
+              "version": "[12.0.0, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[10.4.0, )"
+              "version": "[11.2.2, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[10.0.1, )"
+              "version": "[11.0.0, )"
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "System.IO.FileSystem": {
-              "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[5.0.1, )"
             }
           },
           "imports": [
@@ -74,41 +81,38 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22301.10\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mateuszaugustyniak/traveloapi/Domain/Domain.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mateuszaugustyniak/traveloapi/Domain/Domain.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/Users/mateuszaugustyniak/traveloapi/Domain/Domain.csproj",
-        "packagesPath": "/Users/mateuszaugustyniak/.nuget/packages/",
-        "outputPath": "/Users/mateuszaugustyniak/traveloapi/Domain/obj/",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/mateuszaugustyniak/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -126,6 +130,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -137,22 +147,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22301.10\\RuntimeIdentifierGraph.json"
         }
       }
     }

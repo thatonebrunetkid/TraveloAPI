@@ -1,19 +1,12 @@
 using Application;
+using Persistance;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace TraveloAPI
 {
@@ -30,7 +23,7 @@ namespace TraveloAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureApplicationServices();
-            services.ConfigurePersistenceServices(Configuration);
+            services.ConfigurePersistanceServices(Configuration);
             services.ConfigureInfrastructureServices(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -40,7 +33,7 @@ namespace TraveloAPI
 
             services.AddCors(o =>
             {
-                o.AddPolicy("CorsPloicy",
+                o.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader());
@@ -57,7 +50,7 @@ namespace TraveloAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TraveloAPI v1"));
             }
 
-            //app.UseHttpsRedirection(); //wylaczenie koniecznosci posiadania certyfikatu przez maszyne aws
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

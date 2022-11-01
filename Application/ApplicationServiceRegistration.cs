@@ -13,10 +13,7 @@ namespace Application
     {
         public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
         {
-            //to zapewnia pokrycie kazdego profilu mappera poprzez refleksje
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
-            //to samo ale dla mediatora. Wyszukuje requests/response objects poprzez refleksjse
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             return services;

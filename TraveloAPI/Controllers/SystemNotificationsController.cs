@@ -1,5 +1,5 @@
-﻿using Application.DTOs.SystemNotofications;
-using Application.Features.SystemNotifications.Requests.Queries;
+﻿using Application.SystemNotificationsType.Handlers.Queries;
+using Domain.SystemNotification.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -9,22 +9,23 @@ namespace TraveloAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class SystemNotificationsController : ControllerBase
+    public class SystemNotificationsController : Controller
     {
-        private readonly IMediator _Mediator;
+        private readonly IMediator Mediator;
 
         public SystemNotificationsController(IMediator Mediator)
         {
-            _Mediator = Mediator;
+            this.Mediator = Mediator;
         }
+
 
         [Route("Notifications")]
         [HttpGet]
-        public async Task<ActionResult<List<GetSystemNotificationsDto>>> GetAllValidSystemNotifications()
+        public async Task<ActionResult<List<GetAllSystemNotificationsDTO>>> GetAllNotifications()
         {
-            var Notifications = await _Mediator.Send(new GetSystemNotificationsRequest());
-            if (Notifications.Count == 0) return NoContent();
-            return Notifications;
+            var Notifications = await Mediator.Send(new GetSystemNotificationsQuerieRequest());
+            if (Notifications.Count == 0 || Notifications == null) return NotFound();
+            return Ok(Notifications);
         }
     }
 }
