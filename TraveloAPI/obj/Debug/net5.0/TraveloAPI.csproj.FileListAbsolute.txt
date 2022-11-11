@@ -80,3 +80,13 @@ D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net5.0\refint\Travel
 D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net5.0\TraveloAPI.pdb
 D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net5.0\TraveloAPI.genruntimeconfig.cache
 D:\Users\mateu\source\repos\TraveloAPI\TraveloAPI\obj\Debug\net5.0\ref\TraveloAPI.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.csproj.AssemblyReference.cache
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.AssemblyInfoInputs.cache
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.AssemblyInfo.cs
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.csproj.CoreCompileInputs.cache
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\refint\TraveloAPI.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\TraveloAPI\obj\Debug\net5.0\TraveloAPI.pdb

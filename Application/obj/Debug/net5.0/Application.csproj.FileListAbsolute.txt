@@ -13,3 +13,11 @@ D:\Users\mateu\source\repos\TraveloAPI\Application\obj\Debug\net5.0\Application.
 D:\Users\mateu\source\repos\TraveloAPI\Application\obj\Debug\net5.0\refint\Application.dll
 D:\Users\mateu\source\repos\TraveloAPI\Application\obj\Debug\net5.0\Application.pdb
 D:\Users\mateu\source\repos\TraveloAPI\Application\obj\Debug\net5.0\ref\Application.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Application\obj\Debug\net5.0\Application.csproj.AssemblyReference.cache
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Application\obj\Debug\net5.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Application\obj\Debug\net5.0\Application.AssemblyInfoInputs.cache
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Application\obj\Debug\net5.0\Application.AssemblyInfo.cs
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Application\obj\Debug\net5.0\Application.csproj.CoreCompileInputs.cache
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Application\obj\Debug\net5.0\Application.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Application\obj\Debug\net5.0\refint\Application.dll
+D:\Users\mateu\source\repos\TraveloCleanArchitecture\Application\obj\Debug\net5.0\Application.pdb
