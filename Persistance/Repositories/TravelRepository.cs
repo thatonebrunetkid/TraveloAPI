@@ -35,5 +35,12 @@ namespace Persistance.Repositories
                 result = await DbContext.Travel.FirstOrDefaultAsync(e => e.StartDate >= DateTime.Now && e.UserId == UserId);
             return result;
         }
+
+        public async Task<Travel> AddNewTravel(Travel Travel)
+        {
+            await DbContext.Travel.AddAsync(Travel);
+            await DbContext.SaveChangesAsync();
+            return Travel;
+        }
     }
 }

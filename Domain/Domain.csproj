@@ -13,6 +13,7 @@
     <Folder Include="Country\Validations\" />
     <Folder Include="DictionaryWord\Validations\" />
     <Folder Include="Dictionary\Validations\" />
+    <Folder Include="Spot\Entities\" />
     <Folder Include="SystemNotification\Validations\" />
     <Folder Include="Travels\Validations\" />
   </ItemGroup>

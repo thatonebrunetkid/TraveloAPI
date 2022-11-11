@@ -17,6 +17,7 @@
     <Folder Include="ContryTypes\Handlers\Commadns\" />
     <Folder Include="Flag\Queries\" />
     <Folder Include="TravelTypes\Commands\" />
+    <Folder Include="UserTypes\Handlers\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

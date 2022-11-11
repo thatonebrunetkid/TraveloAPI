@@ -11,5 +11,6 @@ namespace Application.ContryTypes.Contracts
     {
         Task<List<Country>> GetCountryNames(string Phrase);
         Task<Country> GetCountryInfo(int CountryId);
+        Task<List<Country>> GetAllCountries();
     }
 }

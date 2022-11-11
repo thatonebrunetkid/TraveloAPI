@@ -13,6 +13,7 @@ using Application.TravelTypes.Contracts;
 using Application.DictionaryTypes.Contracts;
 using Application.SystemNotificationsType.Contracts;
 using Application.Flag.Contracts;
+using Application.ServicePhoneTypes.Contracts;
 
 namespace Persistance
 {
@@ -30,6 +31,7 @@ namespace Persistance
             services.AddScoped<IDictionaryRepository, DictionaryRepository>();
             services.AddScoped<ISystemNotificationRepository, SystemNotificationRepository>();
             services.AddScoped<IFlagRepository, FlagRepository>();
+            services.AddScoped<IServicePhoneRepository, PhoneServiceRepository>();
 
             return services;
         }

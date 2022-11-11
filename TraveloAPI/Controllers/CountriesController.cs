@@ -3,6 +3,7 @@ using Domain.Country.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace TraveloAPI.Controllers
@@ -32,6 +33,26 @@ namespace TraveloAPI.Controllers
         public async Task<ActionResult<List<CountryISOCodeDTO>>> GetTravelsForMap(int UserId)
         {
             return await Mediator.Send(new GetCountriesForMapQuerieRequest { UserId = UserId });
+        }
+
+        [Route("ServicePhones")]
+        [HttpGet]
+        public async Task<ActionResult<List<GetCountryServicePhonesDTO>>> GetServicePhones()
+        {
+            var result = await Mediator.Send(new GetCountriesServicePhonesQuerieRequest());
+            if (result.Count == 0) return NoContent();
+            if (result is null) return StatusCode(500);
+            return Ok(result);
+        }
+
+        [Route("Currencies")]
+        [HttpGet]
+        public async Task<ActionResult<List<GetCurrencyListDTO>>> GetCurrencyList()
+        {
+            var result = await Mediator.Send(new GetAllCurrenciesQueryRequest());
+            if (result.Count == 0) return NoContent();
+            if (result is null) return StatusCode(500);
+            return Ok(result);
         }
     }
 }

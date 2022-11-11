@@ -3,6 +3,7 @@ using Domain.Country.Entities;
 using Domain.Dictionary.Entities;
 using Domain.DictionaryWord.Entities;
 using Domain.Flag.DTO;
+using Domain.ServicePhone.Entity;
 using Domain.SystemNotification.Entities;
 using Domain.Travels.DTO;
 using Domain.User;
@@ -42,5 +43,6 @@ namespace Persistance
         public DbSet<DictionaryWord> DictionaryWord { get; set; }
         public DbSet<SystemNotification> SystemNotification { get; set; }
         public DbSet<Flag> Flag { get; set; }
+        public DbSet<ServicePhone> ServicePhone { get; set; }
     }
 }

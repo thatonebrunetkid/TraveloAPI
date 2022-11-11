@@ -33,7 +33,7 @@ namespace Application
             CreateMap<DictionaryWord, GetDictionaryWordsDTO>().ReverseMap();
             CreateMap<SystemNotification, GetAllSystemNotificationsDTO>().ReverseMap();
             CreateMap<Travel, TravelDashboardCalendarDTO>().ReverseMap();
-            CreateMap<User, GetUserDataDTO>().ReverseMap();
+            CreateMap<Country, GetCurrencyListDTO>().ReverseMap();
         }
     }
 }

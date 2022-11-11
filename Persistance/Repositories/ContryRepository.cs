@@ -27,5 +27,10 @@ namespace Persistance.Repositories
         {
             return await DbContext.Country.FirstAsync(e => e.CountryId == CountryId);
         }
+
+        public async Task<List<Country>> GetAllCountries()
+        {
+            return await DbContext.Country.ToListAsync();
+        }
     }
 }
