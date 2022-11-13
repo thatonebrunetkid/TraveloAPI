@@ -39,7 +39,7 @@ namespace Application.ContryTypes.Handlers.Queries
             foreach (var Travel in Travels)
                 Countries.Add(Repository.GetCountryInfo(Travel.CountryId).Result);
 
-            return Mapper.Map<List<CountryISOCodeDTO>>(Countries);
+            return Mapper.Map<List<CountryISOCodeDTO>>(Countries.Distinct());
         }
     }
 }

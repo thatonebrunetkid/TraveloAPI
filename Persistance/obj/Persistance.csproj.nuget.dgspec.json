@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Persistance\\Persistance.csproj": {}
+    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj": {}
   },
   "projects": {
-    "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj"
+              "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Domain\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -156,14 +156,14 @@
         }
       }
     },
-    "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Persistance\\Persistance.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Persistance\\Persistance.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj",
         "projectName": "Persistance",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Persistance\\Persistance.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Persistance\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -185,8 +185,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj": {
-                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Application\\Application.csproj"
+              "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj"
               }
             }
           }

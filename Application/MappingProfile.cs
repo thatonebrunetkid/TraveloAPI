@@ -7,6 +7,8 @@ using Domain.Dictionary.DTO;
 using Domain.Dictionary.Entities;
 using Domain.DictionaryWord.DTO;
 using Domain.DictionaryWord.Entities;
+using Domain.OweSinglePayment.DTO;
+using Domain.OweSinglePayment.Entities;
 using Domain.SystemNotification.DTO;
 using Domain.SystemNotification.Entities;
 using Domain.Travels.DTO;
@@ -34,6 +36,7 @@ namespace Application
             CreateMap<SystemNotification, GetAllSystemNotificationsDTO>().ReverseMap();
             CreateMap<Travel, TravelDashboardCalendarDTO>().ReverseMap();
             CreateMap<Country, GetCurrencyListDTO>().ReverseMap();
+            CreateMap<OweSinglePayment, GetOweSinglePayersDTO>().ReverseMap();
         }
     }
 }

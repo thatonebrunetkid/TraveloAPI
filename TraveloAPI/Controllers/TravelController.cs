@@ -1,4 +1,5 @@
 ﻿using Application.TravelTypes.Queries;
+using Domain.OweSinglePayment.DTO;
 using Domain.Travels.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -52,6 +53,16 @@ namespace TraveloAPI.Controllers
             var result = await Mediator.Send(new GetUpcomingTravelQuerieRequest { UserId = UserId });
             if (result is null) return NoContent();
             return Ok(result);
+        }
+
+        [Route("Travels/{TravelId}/Payers")]
+        [HttpGet]
+        public async Task<ActionResult<List<GetOweSinglePayersDTO>>> GetTravelPayers(int TravelId)
+        {
+            var result = Mediator.Send(new GetPayersNameQuerieRequest { TravelId = TravelId });
+            if (result is null) return StatusCode(500);
+            if (result.Result.Count == 0) return NoContent();
+            return Ok(result.Result);
         }
     }
 }

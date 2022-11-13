@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KIDnZjm0lLxVZpYFDNHmG/491Ybx4CMYmDNAFHBBZRdmQFvTLl/uuVFylAw0WUEssI13m4IM4JCvOgTy+29I3A==",
+  "dgSpecHash": "ZkCI2ZM+l7AhKglLJHqDOaXN6BZqnjqldZMNw+H55PwSf5IZP9tefvI6fj6pLRmUGz/Wo9qP97Xqs4i98AlsRg==",
   "success": true,
-  "projectFilePath": "D:\\Users\\mateu\\source\\repos\\TraveloCleanArchitecture\\Persistance\\Persistance.csproj",
+  "projectFilePath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateu\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

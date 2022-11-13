@@ -12,5 +12,6 @@ namespace Application.TravelTypes.Contracts
         Task<List<Travel>> GetAllTravels(int userId);
         Task<List<Travel>> GetTravelsForDashboardCalendar(int userId);
         Task<Travel> GetUpcomingTravel(int UserId);
+        Task<Travel> GetTravelInfo(int TravelId);
     }
 }

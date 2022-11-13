@@ -14,6 +14,10 @@ using Application.DictionaryTypes.Contracts;
 using Application.SystemNotificationsType.Contracts;
 using Application.Flag.Contracts;
 using Application.ServicePhoneTypes.Contracts;
+using Application.VisitDateTypes.Contracts;
+using Application.SpotTypes.Contracts;
+using Application.ExpenseTypes.Contracts;
+using Application.OweSinglePaymentTypes.Contracts;
 
 namespace Persistance
 {
@@ -32,6 +36,10 @@ namespace Persistance
             services.AddScoped<ISystemNotificationRepository, SystemNotificationRepository>();
             services.AddScoped<IFlagRepository, FlagRepository>();
             services.AddScoped<IServicePhoneRepository, PhoneServiceRepository>();
+            services.AddScoped<IVisitDatesRepository, VisitDateRepository>();
+            services.AddScoped<ISpotRepository, SpotRepository>();
+            services.AddScoped<IExpenseReposiotry, ExpenseRepository>();
+            services.AddScoped<IOweSinglePaymentRepository, OweSinglePaymentRepository>();
 
             return services;
         }

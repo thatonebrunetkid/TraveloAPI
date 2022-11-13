@@ -30,10 +30,8 @@ namespace Persistance.Repositories
 
         public async Task<Travel> GetUpcomingTravel(int UserId)
         {
-            var result = await DbContext.Travel.FirstOrDefaultAsync(e => e.StartDate >= DateTime.Now && e.EndDate <= DateTime.Now && e.UserId == UserId);
-            if (result is null)
-                result = await DbContext.Travel.FirstOrDefaultAsync(e => e.StartDate >= DateTime.Now && e.UserId == UserId);
-            return result;
+            var results = await DbContext.Travel.Where(e => e.StartDate >= DateTime.Now).OrderBy(e => e.StartDate).ToListAsync();
+            return results.First();
         }
 
         public async Task<Travel> AddNewTravel(Travel Travel)
@@ -41,6 +39,11 @@ namespace Persistance.Repositories
             await DbContext.Travel.AddAsync(Travel);
             await DbContext.SaveChangesAsync();
             return Travel;
+        }
+
+        public async Task<Travel> GetTravelInfo(int TravelId)
+        {
+            return await DbContext.Travel.FirstAsync(e => e.TravelId == TravelId);
         }
     }
 }

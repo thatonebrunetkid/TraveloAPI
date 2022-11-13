@@ -2,11 +2,15 @@
 using Domain.Country.Entities;
 using Domain.Dictionary.Entities;
 using Domain.DictionaryWord.Entities;
+using Domain.Expense.Entities;
 using Domain.Flag.DTO;
+using Domain.OweSinglePayment.Entities;
 using Domain.ServicePhone.Entity;
+using Domain.Spot.Entities;
 using Domain.SystemNotification.Entities;
 using Domain.Travels.DTO;
 using Domain.User;
+using Domain.VisitDate.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -44,5 +48,9 @@ namespace Persistance
         public DbSet<SystemNotification> SystemNotification { get; set; }
         public DbSet<Flag> Flag { get; set; }
         public DbSet<ServicePhone> ServicePhone { get; set; }
+        public DbSet<VisitDate> VisitDate { get; set; }
+        public DbSet<Spot> Spot { get; set; }
+        public DbSet<Expense> Expense { get; set; }
+        public DbSet<OweSinglePayment> OweSinglePayment { get; set; }
     }
 }
