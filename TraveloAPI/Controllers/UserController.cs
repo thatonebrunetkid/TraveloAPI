@@ -52,5 +52,12 @@ namespace TraveloAPI.Controllers
             if (result is null) return NotFound();
             return Ok(result);
         }
+
+        [Route("{UserId}/Password/Change")]
+        [HttpPost]
+        public async Task<ActionResult<HttpStatusCode>> ChangePassword([FromBody] RegreshPasswordExecuteDTO request, int UserId)
+        {
+            return await Mediator.Send(new ChangePasswordCommandRequest { Request = request, UserId = UserId });
+        }
     }
 }

@@ -63,5 +63,18 @@ namespace Persistance.Repositories
         {
             return DbContext.User.FirstAsync(e => e.UserId == UserId);
         }
+
+        public async Task<HttpStatusCode> ChangePassword(int UserId, string Password)
+        {
+            var user = DbContext.User.First(e => e.UserId == UserId);
+            if (user is not null)
+            {
+                user.Password = Password;
+                await DbContext.SaveChangesAsync();
+                return HttpStatusCode.OK;
+            }
+            else
+                return HttpStatusCode.InternalServerError;
+        }
     }
 }
