@@ -64,5 +64,14 @@ namespace TraveloAPI.Controllers
             if (result.Result.Count == 0) return NoContent();
             return Ok(result.Result);
         }
+
+        [Route("Travels/{TravelId}")]
+        [HttpGet]
+        public async Task<ActionResult<AddNewTravelDTO>> GetParticularTravel(int TravelId)
+        {
+            var result = await Mediator.Send(new GetParticularTravelQuerieRequest { TravelId = TravelId });
+            if (result is null) return NotFound();
+            return Ok(result);
+        }
     }
 }

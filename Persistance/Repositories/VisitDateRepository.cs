@@ -20,7 +20,7 @@ namespace Persistance.Repositories
 
         public async Task<List<VisitDate>> GetVisitDateInfoByTravel(int TravelId)
         {
-            return await DbContext.VisitDate.Where(e => TravelId == TravelId).ToListAsync();
+            return await DbContext.VisitDate.Where(e => e.TravelId == TravelId).ToListAsync();
         }
     }
 }

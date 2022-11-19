@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\TraveloAPI\\TraveloAPI.csproj": {}
+    "D:\\Users\\mateu\\source\\repos\\bbrepo\\TraveloAPI\\TraveloAPI.csproj": {}
   },
   "projects": {
-    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj"
+              "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -156,14 +156,14 @@
         }
       }
     },
-    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Infrastructure\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -185,8 +185,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj": {
-                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj"
+              "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj"
               }
             }
           }
@@ -234,14 +234,14 @@
         }
       }
     },
-    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj",
         "projectName": "Persistance",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -263,8 +263,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj": {
-                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj"
+              "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj"
               }
             }
           }
@@ -312,14 +312,14 @@
         }
       }
     },
-    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\TraveloAPI\\TraveloAPI.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\bbrepo\\TraveloAPI\\TraveloAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\TraveloAPI\\TraveloAPI.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\bbrepo\\TraveloAPI\\TraveloAPI.csproj",
         "projectName": "TraveloAPI",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\TraveloAPI\\TraveloAPI.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\TraveloAPI\\TraveloAPI.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\TraveloAPI\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\TraveloAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -341,14 +341,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj": {
-                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj"
+              "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj"
               },
-              "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Infrastructure\\Infrastructure.csproj"
+              "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\Infrastructure.csproj"
               },
-              "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj": {
-                "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj"
+              "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj": {
+                "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj"
               }
             }
           }

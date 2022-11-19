@@ -37,6 +37,8 @@ namespace Application
             CreateMap<Travel, TravelDashboardCalendarDTO>().ReverseMap();
             CreateMap<Country, GetCurrencyListDTO>().ReverseMap();
             CreateMap<OweSinglePayment, GetOweSinglePayersDTO>().ReverseMap();
+            CreateMap<User, GetUserDataDTO>().ReverseMap();
+            CreateMap<OweSinglePayment, AddNewOweSinglePaymentDTO>().ReverseMap();
         }
     }
 }

@@ -18,9 +18,9 @@ namespace Persistance.Repositories
             this.DbContext = DbContext;
         }
 
-        public async Task<List<Expense>> GetExpenseInfo(int ExpenseId)
+        public async Task<Expense> GetExpenseInfo(int ExpenseId)
         {
-            return await DbContext.Expense.Where(e => e.ExpenseId == ExpenseId).ToListAsync();
+            return await DbContext.Expense.FirstAsync(x => x.ExpenseId == ExpenseId);
         }
     }
 }

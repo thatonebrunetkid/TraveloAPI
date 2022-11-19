@@ -3286,11 +3286,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj",
+      "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj",
       "projectName": "Persistance",
-      "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\Persistance.csproj",
+      "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj",
       "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Persistance\\obj\\",
+      "outputPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3312,8 +3312,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj": {
-              "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Application\\Application.csproj"
+            "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj": {
+              "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj"
             }
           }
         }

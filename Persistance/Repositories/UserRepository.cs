@@ -58,5 +58,10 @@ namespace Persistance.Repositories
                 return HttpStatusCode.InternalServerError;
             }
         }
+
+        public Task<User> GetUserData(int UserId)
+        {
+            return DbContext.User.FirstAsync(e => e.UserId == UserId);
+        }
     }
 }

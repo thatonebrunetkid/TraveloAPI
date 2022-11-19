@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X3eBLmqFfSEdCBKhhtiAwINhedK3w/LYS2R90JkoG6oPxW35Uq2VxDIN2CGcc8fmtYoj+5g3d7TKeW1hQo2l0g==",
+  "dgSpecHash": "H3K0SRM907xoW4V1c19nuGdaCi0EAdyn9isI7VhdzkNKLt2tN5AdKgJVzjpUIZhUVYMN8WsbsNNqfhMnIxI0qA==",
   "success": true,
-  "projectFilePath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateu\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

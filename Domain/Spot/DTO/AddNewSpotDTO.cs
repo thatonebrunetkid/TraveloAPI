@@ -10,7 +10,7 @@ namespace Domain.Spot.DTO
 {
     public class AddNewSpotDTO
     {
-        public int Order { get; set; }
+        public int? Order { get; set; }
         public string? Note { get; set; }
         public string Street { get; set; }
         public string BuildingNo { get; set; }

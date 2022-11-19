@@ -14,5 +14,6 @@ namespace Application.UserTypes.Contracts
         Task<HttpStatusCode> RefreshPasswordInitialize(string email, string password);
         bool CheckEmail(string email);
         Task<HttpStatusCode> RefreshPassword(string Email, string Password);
+        Task<User> GetUserData(int UserId);
     }
 }

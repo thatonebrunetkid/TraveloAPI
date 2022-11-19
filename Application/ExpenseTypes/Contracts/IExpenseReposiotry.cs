@@ -9,6 +9,6 @@ namespace Application.ExpenseTypes.Contracts
 {
     public interface IExpenseReposiotry
     {
-        Task<List<Expense>> GetExpenseInfo(int ExpenseId);
+        Task <Expense> GetExpenseInfo(int ExpenseId);
     }
 }

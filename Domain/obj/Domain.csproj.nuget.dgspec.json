@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj": {}
+    "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj": {
+    "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\mateu\\source\\repos\\TraveloAPI\\Domain\\obj\\",
+        "outputPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

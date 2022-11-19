@@ -1,4 +1,5 @@
 ﻿using Application.UserTypes.Handlers.Commands;
+using Application.UserTypes.Handlers.Queries;
 using Domain.User.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +42,15 @@ namespace TraveloAPI.Controllers
         {
             var result = await Mediator.Send(new RefreshPasswordExecuteCommandRequest { Email = request.Email, Password = request.Password });
             return result;
+        }
+
+        [Route("{UserId}")]
+        [HttpGet]
+        public async Task<ActionResult<GetUserDataDTO>> GetUserData(int UserId)
+        {
+            var result = await Mediator.Send(new GetUserDataQuerieRequest { UserId = UserId });
+            if (result is null) return NotFound();
+            return Ok(result);
         }
     }
 }
