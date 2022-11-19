@@ -8,10 +8,18 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
     <PackageReference Include="SendGrid" Version="9.28.1" />
+    <PackageReference Include="StackExchange.Redis" Version="2.6.70" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Cache\" />
+    <None Remove="StackExchange.Redis" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cache\" />
+  </ItemGroup>
 </Project>

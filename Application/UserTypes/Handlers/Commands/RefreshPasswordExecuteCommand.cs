@@ -1,4 +1,5 @@
-﻿using Application.Models;
+﻿using Application.Common;
+using Application.Models;
 using Application.UserTypes.Contracts;
 using Domain.Common.DTO;
 using Domain.User.DTO;
@@ -16,24 +17,26 @@ namespace Application.UserTypes.Handlers.Commands
 {
     public class RefreshPasswordExecuteCommandRequest : IRequest<HttpStatusCode>
     {
-        public string Email { get; set; }
+        public string ActivityId { get; set; }
         public string Password { get; set; }
     }
 
     public class RefreshPasswordExecuteCommandHandler : IRequestHandler<RefreshPasswordExecuteCommandRequest, HttpStatusCode>
     {
         private readonly IUserRepository Repository;
+        private readonly IRedisHandler RedisHandler;
 
-        public RefreshPasswordExecuteCommandHandler(IUserRepository Repository)
+        public RefreshPasswordExecuteCommandHandler(IUserRepository Repository, IRedisHandler RedisHandler)
         {
             this.Repository = Repository;
+            this.RedisHandler = RedisHandler;
         }
 
         public async Task<HttpStatusCode> Handle(RefreshPasswordExecuteCommandRequest request, CancellationToken cancellationToken)
         {
             var validator = new RefreshPasswordDtoValidator();
             var response = new BaseCommandResponse();
-            var validatorResult = await validator.ValidateAsync(new RegreshPasswordExecuteDTO { Email = request.Email, Password = request.Password });
+            var validatorResult = await validator.ValidateAsync(new RegreshPasswordExecuteDTO { Password = request.Password });
             if(!validatorResult.IsValid)
             {
                 response.Errors = validatorResult.Errors.Select(q => q.ErrorMessage).ToList();
@@ -42,7 +45,14 @@ namespace Application.UserTypes.Handlers.Commands
                 response.StatusCode = HttpStatusCode.BadRequest;
             }
 
-            return await Repository.RefreshPassword(request.Email, request.Password);
+            var email = await RedisHandler.GetData(request.ActivityId);
+            if (email != string.Empty && email != null)
+            {
+                RedisHandler.DeleteData(request.ActivityId);
+                return await Repository.RefreshPassword(email, request.Password);
+            }
+            else
+                return HttpStatusCode.InternalServerError;
         }
     }
 }

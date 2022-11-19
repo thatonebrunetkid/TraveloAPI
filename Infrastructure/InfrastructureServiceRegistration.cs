@@ -1,5 +1,6 @@
 ﻿using Application.Common;
 using Application.Models;
+using Infrastructure.Cache;
 using Infrastructure.Email;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ namespace Infrastructure
         {
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IRedisHandler, Redis>();
             return services;
         }
     }

@@ -12,10 +12,6 @@ namespace Domain.User.Validations
     {
         public RefreshPasswordDtoValidator()
         {
-            RuleFor(p => p.Email)
-                .NotNull().WithMessage("{PropertyName} cannot be null")
-                .NotEmpty().WithMessage("{PropertyName} cannot be empty")
-                .EmailAddress().WithMessage("Incorrect email adress");
             RuleFor(p => p.Password)
                 .NotNull().WithMessage("{PropertyName} cannot be null")
                 .NotEmpty().WithMessage("{PropertyName} cannot be empty");

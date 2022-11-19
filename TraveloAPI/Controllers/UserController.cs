@@ -36,11 +36,11 @@ namespace TraveloAPI.Controllers
             return result;
         }
 
-        [Route("RefreshPasswordExecute")]
+        [Route("RefreshPasswordExecute/{ActivityId}")]
         [HttpPost]
-        public async Task<HttpStatusCode> RefreshPasswordExecute([FromBody] RegreshPasswordExecuteDTO request)
+        public async Task<HttpStatusCode> RefreshPasswordExecute([FromBody] RegreshPasswordExecuteDTO request, string ActivityId)
         {
-            var result = await Mediator.Send(new RefreshPasswordExecuteCommandRequest { Email = request.Email, Password = request.Password });
+            var result = await Mediator.Send(new RefreshPasswordExecuteCommandRequest {Password = request.Password, ActivityId = ActivityId});
             return result;
         }
 

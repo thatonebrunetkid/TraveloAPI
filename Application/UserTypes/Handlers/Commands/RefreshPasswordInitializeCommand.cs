@@ -25,32 +25,38 @@ namespace Application.UserTypes.Handlers.Commands
     {
         private readonly IUserRepository Repository;
         private readonly IEmailSender EmailSender;
+        private readonly IRedisHandler RedisHandler;
 
-        public RefreshPasswordInitializeHandler(IUserRepository Repository, IMapper Mapper, IEmailSender EmailSender)
+        public RefreshPasswordInitializeHandler(IUserRepository Repository, IMapper Mapper, IEmailSender EmailSender, IRedisHandler RedisHandler)
         {
             this.Repository = Repository;
             this.EmailSender = EmailSender;
+            this.RedisHandler = RedisHandler;
         }
 
         public async Task<HttpStatusCode> Handle(RefreshPasswordInitializeRequest request, CancellationToken cancellationToken)
         {
             if (Repository.CheckEmail(request.Email))
             {
+                var ActivityId = RedisHandler.PrepareActivityKey();
                 var email = new Email
                 {
                     To = request.Email,
-                    HtmlBody = $"Hi, we already recieved information about password change request, please click the link: link?{request.Email}",
+                    HtmlBody = $"Hi, we already recieved information about password change request, please click the link: https://travelo.forgotPassword.com?{ActivityId}",
                     PlainText = "",
                     Subject = "Password Change"
                 };
 
-                await EmailSender.SendEmail(email);
-                return HttpStatusCode.OK;
+                if (RedisHandler.SetData(request.Email, ActivityId).Result)
+                {
+                    await EmailSender.SendEmail(email);
+                    return HttpStatusCode.OK;
+                }
+                else
+                    return HttpStatusCode.InternalServerError;
             }
             else
-            {
                 return HttpStatusCode.BadRequest;
-            }
         }
     }
 }
