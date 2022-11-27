@@ -1,4 +1,5 @@
 ﻿using Domain.Expense.Entities;
+using Domain.VisitDate.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace Application.ExpenseTypes.Contracts
     public interface IExpenseReposiotry
     {
         Task <Expense> GetExpenseInfo(int ExpenseId);
+        Task<int> AddExpense(Expense Expense);
     }
 }

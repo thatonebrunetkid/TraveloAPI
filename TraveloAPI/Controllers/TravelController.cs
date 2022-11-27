@@ -1,9 +1,13 @@
-﻿using Application.TravelTypes.Queries;
+﻿using Application.TravelTypes.Commands;
+using Application.TravelTypes.Queries;
+using Domain.Common.DTO;
 using Domain.OweSinglePayment.DTO;
 using Domain.Travels.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace TraveloAPI.Controllers
@@ -72,6 +76,14 @@ namespace TraveloAPI.Controllers
             var result = await Mediator.Send(new GetParticularTravelQuerieRequest { TravelId = TravelId });
             if (result is null) return NotFound();
             return Ok(result);
+        }
+
+        [Route("Travels/Add")]
+        [HttpPost]
+        public async Task<ActionResult<BaseCommandResponse>> AddParticularTravel([FromBody] AddNewTravelDTO Request, int UserId)
+        {
+            var result = await Mediator.Send(new AddNewTravelCommandRequest { Request = Request, UserId = UserId });
+            return result;
         }
     }
 }

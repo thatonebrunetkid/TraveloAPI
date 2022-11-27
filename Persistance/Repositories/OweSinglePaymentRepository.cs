@@ -22,5 +22,12 @@ namespace Persistance.Repositories
         {
             return await DbContext.OweSinglePayment.Where(e => e.ExpenseId == ExpenseId).ToListAsync();
         }
+
+        public async Task<int> AddNewOweSinglePayment(OweSinglePayment SinglePayment)
+        {
+            await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddOweSinglePayment '{SinglePayment.PersonName}', '{SinglePayment.PaymentAmount}', '{SinglePayment.PaymentStatus}', '{SinglePayment.PaymentDate}', '{SinglePayment.IsPayer}', '{SinglePayment.ExpenseId}'");
+            await DbContext.SaveChangesAsync();
+            return SinglePayment.OweSinglePaymentId;
+        }
     }
 }

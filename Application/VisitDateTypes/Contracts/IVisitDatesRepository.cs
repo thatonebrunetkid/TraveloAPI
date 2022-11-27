@@ -10,5 +10,6 @@ namespace Application.VisitDateTypes.Contracts
     public interface IVisitDatesRepository
     {
         Task<List<VisitDate>> GetVisitDateInfoByTravel(int TravelId);
+        Task<int> AddNewVisitDate(VisitDate VisitDate);
     }
 }

@@ -14,12 +14,12 @@ namespace Domain.Travels.DTO
         public string Country { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public string HotelName { get; set; }
-        public string HotelStreet { get; set; }
-        public int HotelBuildingNo { get; set; }
-        public int HotelFlatNo { get; set; }
-        public string HotelZipCode { get; set; }
-        public string HotelCity { get; set; }
+        public string? HotelName { get; set; }
+        public string? HotelStreet { get; set; }
+        public int? HotelBuildingNo { get; set; }
+        public int? HotelFlatNo { get; set; }
+        public string? HotelZipCode { get; set; }
+        public string? HotelCity { get; set; }
         public Decimal PlannedBudget { get; set; }
         public string Currency { get; set; }
         public List<AddNewVisitDateDTO> VisitDate { get; set; }

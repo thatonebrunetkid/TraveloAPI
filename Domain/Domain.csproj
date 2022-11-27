@@ -16,6 +16,16 @@
     <Folder Include="Spot\Entities\" />
     <Folder Include="SystemNotification\Validations\" />
     <Folder Include="Travels\Validations\" />
+    <Folder Include="VisitDate\Validators\" />
+    <Folder Include="Spot\Validations\" />
+    <Folder Include="Expense\Validations\" />
+    <Folder Include="OweSinglePayment\Validations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="VisitDate\Validators\" />
+    <None Remove="Spot\Validations\" />
+    <None Remove="Expense\Validations\" />
+    <None Remove="OweSinglePayment\Validations\" />
+  </ItemGroup>
 </Project>

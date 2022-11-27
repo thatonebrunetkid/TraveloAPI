@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,11 +35,12 @@ namespace Persistance.Repositories
             return results.First();
         }
 
-        public async Task<Travel> AddNewTravel(Travel Travel)
+        public async Task<int> AddNewTravel(Travel Travel)
         {
-            await DbContext.Travel.AddAsync(Travel);
-            await DbContext.SaveChangesAsync();
-            return Travel;
+
+             await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddTravel '{Travel.Name}', '{Travel.Destination}', '{Travel.StartDate}', '{Travel.EndDate}', '{Travel.Note}', '{Travel.PlannedBudget}', '{Travel.UserId}', '{Travel.CountryId}', '{Travel.PickedCurrency}', '{Travel.HotelStreet}', '{Travel.HotelBuildingNo}', '{Travel.HotelFlatNo}', '{Travel.HotelZipCode}', '{Travel.HotelCity}'");
+             await DbContext.SaveChangesAsync();
+             return Travel.TravelId;
         }
 
         public async Task<Travel> GetTravelInfo(int TravelId)

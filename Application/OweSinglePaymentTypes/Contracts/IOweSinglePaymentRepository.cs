@@ -10,5 +10,6 @@ namespace Application.OweSinglePaymentTypes.Contracts
     public interface IOweSinglePaymentRepository
     {
         Task<List<OweSinglePayment>> GetOweSinglePaymentsByExpense(int ExpenseId);
+        Task<int> AddNewOweSinglePayment(OweSinglePayment SinglePayment);
     }
 }

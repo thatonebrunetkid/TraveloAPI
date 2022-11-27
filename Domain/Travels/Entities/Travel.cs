@@ -16,19 +16,16 @@ namespace Domain.Travels.DTO
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string? Note { get; set; }
-        public int? ParticipantNumber { get; set; }
         public Decimal PlannedBudget { get; set; }
-        public string? LinkUrl { get; set; }
-        public DateTime? LinkExpirationDate { get; set; }
         public DateTime CreatedDate { get; set; }
         public int UserId { get; set; }
         public int CountryId { get; set; }
-        public string HotelName { get; set; }
+        public string? HotelName { get; set; }
         public string PickedCurrency { get; set; }
-        public string HotelStreet { get; set; }
-        public int HotelBuildingNo { get; set; }
-        public int HotelFlatNo { get; set; }
-        public string HotelZipCode { get; set; }
-        public string HotelCity { get; set; }
+        public string? HotelStreet { get; set; }
+        public int? HotelBuildingNo { get; set; }
+        public int? HotelFlatNo { get; set; }
+        public string? HotelZipCode { get; set; }
+        public string? HotelCity { get; set; }
     }
 }

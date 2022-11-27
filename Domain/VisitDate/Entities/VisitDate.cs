@@ -12,7 +12,7 @@ namespace Domain.VisitDate.Entities
         [Key]
         public int VisitDateId { get; set; }
         public DateTime Date { get; set; }
-        public string Title { get; set; }
+        public string? Title { get; set; }
         public int TravelId { get; set; }
     }
 }

@@ -22,5 +22,12 @@ namespace Persistance.Repositories
         {
             return await DbContext.VisitDate.Where(e => e.TravelId == TravelId).ToListAsync();
         }
+
+        public async Task<int> AddNewVisitDate(VisitDate VisitDate)
+        {
+            await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddVisitDate '{VisitDate.Date}', '{VisitDate.Title}', '{VisitDate.TravelId}'");
+            await DbContext.SaveChangesAsync();
+            return VisitDate.VisitDateId;
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Domain.Dictionary.DTO
     {
         [JsonPropertyName("lang")]
         public string Name { get; set; }
-        [JsonPropertyName("tanslation")]
+        [JsonPropertyName("translation")]
         public List<GetDictionaryWordsDTO> Words { get; set; }
     }
 }

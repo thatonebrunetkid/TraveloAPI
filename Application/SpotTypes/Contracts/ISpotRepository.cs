@@ -10,5 +10,6 @@ namespace Application.SpotTypes.Contracts
     public interface ISpotRepository
     {
         Task<List<Spot>> GetSpotInfoByVisitDate(int VisitDateId);
+        Task<int> AddNewSpot(Spot Spot);
     }
 }

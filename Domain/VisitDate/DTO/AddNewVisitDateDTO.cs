@@ -10,7 +10,7 @@ namespace Domain.VisitDate.DTO
     public class AddNewVisitDateDTO
     {
         public DateTime Date { get; set; }
-        public string Title { get; set; }
-        public List<AddNewSpotDTO> Spot { get; set; }
+        public string? Title { get; set; }
+        public List<AddNewSpotDTO>? Spot { get; set; }
     }
 }

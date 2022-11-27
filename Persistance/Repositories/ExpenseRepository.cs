@@ -22,5 +22,12 @@ namespace Persistance.Repositories
         {
             return await DbContext.Expense.FirstAsync(x => x.ExpenseId == ExpenseId);
         }
+
+        public async Task<int> AddExpense(Expense Expense)
+        {
+            await DbContext.Expense.AddAsync(Expense);
+            await DbContext.SaveChangesAsync();
+            return Expense.ExpenseId;
+        }
     }
 }

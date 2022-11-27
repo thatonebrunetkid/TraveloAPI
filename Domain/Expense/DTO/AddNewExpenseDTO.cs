@@ -10,6 +10,6 @@ namespace Domain.Expense.DTO
     public class AddNewExpenseDTO
     {
         public Decimal Cost { get; set; }
-        public List<AddNewOweSinglePaymentDTO> OweSinglePayment { get; set; }
+        public List<AddNewOweSinglePaymentDTO>? OweSinglePayment { get; set; }
     }
 }
