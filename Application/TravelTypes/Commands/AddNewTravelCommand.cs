@@ -183,6 +183,7 @@ namespace Application.TravelTypes.Commands
                         }
                     }
                 }
+                response.Id = TravelId;
                 response.Success = true;
                 response.Message = "Added";
                 response.StatusCode = HttpStatusCode.OK;
