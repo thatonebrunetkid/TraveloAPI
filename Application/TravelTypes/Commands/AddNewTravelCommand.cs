@@ -183,11 +183,10 @@ namespace Application.TravelTypes.Commands
                         }
                     }
                 }
+                response.Success = true;
+                response.Message = "Added";
+                response.StatusCode = HttpStatusCode.OK;
             }
-
-            response.Success = true;
-            response.Message = "Added";
-            response.StatusCode = HttpStatusCode.OK;
             return response;
         }
     }

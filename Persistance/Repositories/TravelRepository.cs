@@ -38,7 +38,7 @@ namespace Persistance.Repositories
         public async Task<int> AddNewTravel(Travel Travel)
         {
 
-             await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddTravel '{Travel.Name}', '{Travel.Destination}', '{Travel.StartDate}', '{Travel.EndDate}', '{Travel.Note}', '{Travel.PlannedBudget}', '{Travel.UserId}', '{Travel.CountryId}', '{Travel.PickedCurrency}', '{Travel.HotelStreet}', '{Travel.HotelBuildingNo}', '{Travel.HotelFlatNo}', '{Travel.HotelZipCode}', '{Travel.HotelCity}'");
+             await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddTravel '{Travel.Name}', '{Travel.Destination}', '{Travel.StartDate}', '{Travel.EndDate}', '{Travel.Note}', '{Travel.PlannedBudget}', '{Travel.UserId}', '{Travel.CountryId}', '{Travel.HotelName}', '{Travel.PickedCurrency}', '{Travel.HotelStreet}', '{Travel.HotelBuildingNo}', '{Travel.HotelFlatNo}', '{Travel.HotelZipCode}', '{Travel.HotelCity}'");
              await DbContext.SaveChangesAsync();
              return Travel.TravelId;
         }

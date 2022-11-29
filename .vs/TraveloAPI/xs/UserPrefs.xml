@@ -1,54 +1,57 @@
 ﻿<Properties StartupConfiguration="{79CE9AC2-1B5F-48A6-8C91-F0DFE889E8A3}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TraveloAPI PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.TraveloAPI PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Application/TravelTypes/Commands/AddNewTravelCommand.cs">
-    <Files>
-      <File FileName="Application/TravelTypes/Commands/AddNewTravelCommand.cs" Line="53" Column="33" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TraveloAPI" expanded="True">
             <Node name="Application" expanded="True">
-              <Node name="Common" expanded="True" />
+              <Node name="ExpenseTypes" expanded="True">
+                <Node name="Contracts" expanded="True" />
+              </Node>
+              <Node name="OweSinglePaymentTypes" expanded="True">
+                <Node name="Contracts" expanded="True" />
+              </Node>
+              <Node name="SpotTypes" expanded="True">
+                <Node name="Contracts" expanded="True" />
+              </Node>
               <Node name="TravelTypes" expanded="True">
                 <Node name="Commands" expanded="True" />
+                <Node name="Contracts" expanded="True" />
                 <Node name="Queries" expanded="True" />
               </Node>
-              <Node name="UserTypes" expanded="True">
+              <Node name="VisitDateTypes" expanded="True">
                 <Node name="Contracts" expanded="True" />
-                <Node name="Handlers" expanded="True">
-                  <Node name="Commands" expanded="True" />
-                </Node>
               </Node>
             </Node>
             <Node name="Domain" expanded="True">
-              <Node name="Dictionary" expanded="True">
-                <Node name="DTO" expanded="True" />
-              </Node>
               <Node name="Expense" expanded="True">
                 <Node name="DTO" expanded="True" />
+                <Node name="Validations" expanded="True" />
               </Node>
+              <Node name="Flag" expanded="True" />
               <Node name="OweSinglePayment" expanded="True">
-                <Node name="DTO" expanded="True" />
-              </Node>
-              <Node name="Spot" expanded="True">
-                <Node name="DTO" expanded="True" />
-              </Node>
-              <Node name="Travels" expanded="True">
                 <Node name="DTO" expanded="True" />
                 <Node name="Entities" expanded="True" />
                 <Node name="Validations" expanded="True" />
               </Node>
-              <Node name="User" expanded="True">
+              <Node name="Spot" expanded="True">
                 <Node name="DTO" expanded="True" />
+                <Node name="Validations" expanded="True" />
+              </Node>
+              <Node name="Travels" expanded="True">
+                <Node name="DTO" expanded="True" />
+                <Node name="Validations" expanded="True" />
               </Node>
               <Node name="VisitDate" expanded="True">
                 <Node name="DTO" expanded="True" />
+                <Node name="Validators" expanded="True" />
               </Node>
             </Node>
             <Node name="Persistance" expanded="True">
@@ -65,5 +68,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
