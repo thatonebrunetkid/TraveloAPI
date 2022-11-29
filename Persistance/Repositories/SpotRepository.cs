@@ -25,7 +25,7 @@ namespace Persistance.Repositories
 
         public async Task<int> AddNewSpot(Spot Spot)
         {
-            await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddSpot '{Spot.Note}', '{Spot.Order}', '{Spot.Street}', '{Spot.BuildingNo}', '{Spot.FlatNo}', '{Spot.ZipCode}', '{Spot.VisitDateId}', '{Spot.ExpenseId}'");
+            await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddSpot '{Spot.Note}', '{Spot.Order}', '{Spot.Street}', '{Spot.BuildingNo}', '{Spot.FlatNo}', '{Spot.ZipCode}', '{Spot.VisitDateId}', '{Spot.ExpenseId}', '{Spot.CoordinateX}', '{Spot.CoordinateY}', {Spot.Note}");
             await DbContext.SaveChangesAsync();
             return Spot.SpotId;
         }
