@@ -25,7 +25,7 @@ namespace Persistance.Repositories
 
         public async Task<int> AddNewVisitDate(VisitDate VisitDate)
         {
-            await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddVisitDate '{VisitDate.Date}', '{VisitDate.Title}', '{VisitDate.TravelId}'");
+            await DbContext.VisitDate.AddAsync(VisitDate);
             await DbContext.SaveChangesAsync();
             return VisitDate.VisitDateId;
         }

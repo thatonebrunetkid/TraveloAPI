@@ -80,80 +80,68 @@ namespace Application.TravelTypes.Commands
                     HotelCity = request.Request.HotelCity
                 };
 
-                int TravelId = await TravelRepository.AddNewTravel(Travel);
-
-                foreach(var visitDate in request.Request.VisitDate)
+                int TravelId = 0;
+                try
                 {
-                    VisitDate insertVisitDate = new VisitDate
+                    TravelId = await TravelRepository.AddNewTravel(Travel);
+                }
+                catch (Exception)
+                {
+                    response.Success = false;
+                    response.Message = "Something went wrong - Add Travel";
+                    response.StatusCode = HttpStatusCode.InternalServerError;
+                    return response;
+                }
+
+                foreach (var VisitDate in request.Request.VisitDate)
+                {
+                    VisitDate VisitDateInput = new VisitDate
                     {
-                        Date = visitDate.Date,
-                        Title = visitDate.Title,
+                        Date = VisitDate.Date,
+                        Title = VisitDate.Title,
                         TravelId = TravelId
                     };
+
                     int VisitDateId = 0;
-                    try {
-                        VisitDateId = await VisitDateRepository.AddNewVisitDate(insertVisitDate);
-                    }
-                    catch (Exception)
+
+                    try
+                    {
+                        VisitDateId = await VisitDateRepository.AddNewVisitDate(VisitDateInput);
+                    }catch(Exception)
                     {
                         response.Success = false;
-                        response.Message = "VisitDate insert error";
+                        response.Message = "Something went wrong - Add Visit Date";
                         response.StatusCode = HttpStatusCode.InternalServerError;
                         return response;
                     }
 
-                    if(visitDate.Spot != null && visitDate.Spot.Count > 0)
+                    if(VisitDate.Spot.Count > 0 && VisitDate.Spot != null)
                     {
-                        foreach (var Spot in visitDate.Spot)
+                        foreach(var Spot in VisitDate.Spot)
                         {
-                            var ExpenseId = 0;
-                            if (Spot.Expense != null)
+                            int ExpenseId = 0;
+                            if(Spot.Expense != null)
                             {
-                                Expense insertExpense = new Expense
+                                Expense ExpenseInput = new Expense
                                 {
                                     Cost = Spot.Expense.Cost
                                 };
+
                                 try
                                 {
-                                    ExpenseId = await ExpenseRepository.AddExpense(insertExpense);
+                                    ExpenseId = await ExpenseRepository.AddExpense(ExpenseInput);
                                 }catch(Exception)
                                 {
                                     response.Success = false;
-                                    response.Message = "Expense insert error";
+                                    response.Message = "Something Went Wrong - Expense input";
                                     response.StatusCode = HttpStatusCode.InternalServerError;
                                     return response;
                                 }
 
-                                if (Spot.Expense.OweSinglePayment != null)
-                                {
-                                    foreach (var singlePayment in Spot.Expense.OweSinglePayment)
-                                    {
-                                        OweSinglePayment insertSinglePayment = new OweSinglePayment
-                                        {
-                                            PersonName = singlePayment.PersonName,
-                                            PaymentAmount = singlePayment.PaymentAmount,
-                                            PaymentStatus = singlePayment.PaymentStatus,
-                                            PaymentDate = singlePayment.PaymentDate,
-                                            IsPayer = singlePayment.IsPayer,
-                                            ExpenseId = ExpenseId
-                                        };
-                                        int OweSinglePaymentId = 0;
-                                        try
-                                        {
-                                            OweSinglePaymentId = await SinglePaymentRepository.AddNewOweSinglePayment(insertSinglePayment);
-                                        }catch(Exception)
-                                        {
-                                            response.Success = false;
-                                            response.Message = "OweSinglePayment insert error";
-                                            response.StatusCode = HttpStatusCode.InternalServerError;
-                                            return response;
-                                        }
-                                    }
-                                }
                             }
 
-
-                            Spot insertSpot = new Spot
+                            int SpotId = 0;
+                            Spot InputSpot = new Spot
                             {
                                 Note = Spot.Note,
                                 Order = Spot.Order,
@@ -168,25 +156,50 @@ namespace Application.TravelTypes.Commands
                                 Name = Spot.Name
                             };
 
-                            int SpotId = 0;
                             try
                             {
-                                SpotId = await SpotRepository.AddNewSpot(insertSpot);
+                                SpotId = await SpotRepository.AddNewSpot(InputSpot);
                             }catch(Exception)
                             {
                                 response.Success = false;
-                                response.Message = "Spot insert error";
+                                response.Message = "Something went wrong - Add Spot";
                                 response.StatusCode = HttpStatusCode.InternalServerError;
                                 return response;
                             }
 
+                            if(Spot.Expense.OweSinglePayment.Count > 0 && Spot.Expense.OweSinglePayment != null)
+                            {
+                                foreach(var OweSinglePayer in Spot.Expense.OweSinglePayment)
+                                {
+                                    OweSinglePayment InputSinglePayment = new OweSinglePayment
+                                    {
+                                        PersonName = OweSinglePayer.PersonName,
+                                        PaymentAmount = OweSinglePayer.PaymentAmount,
+                                        PaymentStatus = OweSinglePayer.PaymentStatus,
+                                        PaymentDate = OweSinglePayer.PaymentDate,
+                                        IsPayer = OweSinglePayer.IsPayer,
+                                        ExpenseId = ExpenseId
+                                    };
+
+                                    try
+                                    {
+                                        await SinglePaymentRepository.AddNewOweSinglePayment(InputSinglePayment);
+                                    }catch(Exception)
+                                    {
+                                        response.Success = false;
+                                        response.Message = "Something went wrong - Add OweSinglePayment";
+                                        response.StatusCode = HttpStatusCode.InternalServerError;
+                                        return response;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-                response.Id = TravelId;
                 response.Success = true;
                 response.Message = "Added";
                 response.StatusCode = HttpStatusCode.OK;
+                response.Id = TravelId;
             }
             return response;
         }

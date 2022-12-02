@@ -25,7 +25,7 @@ namespace Persistance.Repositories
 
         public async Task<int> AddNewOweSinglePayment(OweSinglePayment SinglePayment)
         {
-            await DbContext.Database.ExecuteSqlRawAsync($"exec dbo.AddOweSinglePayment '{SinglePayment.PersonName}', '{SinglePayment.PaymentAmount}', '{SinglePayment.PaymentStatus}', '{SinglePayment.PaymentDate}', '{SinglePayment.IsPayer}', '{SinglePayment.ExpenseId}'");
+            await DbContext.OweSinglePayment.AddAsync(SinglePayment);
             await DbContext.SaveChangesAsync();
             return SinglePayment.OweSinglePaymentId;
         }
