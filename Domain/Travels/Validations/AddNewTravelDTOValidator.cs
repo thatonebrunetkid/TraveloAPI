@@ -25,7 +25,6 @@ namespace Domain.Travels.Validations
                 .NotEmpty().WithMessage("{PropertyName} cannot be empty")
                 .NotNull().WithMessage("{PropertyName} cannot be null");
             RuleFor(p => p.PlannedBudget)
-                .NotEmpty().WithMessage("{PropertyName} cannot be empty")
                 .NotNull().WithMessage("{PropertyName} cannot be null");
             RuleFor(p => p.Currency)
                 .NotEmpty().WithMessage("{PropertyName} cannot be empty")

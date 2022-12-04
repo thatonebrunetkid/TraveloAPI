@@ -22,3 +22,15 @@ D:/Users/mateu/source/repos/TraveloAPI/Domain/obj/Release/net5.0/ref/Domain.dll
 /Users/mateuszaugustyniak/traveloapi/Domain/obj/Release/net5.0/refint/Domain.dll
 /Users/mateuszaugustyniak/traveloapi/Domain/obj/Release/net5.0/Domain.pdb
 /Users/mateuszaugustyniak/traveloapi/Domain/obj/Release/net5.0/ref/Domain.dll
+D:\Users\mateu\source\repos\bbrepo\Domain\bin\Release\net5.0\Domain.deps.json
+D:\Users\mateu\source\repos\bbrepo\Domain\bin\Release\net5.0\Domain.dll
+D:\Users\mateu\source\repos\bbrepo\Domain\bin\Release\net5.0\Domain.pdb
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\Domain.csproj.AssemblyReference.cache
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\Domain.AssemblyInfoInputs.cache
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\Domain.AssemblyInfo.cs
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\Domain.csproj.CoreCompileInputs.cache
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\Domain.dll
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\refint\Domain.dll
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\Domain.pdb
+D:\Users\mateu\source\repos\bbrepo\Domain\obj\Release\net5.0\ref\Domain.dll

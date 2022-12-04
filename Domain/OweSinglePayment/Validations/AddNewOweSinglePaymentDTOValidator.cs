@@ -12,8 +12,7 @@ namespace Domain.OweSinglePayment.Validations
                 .NotNull().WithMessage("{PropertyName} cannot be null")
                 .NotEmpty().WithMessage("{PropertyName} cannot be empty");
             RuleFor(p => p.PaymentAmount)
-                .NotNull().WithMessage("{PropertyName} cannot be null")
-                .NotEmpty().WithMessage("{PropertyName} cannot be empty");
+                .NotNull().WithMessage("{PropertyName} cannot be null");
             RuleFor(p => p.PaymentStatus)
                 .NotNull().WithMessage("{PropertyName} cannot be null");
             RuleFor(p => p.PaymentDate)
