@@ -18,6 +18,7 @@
   <ItemGroup>
     <None Remove="Cache\" />
     <None Remove="StackExchange.Redis" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />

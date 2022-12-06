@@ -41,6 +41,11 @@ namespace Infrastructure.Cache
         {
             await ConnectionInstance.KeyDeleteAsync(ActivityId);
         }
+
+        public async Task<string> GetJwtIssuerKey()
+        {
+            return await ConnectionInstance.StringGetAsync("JwtToken");
+        }
     }
 }
 

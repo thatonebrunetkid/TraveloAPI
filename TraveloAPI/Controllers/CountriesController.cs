@@ -1,6 +1,7 @@
 ﻿using Application.ContryTypes.Handlers.Queries;
 using Domain.Country.DTO;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net;
@@ -10,6 +11,7 @@ namespace TraveloAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class CountriesController : ControllerBase
     {
         private readonly IMediator Mediator;
@@ -21,6 +23,7 @@ namespace TraveloAPI.Controllers
 
         [Route("Search/{phrase}")]
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<CountryNameDTO>>> GetCountriesList(string phrase)
         {
             var names = await Mediator.Send(new GetCountriesNamesQuerieRequest { Phrase = phrase });
@@ -37,6 +40,7 @@ namespace TraveloAPI.Controllers
 
         [Route("ServicePhones")]
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<GetCountryServicePhonesDTO>>> GetServicePhones()
         {
             var result = await Mediator.Send(new GetCountriesServicePhonesQuerieRequest());
@@ -47,6 +51,7 @@ namespace TraveloAPI.Controllers
 
         [Route("Currencies")]
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<GetCurrencyListDTO>>> GetCurrencyList()
         {
             var result = await Mediator.Send(new GetAllCurrenciesQueryRequest());

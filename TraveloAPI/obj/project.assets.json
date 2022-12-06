@@ -119,6 +119,21 @@
           "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.17": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.7.1"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -1332,6 +1347,21 @@
         "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll",
         "mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
         "mediatr.extensions.microsoft.dependencyinjection.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.17": {
+      "sha512": "jXMB2+jOG9JvGVCjsKvc5Bo1iSgzdbQw+Iq3BM+eIZ1inDg8rnEVUcWKpRevi9Z6F1/UnSJZ0+rhElT2/aVhhQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/5.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -3828,52 +3858,45 @@
       "Application >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "MediatR >= 11.0.0",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.17",
       "Microsoft.Extensions.DependencyInjection >= 5.0.2",
       "Persistance >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mateu\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/mateuszaugustyniak/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\mateu\\source\\repos\\bbrepo\\TraveloAPI\\TraveloAPI.csproj",
+      "projectUniqueName": "/Users/mateuszaugustyniak/traveloapi/TraveloAPI/TraveloAPI.csproj",
       "projectName": "TraveloAPI",
-      "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\TraveloAPI\\TraveloAPI.csproj",
-      "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\TraveloAPI\\obj\\",
+      "projectPath": "/Users/mateuszaugustyniak/traveloapi/TraveloAPI/TraveloAPI.csproj",
+      "packagesPath": "/Users/mateuszaugustyniak/.nuget/packages/",
+      "outputPath": "/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mateuszaugustyniak/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj": {
-              "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Application\\Application.csproj"
+            "/Users/mateuszaugustyniak/traveloapi/Application/Application.csproj": {
+              "projectPath": "/Users/mateuszaugustyniak/traveloapi/Application/Application.csproj"
             },
-            "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Infrastructure\\Infrastructure.csproj"
+            "/Users/mateuszaugustyniak/traveloapi/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/Users/mateuszaugustyniak/traveloapi/Infrastructure/Infrastructure.csproj"
             },
-            "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj": {
-              "projectPath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Persistance\\Persistance.csproj"
+            "/Users/mateuszaugustyniak/traveloapi/Persistance/Persistance.csproj": {
+              "projectPath": "/Users/mateuszaugustyniak/traveloapi/Persistance/Persistance.csproj"
             }
           }
         }
@@ -3891,6 +3914,10 @@
           "MediatR": {
             "target": "Package",
             "version": "[11.0.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[5.0.17, )"
           },
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
@@ -3912,6 +3939,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[5.0.17, 5.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3920,7 +3961,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22301.10\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }

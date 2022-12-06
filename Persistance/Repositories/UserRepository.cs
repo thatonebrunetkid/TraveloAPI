@@ -76,5 +76,10 @@ namespace Persistance.Repositories
             else
                 return HttpStatusCode.InternalServerError;
         }
+
+        public async Task<User> CheckIfUserExist(string Email, string Password)
+        {
+            return await DbContext.User.FirstOrDefaultAsync(e => e.Email == Email && e.Password == Password);
+        }
     }
 }

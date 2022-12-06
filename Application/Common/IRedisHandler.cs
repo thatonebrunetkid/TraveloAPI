@@ -9,6 +9,7 @@ namespace Application.Common
         Task<bool> SetData(string ActivityId, string CustomerEmail);
         Task<string> GetData(string ActivityId);
         void DeleteData(string ActivityId);
+        Task<string> GetJwtIssuerKey();
     }
 }
 

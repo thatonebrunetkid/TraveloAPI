@@ -4,6 +4,7 @@ using Domain.Common.DTO;
 using Domain.OweSinglePayment.DTO;
 using Domain.Travels.DTO;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace TraveloAPI.Controllers
 {
     [ApiController]
     [Route("{UserId}")]
+    [Authorize]
     public class TravelController : ControllerBase
     {
         private readonly IMediator Mediator;

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OpY4bnZq2CaZKnbqNHxkqS8yNFXccm3zNL16RkzHLSsLQtcUlEGa45vEBRObjWn2VEIEogu+gmpxyHmRFOFmJw==",
+  "dgSpecHash": "CMaQKxL9267UCvaOjYksju+NPJ55aWhn2wfR5Fliv5puw7pSSzk9t0GEX9AWsvkpPfIcGZkAM+fF6MtwqlCkaQ==",
   "success": true,
-  "projectFilePath": "D:\\Users\\mateu\\source\\repos\\bbrepo\\Identity\\Identity.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/mateuszaugustyniak/traveloapi/Identity/Identity.csproj",
+  "expectedPackageFiles": [
+    "/Users/mateuszaugustyniak/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/mateuszaugustyniak/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

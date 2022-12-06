@@ -2,6 +2,7 @@
 using Application.UserTypes.Handlers.Queries;
 using Domain.User.DTO;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace TraveloAPI.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
@@ -21,6 +23,7 @@ namespace TraveloAPI.Controllers
 
         [Route("New")]
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult> AddUser([FromBody] CreateUserDTO user)
         {
             var command = new CreateUserCommandRequest { CreateUserDTO = user };
@@ -30,6 +33,7 @@ namespace TraveloAPI.Controllers
 
         [Route("RefreshPasswordInitialize")]
         [HttpPost]
+        [AllowAnonymous]
         public async Task<HttpStatusCode> RefreshPasswordInitialize([FromBody] RefreshPasswordInitializeDTO request)
         {
             var result = await Mediator.Send(new RefreshPasswordInitializeRequest { Email = request.Email });
@@ -38,6 +42,7 @@ namespace TraveloAPI.Controllers
 
         [Route("RefreshPasswordExecute/{ActivityId}")]
         [HttpPost]
+        [AllowAnonymous]
         public async Task<HttpStatusCode> RefreshPasswordExecute([FromBody] RegreshPasswordExecuteDTO request, string ActivityId)
         {
             var result = await Mediator.Send(new RefreshPasswordExecuteCommandRequest {Password = request.Password, ActivityId = ActivityId});
@@ -58,6 +63,17 @@ namespace TraveloAPI.Controllers
         public async Task<ActionResult<HttpStatusCode>> ChangePassword([FromBody] RegreshPasswordExecuteDTO request, int UserId)
         {
             return await Mediator.Send(new ChangePasswordCommandRequest { Request = request, UserId = UserId });
+        }
+
+        [Route("Login")]
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ActionResult<LoginResponseDTO>> Login([FromBody] LoginDTO Login)
+        {
+            var result = await Mediator.Send(new LoginUserQuerieRequest { Email = Login.Email, Password = Login.Password });
+            if (result == null) return NotFound();
+            else
+                return Ok(result);
         }
     }
 }

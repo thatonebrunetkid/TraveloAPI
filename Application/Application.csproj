@@ -18,10 +18,14 @@
     <Folder Include="Flag\Queries\" />
     <Folder Include="TravelTypes\Commands\" />
     <Folder Include="UserTypes\Handlers\Queries\" />
+    <Folder Include="Authentication\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Authentication\" />
+  </ItemGroup>
 </Project>
