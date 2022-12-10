@@ -34,6 +34,7 @@ namespace TraveloAPI
 
             var AuthenticationSettings = new AuthenticationSettings();
             Configuration.GetSection("Authentication").Bind(AuthenticationSettings);
+            AuthenticationSettings.JwtKey = new Redis().GetJwtIssuerKey().Result;
             services.AddSingleton(AuthenticationSettings);
             services.AddAuthentication(option =>
             {
@@ -48,7 +49,9 @@ namespace TraveloAPI
                 {
                     ValidIssuer = AuthenticationSettings.JwtIssuer,
                     ValidAudience = AuthenticationSettings.JwtIssuer,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(new Redis().GetJwtIssuerKey().Result)),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AuthenticationSettings.JwtKey)),
+                    ValidateLifetime = true,
+                    ClockSkew = System.TimeSpan.Zero
                 };
             });
             services.AddControllers();

@@ -1,31 +1,16 @@
 ﻿<Properties StartupConfiguration="{79CE9AC2-1B5F-48A6-8C91-F0DFE889E8A3}|Default">
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Domain/Spot/DTO/AddNewSpotDTO.cs">
+    <Files>
+      <File FileName="Domain/Spot/Entities/Spot.cs" Line="16" Column="44" />
+      <File FileName="Domain/Spot/DTO/AddNewSpotDTO.cs" Line="21" Column="42" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TraveloAPI" expanded="True">
-            <Node name="Application" expanded="True">
-              <Node name="UserTypes" expanded="True">
-                <Node name="Handlers" expanded="True">
-                  <Node name="Queries" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="Infrastructure" expanded="True">
-              <Node name="Cache" expanded="True" />
-            </Node>
-            <Node name="Persistance" expanded="True">
-              <Node name="Repositories" expanded="True" />
-            </Node>
-            <Node name="TraveloAPI" expanded="True">
-              <Node name="Controllers" expanded="True" />
-            </Node>
+            <Node name="Domain" expanded="True" />
+            <Node name="TraveloAPI" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -34,5 +19,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.TraveloAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>

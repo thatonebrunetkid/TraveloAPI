@@ -8,7 +8,7 @@ namespace TraveloAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize]
+    [Authorize]
     public class PaymentController : Controller
     {
 

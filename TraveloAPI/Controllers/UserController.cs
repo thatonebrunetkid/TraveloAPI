@@ -4,13 +4,15 @@ using Domain.User.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
 namespace TraveloAPI.Controllers
 {
     [ApiController]
-    //[Authorize]
+    [Authorize]
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
@@ -53,16 +55,33 @@ namespace TraveloAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<GetUserDataDTO>> GetUserData(int UserId)
         {
-            var result = await Mediator.Send(new GetUserDataQuerieRequest { UserId = UserId });
-            if (result is null) return NotFound();
-            return Ok(result);
+            Request.Headers.TryGetValue("Authorization", out StringValues authToken);
+
+            if (await Mediator.Send(new ValidatePropertyAccessQuerieRequest { token = authToken, UserId = UserId }))
+            {
+                var result = await Mediator.Send(new GetUserDataQuerieRequest { UserId = UserId });
+                if (result is null) return NotFound();
+                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
+                return Ok(result);
+            }
+            else
+                return Unauthorized();
+            
         }
 
         [Route("{UserId}/Password/Change")]
         [HttpPost]
         public async Task<ActionResult<HttpStatusCode>> ChangePassword([FromBody] RegreshPasswordExecuteDTO request, int UserId)
         {
-            return await Mediator.Send(new ChangePasswordCommandRequest { Request = request, UserId = UserId });
+            Request.Headers.TryGetValue("Authorization", out StringValues authToken);
+            if (await Mediator.Send(new ValidatePropertyAccessQuerieRequest { token = authToken, UserId = UserId }))
+            {
+                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
+                return await Mediator.Send(new ChangePasswordCommandRequest { Request = request, UserId = UserId });
+
+            }
+            else
+                return Unauthorized();
         }
 
         [Route("Login")]

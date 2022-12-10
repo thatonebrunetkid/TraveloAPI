@@ -1,8 +1,10 @@
 ﻿using Application.ContryTypes.Handlers.Queries;
+using Application.UserTypes.Handlers.Queries;
 using Domain.Country.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
@@ -11,7 +13,7 @@ namespace TraveloAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize]
+    [Authorize]
     public class CountriesController : ControllerBase
     {
         private readonly IMediator Mediator;
@@ -35,7 +37,14 @@ namespace TraveloAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<CountryISOCodeDTO>>> GetTravelsForMap(int UserId)
         {
-            return await Mediator.Send(new GetCountriesForMapQuerieRequest { UserId = UserId });
+            Request.Headers.TryGetValue("Authorization", out StringValues authToken);
+            if (await Mediator.Send(new ValidatePropertyAccessQuerieRequest { token = authToken, UserId = UserId }))
+            {
+                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
+                return await Mediator.Send(new GetCountriesForMapQuerieRequest { UserId = UserId });
+
+            }
+            else return Unauthorized();
         }
 
         [Route("ServicePhones")]
