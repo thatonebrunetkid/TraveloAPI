@@ -13,10 +13,7 @@ namespace Domain.Spot.Entities
         public int SpotId { get; set; }
         public string? Note { get; set; }
         public int Order { get; set; }
-        public string? Street { get; set; }
-        public string? BuildingNo { get; set; }
-        public string? FlatNo { get; set; }
-        public string? ZipCode { get; set; }
+        public string? Adress { get; set; }
         public int VisitDateId { get; set; }
         public int ExpenseId { get; set; }
         public Decimal? CoordinateX { get; set; }

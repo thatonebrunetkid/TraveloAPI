@@ -1,54 +1,24 @@
 ﻿<Properties StartupConfiguration="{79CE9AC2-1B5F-48A6-8C91-F0DFE889E8A3}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TraveloAPI" expanded="True">
             <Node name="Application" expanded="True">
-              <Node name="ExpenseTypes" expanded="True">
-                <Node name="Contracts" expanded="True" />
-              </Node>
-              <Node name="OweSinglePaymentTypes" expanded="True">
-                <Node name="Contracts" expanded="True" />
-              </Node>
-              <Node name="SpotTypes" expanded="True">
-                <Node name="Contracts" expanded="True" />
-              </Node>
-              <Node name="TravelTypes" expanded="True">
-                <Node name="Commands" expanded="True" />
-                <Node name="Contracts" expanded="True" />
-                <Node name="Queries" expanded="True" />
-              </Node>
-              <Node name="VisitDateTypes" expanded="True">
-                <Node name="Contracts" expanded="True" />
+              <Node name="UserTypes" expanded="True">
+                <Node name="Handlers" expanded="True">
+                  <Node name="Queries" expanded="True" />
+                </Node>
               </Node>
             </Node>
-            <Node name="Domain" expanded="True">
-              <Node name="Expense" expanded="True">
-                <Node name="DTO" expanded="True" />
-                <Node name="Validations" expanded="True" />
-              </Node>
-              <Node name="Flag" expanded="True" />
-              <Node name="OweSinglePayment" expanded="True">
-                <Node name="DTO" expanded="True" />
-                <Node name="Entities" expanded="True" />
-                <Node name="Validations" expanded="True" />
-              </Node>
-              <Node name="Spot" expanded="True">
-                <Node name="DTO" expanded="True" />
-                <Node name="Validations" expanded="True" />
-              </Node>
-              <Node name="Travels" expanded="True">
-                <Node name="DTO" expanded="True" />
-                <Node name="Validations" expanded="True" />
-              </Node>
-              <Node name="VisitDate" expanded="True">
-                <Node name="DTO" expanded="True" />
-                <Node name="Validators" expanded="True" />
-              </Node>
+            <Node name="Infrastructure" expanded="True">
+              <Node name="Cache" expanded="True" />
             </Node>
             <Node name="Persistance" expanded="True">
               <Node name="Repositories" expanded="True" />
@@ -64,6 +34,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.TraveloAPI PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.TraveloAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

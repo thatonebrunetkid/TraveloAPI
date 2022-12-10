@@ -67,10 +67,7 @@ namespace Application.TravelTypes.Queries
                     {
                         Order = Spot.Order,
                         Note = Spot.Note,
-                        Street = Spot.Street,
-                        BuildingNo = Spot.BuildingNo,
-                        FlatNo = Spot.FlatNo,
-                        ZipCode = Spot.ZipCode,
+                        Adress = Spot.Adress,
                         CoordinateX = Spot.CoordinateX,
                         CoordinateY = Spot.CoordinateY,
                         Expense = new AddNewExpenseDTO

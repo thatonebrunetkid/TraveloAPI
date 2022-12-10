@@ -145,10 +145,7 @@ namespace Application.TravelTypes.Commands
                             {
                                 Note = Spot.Note,
                                 Order = Spot.Order,
-                                Street = Spot.Street,
-                                BuildingNo = Spot.BuildingNo,
-                                FlatNo = Spot.FlatNo,
-                                ZipCode = Spot.ZipCode,
+                                Adress = Spot.Adress,
                                 VisitDateId = VisitDateId,
                                 ExpenseId = ExpenseId,
                                 CoordinateX = Spot.CoordinateX,

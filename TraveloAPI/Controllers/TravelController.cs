@@ -15,7 +15,7 @@ namespace TraveloAPI.Controllers
 {
     [ApiController]
     [Route("{UserId}")]
-    [Authorize]
+    //[Authorize]
     public class TravelController : ControllerBase
     {
         private readonly IMediator Mediator;
