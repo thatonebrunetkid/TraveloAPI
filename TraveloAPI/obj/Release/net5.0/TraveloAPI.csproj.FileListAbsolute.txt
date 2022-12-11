@@ -255,3 +255,8 @@ D:/Users/mateu/source/repos/bbrepo/TraveloAPI/obj/Release/net5.0/TraveloAPI.pdb
 D:/Users/mateu/source/repos/bbrepo/TraveloAPI/obj/Release/net5.0/TraveloAPI.genruntimeconfig.cache
 D:/Users/mateu/source/repos/bbrepo/TraveloAPI/obj/Release/net5.0/ref/TraveloAPI.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/bin/Release/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/staticwebassets/TraveloAPI.StaticWebAssets.Pack.cache
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/staticwebassets/msbuild.TraveloAPI.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/staticwebassets/msbuild.build.TraveloAPI.props
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/staticwebassets/msbuild.buildMultiTargeting.TraveloAPI.props
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/staticwebassets/msbuild.buildTransitive.TraveloAPI.props

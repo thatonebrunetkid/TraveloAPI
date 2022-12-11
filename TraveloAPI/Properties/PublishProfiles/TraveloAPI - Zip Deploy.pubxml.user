@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <EncryptedPassword>AULCqMYu3mFV/FKIi9MZu/rsPjBENMBHduqWjdfySdNDxk0J60fW31cR+ZrnScnK6Ok6ztQA+ysftDWJpuX1NQPLrmgKx1Y4vMlbb41WavbbK5N1vJpEeMP1GtKt6R0rJvCZkSIfqiQsTZ3pxSQNywidq2u3pBeTiBOrKZ1gC8ADxWkAgZGDfrLs0A4JH7cjCV9OHsNHWCf66aJxqsr2dQJTv3xJF4RU6uRuDg7fbyXPzZFyD7lqXVWmjv+v3nQ2JqVy9lInQ8+tUWV7Oet4uaWPs9yYKdNaVTPK/FzVeF5qswEJd4dXAwj+EzIAIYZRYqxtdZhcTdF9IRKnG7AwacUMNjd+xBPh3R4v6MNjRNAMfuR+v6uhXF4FA/9lmCUC/EEKyMZKzD0/GQQQxZ6mzdgoqNXdOd8SOUkqLodO+YnnGlskqkxYl7912chd6Q1knBEBQpYGXJHYA8wLzxSaaU3VTNTS9B0Wfs4ogWxOWXajB1fJag8c7M+rXPIzj+APVuljtPLgZaa6beiN9YxOc4F/POSsuSplZALgooMrc8dSVykAnM4acjyO3tb/vY1lNYuHmbDpU+1eBIi6X/erPycvEMYdjWRHMHgQT5mHDT/1</EncryptedPassword>
-  </PropertyGroup>
+  <PropertyGroup />
 </Project>
