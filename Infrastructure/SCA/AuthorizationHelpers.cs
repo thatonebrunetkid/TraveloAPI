@@ -39,7 +39,7 @@ namespace Infrastructure.SCA
         public string GetRefreshToken(string token, int UserId)
         {
             if (new JwtSecurityTokenHandler().ReadJwtToken(token.Replace("Bearer ", string.Empty)).ValidTo.Minute - DateTime.Now.AddMinutes(-1).Minute <= 1)
-                return GenerateToken(UserId);
+                return $"Bearer {GenerateToken(UserId)}";
             else
                 return token;
 
