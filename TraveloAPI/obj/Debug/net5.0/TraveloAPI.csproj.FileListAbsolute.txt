@@ -248,6 +248,11 @@ D:/Users/mateu/source/repos/bbrepo/TraveloAPI/obj/Debug/net5.0/ref/TraveloAPI.dl
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/TraveloAPI.MvcApplicationPartsAssemblyInfo.cache
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/scopedcss/bundle/TraveloAPI.styles.css
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/staticwebassets/TraveloAPI.StaticWebAssets.Manifest.cache
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/staticwebassets/TraveloAPI.StaticWebAssets.Pack.cache
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/staticwebassets/msbuild.TraveloAPI.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/staticwebassets/msbuild.build.TraveloAPI.props
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/staticwebassets/msbuild.buildMultiTargeting.TraveloAPI.props
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/staticwebassets/msbuild.buildTransitive.TraveloAPI.props
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/TraveloAPI.RazorTargetAssemblyInfo.cache
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/TraveloAPI.csproj.CopyComplete
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Debug/net5.0/TraveloAPI.dll

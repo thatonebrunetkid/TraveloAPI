@@ -8,6 +8,6 @@ namespace Domain.ServicePhone.DTO
 {
     public class GetServicePhoneDTO
     {
-        public int Number { get; set; }
+        public string Number { get; set; }
     }
 }

@@ -11,6 +11,6 @@ namespace Domain.ServicePhone.Entity
     {
         [Key]
         public int ServicePhoneId { get; set; }
-        public int Number { get; set; }
+        public string Number { get; set; }
     }
 }
