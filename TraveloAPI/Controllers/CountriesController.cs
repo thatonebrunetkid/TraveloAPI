@@ -40,7 +40,6 @@ namespace TraveloAPI.Controllers
             Request.Headers.TryGetValue("Authorization", out StringValues authToken);
             if (await Mediator.Send(new ValidatePropertyAccessQuerieRequest { token = authToken, UserId = UserId }))
             {
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return await Mediator.Send(new GetCountriesForMapQuerieRequest { UserId = UserId });
 
             }

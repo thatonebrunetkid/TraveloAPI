@@ -61,7 +61,6 @@ namespace TraveloAPI.Controllers
             {
                 var result = await Mediator.Send(new GetUserDataQuerieRequest { UserId = UserId });
                 if (result is null) return NotFound();
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return Ok(result);
             }
             else
@@ -76,7 +75,6 @@ namespace TraveloAPI.Controllers
             Request.Headers.TryGetValue("Authorization", out StringValues authToken);
             if (await Mediator.Send(new ValidatePropertyAccessQuerieRequest { token = authToken, UserId = UserId }))
             {
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return await Mediator.Send(new ChangePasswordCommandRequest { Request = request, UserId = UserId });
 
             }

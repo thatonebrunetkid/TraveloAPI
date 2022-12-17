@@ -31,18 +31,9 @@ namespace Infrastructure.SCA
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AuthenticationSettings.JwtKey));
             var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddMinutes(AuthenticationSettings.JwtExpireMinutes);
+            var expires = DateTime.Now.AddHours(AuthenticationSettings.JwtExpireHours);
             var token = new JwtSecurityToken(AuthenticationSettings.JwtIssuer, AuthenticationSettings.JwtIssuer, claims, expires: expires, signingCredentials: credential);
             return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        public string GetRefreshToken(string token, int UserId)
-        {
-            if (new JwtSecurityTokenHandler().ReadJwtToken(token.Replace("Bearer ", string.Empty)).ValidTo.Minute - DateTime.Now.AddMinutes(-1).Minute <= 1)
-                return $"Bearer {GenerateToken(UserId)}";
-            else
-                return token;
-
         }
 
         public bool ValidatePropertyAuthorization(string token, int UserId)

@@ -37,7 +37,6 @@ namespace TraveloAPI.Controllers
             {
                 var result = await Mediator.Send(new GetAllTravelsQuerieRequest { UserId = UserId });
                 if (result.Count == 0 || result == null) return NotFound();
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return Ok(result);
             }
             else return Unauthorized();
@@ -53,7 +52,6 @@ namespace TraveloAPI.Controllers
             {
                 var result = await Mediator.Send(new GetTravelsForDashboardCalendarQuerieRequest { UserId = UserId });
                 if (result.Count == 0 || result == null) return NoContent();
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return Ok(result);
             }
             else return Unauthorized();
@@ -68,7 +66,6 @@ namespace TraveloAPI.Controllers
             {
                 var result = await Mediator.Send(new GetAllTravelsForEntireCalendarQuerieRequest { UserId = UserId });
                 if (result.Count == 0 || result == null) return NoContent();
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return Ok(result);
             }
             else return Unauthorized();
@@ -84,7 +81,6 @@ namespace TraveloAPI.Controllers
             {
                 var result = await Mediator.Send(new GetUpcomingTravelQuerieRequest { UserId = UserId });
                 if (result is null) return NoContent();
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return Ok(result);
             }
             else return Unauthorized();
@@ -101,7 +97,6 @@ namespace TraveloAPI.Controllers
                 var result = Mediator.Send(new GetPayersNameQuerieRequest { TravelId = TravelId });
                 if (result is null) return StatusCode(500);
                 if (result.Result.Count == 0) return NoContent();
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return Ok(result.Result);
             }
             else return Unauthorized();
@@ -117,7 +112,6 @@ namespace TraveloAPI.Controllers
             {
                 var result = await Mediator.Send(new GetParticularTravelQuerieRequest { TravelId = TravelId });
                 if (result is null) return NotFound();
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return Ok(result);
             }
             else return Unauthorized();
@@ -132,7 +126,6 @@ namespace TraveloAPI.Controllers
             if (await Mediator.Send(new ValidatePropertyAccessQuerieRequest { token = authToken, UserId = UserId }))
             {
                 var result = await Mediator.Send(new AddNewTravelCommandRequest { Request = TravelRequest, UserId = UserId });
-                Response.Headers.Add("RefreshToken", await Mediator.Send(new GetRefreshTokenQueryRequest { Token = authToken, UserId = UserId }));
                 return result;
             }
             else return Unauthorized();
