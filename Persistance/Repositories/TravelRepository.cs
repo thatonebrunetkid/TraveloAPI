@@ -47,17 +47,10 @@ namespace Persistance.Repositories
             return await DbContext.Travel.FirstAsync(e => e.TravelId == TravelId);
         }
 
-        public async Task<bool> DeleteParticularTravel(int TravelId)
+        public async void DeleteParticularTravel(int TravelId)
         {
-            try
-            {
-                DbContext.Travel.Remove(GetTravelInfo(TravelId).Result);
-                await DbContext.SaveChangesAsync();
-                return true;
-            }catch(Exception)
-            {
-                return false;
-            }
+            DbContext.Database.ExecuteSqlRaw($"exec dbo.RemoveTravel '{TravelId}'");
+            await DbContext.SaveChangesAsync();
         }
 
         public async Task<int> UpdateTravel(Travel Travel)

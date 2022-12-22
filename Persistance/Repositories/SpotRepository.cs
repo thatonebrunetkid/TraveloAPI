@@ -30,18 +30,6 @@ namespace Persistance.Repositories
             return Spot.SpotId;
         }
 
-        public async Task<bool> DeleteSpot(int VisitDateId)
-        {
-            try
-            {
-                DbContext.Spot.RemoveRange(await GetSpotInfoByVisitDate(VisitDateId));
-                await DbContext.SaveChangesAsync();
-                return true;
-            }catch(Exception)
-            {
-                return false;
-            }
-        }
 
         public async Task<int> UpdateSpot(Spot Spot)
         {

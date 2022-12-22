@@ -30,19 +30,7 @@ namespace Persistance.Repositories
             return VisitDate.VisitDateId;
         }
 
-        public async Task<bool> DeleteVisitDates(int VisitDateId)
-        {
-            try
-            {
-               DbContext.VisitDate.RemoveRange(DbContext.VisitDate.Where(e => e.VisitDateId == VisitDateId));
-                await DbContext.SaveChangesAsync();
-                return true;
-            } catch(Exception)
-            {
-                return false;
-            }
-        }
-
+   
         public async Task<int> UpdateVisitDate(VisitDate visitDate)
         {
             DbContext.VisitDate.Update(visitDate);

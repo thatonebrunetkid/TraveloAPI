@@ -30,18 +30,6 @@ namespace Persistance.Repositories
             return SinglePayment.OweSinglePaymentId;
         }
 
-        public async Task<bool> DeleteOweSinglePayments(int ExpenseId)
-        {
-            try
-            {
-                DbContext.OweSinglePayment.RemoveRange(await GetOweSinglePaymentsByExpense(ExpenseId));
-                await DbContext.SaveChangesAsync();
-                return true;
-            }catch(Exception)
-            {
-                return false;
-            }
-        }
 
         public async Task<int> UpdateOweSinglePayment(OweSinglePayment OweSinglePayment)
         {

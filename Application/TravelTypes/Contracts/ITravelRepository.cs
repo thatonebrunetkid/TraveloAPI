@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace Application.TravelTypes.Contracts
         Task<Travel> GetUpcomingTravel(int UserId);
         Task<Travel> GetTravelInfo(int TravelId);
         Task<int> AddNewTravel(Travel Travel);
-        Task<bool> DeleteParticularTravel(int TravelId);
+        void DeleteParticularTravel(int TravelId);
         Task<int> UpdateTravel(Travel Travel);
     }
 }

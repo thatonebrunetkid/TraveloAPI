@@ -11,7 +11,6 @@ namespace Application.SpotTypes.Contracts
     {
         Task<List<Spot>> GetSpotInfoByVisitDate(int VisitDateId);
         Task<int> AddNewSpot(Spot Spot);
-        Task<bool> DeleteSpot(int VisitDateId);
         Task<int> UpdateSpot(Spot Spot);
     }
 }

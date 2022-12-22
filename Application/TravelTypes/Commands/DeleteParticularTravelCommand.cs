@@ -26,57 +26,36 @@ namespace Application.TravelTypes.Commands
     public class DeleteParticularTravelCommandHandler : IRequestHandler<DeleteParticularTravelCommandRequest, BaseCommandResponse>
     {
         private readonly ITravelRepository Repository;
-        private readonly IVisitDatesRepository VisitDateRepository;
-        private readonly ISpotRepository SpotRepository;
-        private readonly IExpenseReposiotry ExpenseRepository;
-        private readonly IOweSinglePaymentRepository OweSinglePaymentRepository;
 
-        public DeleteParticularTravelCommandHandler(ITravelRepository Repository, IVisitDatesRepository VisitDateRepository, ISpotRepository SpotRepository, IExpenseReposiotry ExpenseRepository, IOweSinglePaymentRepository OweSinglePaymentRepository)
+        public DeleteParticularTravelCommandHandler(ITravelRepository Repository)
         {
             this.Repository = Repository;
-            this.VisitDateRepository = VisitDateRepository;
-            this.SpotRepository = SpotRepository;
-            this.ExpenseRepository = ExpenseRepository;
-            this.OweSinglePaymentRepository = OweSinglePaymentRepository;
         }
 
         public async Task<BaseCommandResponse> Handle(DeleteParticularTravelCommandRequest request, CancellationToken cancellationToken)
         {
-            if (await Repository.DeleteParticularTravel(request.TravelId))
+            BaseCommandResponse response;
+
+            try
             {
-                var VisitDates = await VisitDateRepository.GetVisitDateInfoByTravel(request.TravelId);
-                var Spots = new List<Spot>();
-                foreach (var VisitDate in VisitDates)
-                {
-                    Spots.Concat(await SpotRepository.GetSpotInfoByVisitDate(VisitDate.VisitDateId));
-                    await VisitDateRepository.DeleteVisitDates(VisitDate.VisitDateId);
-                    await SpotRepository.DeleteSpot(VisitDate.VisitDateId);
-                }
-
-                var Payments = new List<OweSinglePayment>();
-                foreach (var Spot in Spots)
-                {
-                    Payments.Concat(await OweSinglePaymentRepository.GetOweSinglePaymentsByExpense(Spot.ExpenseId));
-                    await ExpenseRepository.DeleteExpense(Spot.ExpenseId);
-                    await OweSinglePaymentRepository.DeleteOweSinglePayments(Spot.ExpenseId);
-                }
-
-                return new BaseCommandResponse
+                Repository.DeleteParticularTravel(request.TravelId);
+                response = new BaseCommandResponse()
                 {
                     Success = true,
                     Message = "Deleted",
                     StatusCode = HttpStatusCode.OK
                 };
-            }
-            else
+            }catch(Exception)
             {
-                return new BaseCommandResponse
+                response = new BaseCommandResponse()
                 {
                     Success = false,
                     Message = "Internal Server Error",
                     StatusCode = HttpStatusCode.InternalServerError
                 };
             }
+
+            return response;
         }
     }
 }

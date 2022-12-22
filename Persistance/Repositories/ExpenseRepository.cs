@@ -30,20 +30,6 @@ namespace Persistance.Repositories
             return Expense.ExpenseId;
         }
 
-        public async Task<bool> DeleteExpense(int ExpenseId)
-        {
-            try
-            {
-                DbContext.Expense.Remove(await GetExpenseInfo(ExpenseId));
-                await DbContext.SaveChangesAsync();
-                return true;
-            }catch(Exception)
-            {
-                return false;
-            }
-
-        }
-
         public async Task<int> UpdateExpense(Expense Expense)
         {
             DbContext.Expense.Update(Expense);
