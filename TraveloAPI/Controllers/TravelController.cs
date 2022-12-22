@@ -131,5 +131,30 @@ namespace TraveloAPI.Controllers
             else return Unauthorized();
                
         }
+
+        [Route("Travels/Delete/{TravelId}")]
+        [HttpDelete]
+        public async Task<ActionResult<BaseCommandResponse>> DeleteParticularTravel(int TravelId, int UserId)
+        {
+            Request.Headers.TryGetValue("Authorization", out StringValues authToken);
+            if (await Mediator.Send(new ValidatePropertyAccessQuerieRequest { token = authToken, UserId = UserId }))
+            {
+                return await Mediator.Send(new DeleteParticularTravelCommandRequest { TravelId = TravelId });
+            }
+            else return Unauthorized();
+        }
+
+        [Route("Travels/Update")]
+        [HttpPost]
+        public async Task<ActionResult<BaseCommandResponse>> UpdateParticularTravel([FromBody] AddNewTravelDTO TravelRequest, int UserId, int TravelId)
+        {
+            Request.Headers.TryGetValue("Authorization", out StringValues authToken);
+            if (await Mediator.Send(new ValidatePropertyAccessQuerieRequest { token = authToken, UserId = UserId }))
+            {
+                var result = await Mediator.Send(new UpdateTravelCommandRequest { Request = TravelRequest, UserId = UserId, TravelId = TravelId });
+                return result;
+            }
+            else return Unauthorized();
+        }
     }
 }

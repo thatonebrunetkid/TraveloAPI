@@ -16,7 +16,6 @@
     <Folder Include="AlertTypes\Handlers\Commands\" />
     <Folder Include="ContryTypes\Handlers\Commadns\" />
     <Folder Include="Flag\Queries\" />
-    <Folder Include="TravelTypes\Commands\" />
     <Folder Include="UserTypes\Handlers\Queries\" />
     <Folder Include="Authentication\" />
   </ItemGroup>

@@ -12,6 +12,7 @@ namespace Domain.Spot.DTO
     {
         public int Order { get; set; }
         public string? Note { get; set; }
+        [JsonPropertyName("Address")]
         public string? Adress { get; set; }
         [JsonPropertyName("lan")]
         public Decimal? CoordinateX { get; set; }

@@ -65,7 +65,6 @@ namespace Application.TravelTypes.Queries
                     var SinglePayments = await OweSinglePaymentRepository.GetOweSinglePaymentsByExpense(Expense.ExpenseId);
                     var TempSpot = new AddNewSpotDTO
                     {
-                        Order = Spot.Order,
                         Note = Spot.Note,
                         Adress = Spot.Adress,
                         CoordinateX = Spot.CoordinateX,

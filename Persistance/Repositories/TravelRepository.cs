@@ -46,5 +46,26 @@ namespace Persistance.Repositories
         {
             return await DbContext.Travel.FirstAsync(e => e.TravelId == TravelId);
         }
+
+        public async Task<bool> DeleteParticularTravel(int TravelId)
+        {
+            try
+            {
+                DbContext.Travel.Remove(GetTravelInfo(TravelId).Result);
+                await DbContext.SaveChangesAsync();
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<int> UpdateTravel(Travel Travel)
+        {
+            DbContext.Travel.Update(Travel);
+            DbContext.Entry(Travel).State = EntityState.Modified;
+            await DbContext.SaveChangesAsync();
+            return Travel.TravelId;
+        }
     }
 }

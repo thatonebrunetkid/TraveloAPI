@@ -11,5 +11,7 @@ namespace Application.OweSinglePaymentTypes.Contracts
     {
         Task<List<OweSinglePayment>> GetOweSinglePaymentsByExpense(int ExpenseId);
         Task<int> AddNewOweSinglePayment(OweSinglePayment SinglePayment);
+        Task<bool> DeleteOweSinglePayments(int ExpenseId);
+        Task<int> UpdateOweSinglePayment(OweSinglePayment OweSinglePayment);
     }
 }

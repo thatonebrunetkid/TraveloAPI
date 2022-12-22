@@ -29,5 +29,26 @@ namespace Persistance.Repositories
             await DbContext.SaveChangesAsync();
             return SinglePayment.OweSinglePaymentId;
         }
+
+        public async Task<bool> DeleteOweSinglePayments(int ExpenseId)
+        {
+            try
+            {
+                DbContext.OweSinglePayment.RemoveRange(await GetOweSinglePaymentsByExpense(ExpenseId));
+                await DbContext.SaveChangesAsync();
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<int> UpdateOweSinglePayment(OweSinglePayment OweSinglePayment)
+        {
+            DbContext.OweSinglePayment.Update(OweSinglePayment);
+            DbContext.Entry(OweSinglePayment).State = EntityState.Modified;
+            await DbContext.SaveChangesAsync();
+            return OweSinglePayment.OweSinglePaymentId;
+        }
     }
 }

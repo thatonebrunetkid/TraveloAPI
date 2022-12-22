@@ -15,5 +15,7 @@ namespace Application.TravelTypes.Contracts
         Task<Travel> GetUpcomingTravel(int UserId);
         Task<Travel> GetTravelInfo(int TravelId);
         Task<int> AddNewTravel(Travel Travel);
+        Task<bool> DeleteParticularTravel(int TravelId);
+        Task<int> UpdateTravel(Travel Travel);
     }
 }

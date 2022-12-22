@@ -29,5 +29,26 @@ namespace Persistance.Repositories
             await DbContext.SaveChangesAsync();
             return VisitDate.VisitDateId;
         }
+
+        public async Task<bool> DeleteVisitDates(int VisitDateId)
+        {
+            try
+            {
+               DbContext.VisitDate.RemoveRange(DbContext.VisitDate.Where(e => e.VisitDateId == VisitDateId));
+                await DbContext.SaveChangesAsync();
+                return true;
+            } catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<int> UpdateVisitDate(VisitDate visitDate)
+        {
+            DbContext.VisitDate.Update(visitDate);
+            DbContext.Entry(visitDate).State = EntityState.Modified;
+            await DbContext.SaveChangesAsync();
+            return visitDate.VisitDateId;
+        }
     }
 }

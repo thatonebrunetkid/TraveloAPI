@@ -29,5 +29,26 @@ namespace Persistance.Repositories
             await DbContext.SaveChangesAsync();
             return Spot.SpotId;
         }
+
+        public async Task<bool> DeleteSpot(int VisitDateId)
+        {
+            try
+            {
+                DbContext.Spot.RemoveRange(await GetSpotInfoByVisitDate(VisitDateId));
+                await DbContext.SaveChangesAsync();
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<int> UpdateSpot(Spot Spot)
+        {
+            DbContext.Spot.Update(Spot);
+            DbContext.Entry(Spot).State = EntityState.Modified;
+            await DbContext.SaveChangesAsync();
+            return Spot.SpotId;
+        }
     }
 }

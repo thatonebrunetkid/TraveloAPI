@@ -144,7 +144,6 @@ namespace Application.TravelTypes.Commands
                             Spot InputSpot = new Spot
                             {
                                 Note = Spot.Note,
-                                Order = Spot.Order,
                                 Adress = Spot.Adress,
                                 VisitDateId = VisitDateId,
                                 ExpenseId = ExpenseId,

@@ -12,5 +12,7 @@ namespace Application.ExpenseTypes.Contracts
     {
         Task <Expense> GetExpenseInfo(int ExpenseId);
         Task<int> AddExpense(Expense Expense);
+        Task<bool> DeleteExpense(int ExpenseId);
+        Task<int> UpdateExpense(Expense Expense);
     }
 }

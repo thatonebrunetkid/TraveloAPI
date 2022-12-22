@@ -11,5 +11,7 @@ namespace Application.VisitDateTypes.Contracts
     {
         Task<List<VisitDate>> GetVisitDateInfoByTravel(int TravelId);
         Task<int> AddNewVisitDate(VisitDate VisitDate);
+        Task<bool> DeleteVisitDates(int VisitDateId);
+        Task<int> UpdateVisitDate(VisitDate visitDate);
     }
 }

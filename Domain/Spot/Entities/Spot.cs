@@ -12,7 +12,6 @@ namespace Domain.Spot.Entities
         [Key]
         public int SpotId { get; set; }
         public string? Note { get; set; }
-        public int Order { get; set; }
         public string? Adress { get; set; }
         public int VisitDateId { get; set; }
         public int ExpenseId { get; set; }

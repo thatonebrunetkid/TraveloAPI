@@ -29,5 +29,27 @@ namespace Persistance.Repositories
             await DbContext.SaveChangesAsync();
             return Expense.ExpenseId;
         }
+
+        public async Task<bool> DeleteExpense(int ExpenseId)
+        {
+            try
+            {
+                DbContext.Expense.Remove(await GetExpenseInfo(ExpenseId));
+                await DbContext.SaveChangesAsync();
+                return true;
+            }catch(Exception)
+            {
+                return false;
+            }
+
+        }
+
+        public async Task<int> UpdateExpense(Expense Expense)
+        {
+            DbContext.Expense.Update(Expense);
+            DbContext.Entry(Expense).State = EntityState.Modified;
+            await DbContext.SaveChangesAsync();
+            return Expense.ExpenseId;
+        }
     }
 }
