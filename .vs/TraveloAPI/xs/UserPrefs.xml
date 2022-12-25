@@ -1,39 +1,21 @@
 ﻿<Properties StartupConfiguration="{79CE9AC2-1B5F-48A6-8C91-F0DFE889E8A3}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.TraveloAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TraveloAPI" expanded="True">
-            <Node name="Application" expanded="True">
-              <Node name="ExpenseTypes" expanded="True">
-                <Node name="Contracts" expanded="True" />
-              </Node>
-              <Node name="OweSinglePaymentTypes" expanded="True">
-                <Node name="Contracts" expanded="True" />
-              </Node>
-              <Node name="SpotTypes" expanded="True">
-                <Node name="Contracts" expanded="True" />
-              </Node>
-              <Node name="TravelTypes" expanded="True">
-                <Node name="Commands" expanded="True" />
-                <Node name="Contracts" expanded="True" />
-              </Node>
-              <Node name="VisitDateTypes" expanded="True">
-                <Node name="Contracts" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Persistance" expanded="True">
-              <Node name="Repositories" expanded="True" />
-            </Node>
-            <Node name="TraveloAPI" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="TravelController.cs" selected="True" />
+            <Node name="Application">
+              <Node name="TravelTypes">
+                <Node name="Commands">
+                  <Node name="DeleteParticularTravelCommand.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -41,5 +23,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
 </Properties>
