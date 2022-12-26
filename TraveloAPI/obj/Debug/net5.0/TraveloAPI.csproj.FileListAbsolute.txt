@@ -180,6 +180,7 @@ D:/Users/mateu/source/repos/bbrepo/TraveloAPI/obj/Debug/net5.0/ref/TraveloAPI.dl
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/bin/Debug/net5.0/Azure.Core.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/bin/Debug/net5.0/Azure.Identity.dll
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/bin/Debug/net5.0/Azure.Security.KeyVault.Secrets.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/bin/Debug/net5.0/FluentValidation.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/bin/Debug/net5.0/FluentValidation.DependencyInjectionExtensions.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/bin/Debug/net5.0/MediatR.dll

@@ -5,8 +5,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using Application.Common;
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
 using Domain.User;
 using Infrastructure.Authentication;
+using Infrastructure.Cache;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Infrastructure.SCA
@@ -14,11 +19,11 @@ namespace Infrastructure.SCA
     public class AuthorizationHelpers : IAuthorisationHelpers
     {
         private readonly AuthenticationSettings AuthenticationSettings;
-        private readonly IRedisHandler Redis;
-        public AuthorizationHelpers(AuthenticationSettings AuthenticationSettings, IRedisHandler Redis)
+        private readonly IConfiguration configuration;
+        public AuthorizationHelpers(AuthenticationSettings AuthenticationSettings, IConfiguration configuration)
         {
             this.AuthenticationSettings = AuthenticationSettings;
-            this.Redis = Redis;
+            this.configuration = configuration;
         }
 
 
@@ -41,6 +46,13 @@ namespace Infrastructure.SCA
             var securityToken = new JwtSecurityTokenHandler().ReadJwtToken(token.Replace("Bearer ", string.Empty));
             return Int32.Parse(securityToken.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value) == UserId;
         }
+
+        public string GetJwtSecretKey()
+        {
+            var client = new SecretClient(new Uri(configuration.GetValue<string>("AzureKeyVault:KeyVaultUrl")), new DefaultAzureCredential());
+            return client.GetSecret(configuration.GetValue<string>("AzureKeyVault:SecretName")).Value.Value;
+        }
+
     }
 }
 

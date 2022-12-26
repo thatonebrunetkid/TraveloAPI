@@ -13,6 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Application.Common;
 using Infrastructure.Cache;
+using Infrastructure.SCA;
 
 namespace TraveloAPI
 {
@@ -34,7 +35,7 @@ namespace TraveloAPI
 
             var AuthenticationSettings = new AuthenticationSettings();
             Configuration.GetSection("Authentication").Bind(AuthenticationSettings);
-            AuthenticationSettings.JwtKey = new Redis().GetJwtIssuerKey().Result;
+            AuthenticationSettings.JwtKey = new AuthorizationHelpers(AuthenticationSettings, Configuration).GetJwtSecretKey();
             services.AddSingleton(AuthenticationSettings);
             services.AddAuthentication(option =>
             {

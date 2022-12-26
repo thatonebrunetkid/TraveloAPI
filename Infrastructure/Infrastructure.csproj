@@ -9,6 +9,7 @@
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
     <PackageReference Include="SendGrid" Version="9.28.1" />
     <PackageReference Include="StackExchange.Redis" Version="2.6.70" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
     <None Remove="StackExchange.Redis" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="SCA\" />
+    <None Remove="Azure.Security.KeyVault.Secrets" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
