@@ -9,6 +9,7 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Azure.Security.KeyVault.Secrets": "4.4.0",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "5.0.0",
           "SendGrid": "9.28.1",
@@ -72,6 +73,20 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.6.0.0",
             "fileVersion": "1.600.22.20503"
+          }
+        }
+      },
+      "Azure.Security.KeyVault.Secrets/4.4.0": {
+        "dependencies": {
+          "Azure.Core": "1.24.0",
+          "System.Memory": "4.5.4",
+          "System.Text.Json": "4.7.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Security.KeyVault.Secrets.dll": {
+            "assemblyVersion": "4.4.0.0",
+            "fileVersion": "4.400.22.46903"
           }
         }
       },
@@ -751,6 +766,13 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
+    },
+    "Azure.Security.KeyVault.Secrets/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BoFpZkBU6e3kXl58xG/0FwzZ79IUcJM3tAr3m74mxL0FVG24qQeMsm8/Wis+jYtixVbk+UmsUgKN6ut0tDimnQ==",
+      "path": "azure.security.keyvault.secrets/4.4.0",
+      "hashPath": "azure.security.keyvault.secrets.4.4.0.nupkg.sha512"
     },
     "FluentValidation/11.2.2": {
       "type": "package",

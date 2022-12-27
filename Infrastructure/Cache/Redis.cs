@@ -24,7 +24,7 @@ namespace Infrastructure.Cache
         {
             try
             {
-                await ConnectionInstance.StringSetAsync(ActivityId, CustomerEmail + "|date|" + DateTime.Now);
+                await ConnectionInstance.StringSetAsync(ActivityId, CustomerEmail + "|date|" + DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc));
                 return true;
             }catch(Exception)
             {

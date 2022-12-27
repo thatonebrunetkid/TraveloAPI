@@ -49,7 +49,7 @@ namespace Application.UserTypes.Handlers.Commands
             var cacheSplitter = cacheResult.Split("|date|");
             var email = cacheSplitter[0];
             var date = cacheSplitter[1];
-            if (email != string.Empty && email != null && DateTime.Now < DateTime.Parse(date).AddMinutes(10))
+            if (email != string.Empty && email != null && DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc) < DateTime.SpecifyKind(DateTime.Parse(date).AddMinutes(10), DateTimeKind.Utc))
             {
                 if(await Repository.RefreshPassword(email, request.Password) == HttpStatusCode.OK)
                 {

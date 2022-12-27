@@ -261,3 +261,4 @@ D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\refint\TraveloA
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\TraveloAPI.pdb
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\TraveloAPI.genruntimeconfig.cache
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\ref\TraveloAPI.dll
+D:\Users\mateu\source\repos\bbrepo\TraveloAPI\bin\Release\net5.0\Azure.Security.KeyVault.Secrets.dll

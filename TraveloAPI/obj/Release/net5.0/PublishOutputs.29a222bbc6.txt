@@ -9,6 +9,7 @@ D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Auto
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Azure.Core.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Azure.Identity.dll
+D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Azure.Security.KeyVault.Secrets.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\FluentValidation.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\FluentValidation.DependencyInjectionExtensions.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\MediatR.dll
