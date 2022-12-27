@@ -4,11 +4,14 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 using Application.Common;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using Domain.User;
 using Infrastructure.Authentication;
+using Infrastructure.Azure;
+using Infrastructure.Azure.Configuration;
 using Infrastructure.Cache;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
@@ -46,13 +49,6 @@ namespace Infrastructure.SCA
             var securityToken = new JwtSecurityTokenHandler().ReadJwtToken(token.Replace("Bearer ", string.Empty));
             return Int32.Parse(securityToken.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value) == UserId;
         }
-
-        public string GetJwtSecretKey()
-        {
-            var client = new SecretClient(new Uri(configuration.GetValue<string>("AzureKeyVault:KeyVaultUrl")), new DefaultAzureCredential());
-            return client.GetSecret(configuration.GetValue<string>("AzureKeyVault:SecretName")).Value.Value;
-        }
-
     }
 }
 

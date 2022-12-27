@@ -1,5 +1,6 @@
 ﻿using Application.UserTypes.Handlers.Commands;
 using Application.UserTypes.Handlers.Queries;
+using Domain.Common.DTO;
 using Domain.User.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -45,7 +46,7 @@ namespace TraveloAPI.Controllers
         [Route("RefreshPasswordExecute/{ActivityId}")]
         [HttpPost]
         [AllowAnonymous]
-        public async Task<HttpStatusCode> RefreshPasswordExecute([FromBody] RegreshPasswordExecuteDTO request, string ActivityId)
+        public async Task<BaseCommandResponse> RefreshPasswordExecute([FromBody] RegreshPasswordExecuteDTO request, string ActivityId)
         {
             var result = await Mediator.Send(new RefreshPasswordExecuteCommandRequest {Password = request.Password, ActivityId = ActivityId});
             return result;

@@ -15,13 +15,13 @@ using System.Threading.Tasks;
 
 namespace Application.UserTypes.Handlers.Commands
 {
-    public class RefreshPasswordExecuteCommandRequest : IRequest<HttpStatusCode>
+    public class RefreshPasswordExecuteCommandRequest : IRequest<BaseCommandResponse>
     {
         public string ActivityId { get; set; }
         public string Password { get; set; }
     }
 
-    public class RefreshPasswordExecuteCommandHandler : IRequestHandler<RefreshPasswordExecuteCommandRequest, HttpStatusCode>
+    public class RefreshPasswordExecuteCommandHandler : IRequestHandler<RefreshPasswordExecuteCommandRequest, BaseCommandResponse>
     {
         private readonly IUserRepository Repository;
         private readonly IRedisHandler RedisHandler;
@@ -32,7 +32,7 @@ namespace Application.UserTypes.Handlers.Commands
             this.RedisHandler = RedisHandler;
         }
 
-        public async Task<HttpStatusCode> Handle(RefreshPasswordExecuteCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse> Handle(RefreshPasswordExecuteCommandRequest request, CancellationToken cancellationToken)
         {
             var validator = new RefreshPasswordDtoValidator();
             var response = new BaseCommandResponse();
@@ -45,14 +45,44 @@ namespace Application.UserTypes.Handlers.Commands
                 response.StatusCode = HttpStatusCode.BadRequest;
             }
 
-            var email = await RedisHandler.GetData(request.ActivityId);
-            if (email != string.Empty && email != null)
+            var cacheResult = await RedisHandler.GetData(request.ActivityId);
+            var cacheSplitter = cacheResult.Split("|date|");
+            var email = cacheSplitter[0];
+            var date = cacheSplitter[1];
+            if (email != string.Empty && email != null && DateTime.Now < DateTime.Parse(date).AddMinutes(10))
             {
-                RedisHandler.DeleteData(request.ActivityId);
-                return await Repository.RefreshPassword(email, request.Password);
+                if(await Repository.RefreshPassword(email, request.Password) == HttpStatusCode.OK)
+                {
+                    response = new BaseCommandResponse
+                    {
+                        Success = true,
+                        Message = "Succeed",
+                        StatusCode = HttpStatusCode.OK
+                    };
+
+                    RedisHandler.DeleteData(request.ActivityId);
+                }
+                else
+                {
+                    response = new BaseCommandResponse
+                    {
+                        Success = false,
+                        Message = "Operation Exceeded",
+                        StatusCode = HttpStatusCode.Unauthorized
+                    };
+                }
             }
             else
-                return HttpStatusCode.InternalServerError;
+            {
+                response = new BaseCommandResponse()
+                {
+                    Success = false,
+                    Message = "Internal Server Error",
+                    StatusCode = HttpStatusCode.InternalServerError
+                };
+            }
+
+            return response;
         }
     }
 }

@@ -14,6 +14,7 @@ D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Flue
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\MediatR.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\MediatR.Contracts.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 D:\Users\mateu\source\repos\bbrepo\TraveloAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll

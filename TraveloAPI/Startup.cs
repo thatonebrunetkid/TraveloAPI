@@ -14,6 +14,9 @@ using System.Text;
 using Application.Common;
 using Infrastructure.Cache;
 using Infrastructure.SCA;
+using Infrastructure.Azure;
+using Infrastructure.Azure.Configuration;
+using Application.Models;
 
 namespace TraveloAPI
 {
@@ -32,10 +35,12 @@ namespace TraveloAPI
             services.ConfigureApplicationServices();
             services.ConfigurePersistanceServices(Configuration);
             services.ConfigureInfrastructureServices(Configuration);
+            Configuration["EmailSettings:ApiKey"] = new AzureHelpers(Configuration, AzureKeyVaultConfigType.TwilioApiKey).GetKeyVaultValueFromAzure().Result;
+            Configuration["ConnectionStrings:AzureConnectionString"] = new AzureHelpers(Configuration, AzureKeyVaultConfigType.AzureConnectionString).GetKeyVaultValueFromAzure().Result;
 
             var AuthenticationSettings = new AuthenticationSettings();
             Configuration.GetSection("Authentication").Bind(AuthenticationSettings);
-            AuthenticationSettings.JwtKey = new AuthorizationHelpers(AuthenticationSettings, Configuration).GetJwtSecretKey();
+            AuthenticationSettings.JwtKey = new AzureHelpers(Configuration, AzureKeyVaultConfigType.JwtToken).GetKeyVaultValueFromAzure().Result;
             services.AddSingleton(AuthenticationSettings);
             services.AddAuthentication(option =>
             {

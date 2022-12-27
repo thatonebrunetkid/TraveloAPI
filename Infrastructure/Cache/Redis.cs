@@ -20,11 +20,11 @@ namespace Infrastructure.Cache
             return Guid.NewGuid().ToString();
         }
 
-        public async Task<bool> SetData(string ActivityId, string CustomerEmail)
+        public async Task<bool> SetData(string CustomerEmail, string ActivityId)
         {
             try
             {
-                await ConnectionInstance.StringSetAsync(CustomerEmail, ActivityId);
+                await ConnectionInstance.StringSetAsync(ActivityId, CustomerEmail + "|date|" + DateTime.Now);
                 return true;
             }catch(Exception)
             {
