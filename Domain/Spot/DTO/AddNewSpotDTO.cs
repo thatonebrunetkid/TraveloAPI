@@ -10,7 +10,6 @@ namespace Domain.Spot.DTO
 {
     public class AddNewSpotDTO
     {
-        public int Order { get; set; }
         public string? Note { get; set; }
         [JsonPropertyName("Address")]
         public string? Adress { get; set; }

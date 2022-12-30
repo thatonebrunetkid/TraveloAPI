@@ -10,8 +10,7 @@ namespace Domain.Expense.Validations
         public AddNewExpenseDTOValidator()
         {
             RuleFor(p => p.Cost)
-                .NotNull().WithMessage("{PropertyName} cannot be null")
-                .NotEmpty().WithMessage("{PropertyName} cannot be empty");
+                .NotNull().WithMessage("{PropertyName} cannot be null");
             RuleForEach(p => p.OweSinglePayment)
                 .SetValidator(new AddNewOweSinglePaymentDTOValidator());
         }

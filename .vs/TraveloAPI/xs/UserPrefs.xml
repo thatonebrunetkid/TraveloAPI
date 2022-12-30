@@ -1,28 +1,34 @@
 ﻿<Properties StartupConfiguration="{79CE9AC2-1B5F-48A6-8C91-F0DFE889E8A3}|Default">
-  <MonoDevelop.Ide.ItemProperties.TraveloAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TraveloAPI" expanded="True">
-            <Node name="Application">
-              <Node name="UserTypes">
-                <Node name="Handlers">
-                  <Node name="Commands">
-                    <Node name="RefreshPasswordInitializeCommand.cs" selected="True" />
-                  </Node>
+            <Node name="Application" expanded="True">
+              <Node name="Authentication" expanded="True" />
+              <Node name="Common" expanded="True" />
+              <Node name="UserTypes" expanded="True">
+                <Node name="Handlers" expanded="True">
+                  <Node name="Commands" expanded="True" />
                 </Node>
               </Node>
             </Node>
+            <Node name="Infrastructure" expanded="True">
+              <Node name="Cache" expanded="True" />
+              <Node name="SCA" expanded="True" />
+            </Node>
+            <Node name="Persistance" expanded="True" />
+            <Node name="TraveloAPI" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TraveloAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

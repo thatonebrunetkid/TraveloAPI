@@ -9,6 +9,7 @@
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/PubTmp/Out/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/PubTmp/Out/Azure.Core.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/PubTmp/Out/Azure.Identity.dll
+/Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/PubTmp/Out/Azure.Security.KeyVault.Secrets.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/PubTmp/Out/FluentValidation.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/PubTmp/Out/FluentValidation.DependencyInjectionExtensions.dll
 /Users/mateuszaugustyniak/traveloapi/TraveloAPI/obj/Release/net5.0/PubTmp/Out/MediatR.dll
