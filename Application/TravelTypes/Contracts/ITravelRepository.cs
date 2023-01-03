@@ -18,5 +18,6 @@ namespace Application.TravelTypes.Contracts
         Task<int> AddNewTravel(Travel Travel);
         void DeleteParticularTravel(int TravelId);
         Task<int> UpdateTravel(Travel Travel);
+        int GetUsedBudget(int TravelId);
     }
 }

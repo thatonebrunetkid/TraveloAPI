@@ -31,7 +31,7 @@ namespace Persistance.Repositories
 
         public async Task<Travel> GetUpcomingTravel(int UserId)
         {
-            var results = await DbContext.Travel.Where(e => e.StartDate >= DateTime.Now).OrderBy(e => e.StartDate).ToListAsync();
+            var results = await DbContext.Travel.Where(e => e.StartDate.Date >= DateTime.Now.Date && e.UserId == UserId).OrderBy(e => e.StartDate).ToListAsync();
             return results.First();
         }
 
@@ -59,6 +59,11 @@ namespace Persistance.Repositories
             DbContext.Entry(Travel).State = EntityState.Modified;
             await DbContext.SaveChangesAsync();
             return Travel.TravelId;
+        }
+
+        public int GetUsedBudget(int TravelId)
+        {
+            return DbContext.Database.ExecuteSqlRaw($"exec dbo.CheckBudget {TravelId}");
         }
     }
 }

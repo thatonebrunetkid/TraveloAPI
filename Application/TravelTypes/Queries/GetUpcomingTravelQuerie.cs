@@ -49,6 +49,7 @@ namespace Application.TravelTypes.Queries
                 CountryName = Country.Name,
                 Currency = Country.Currency,
                 PlannedBudget = Travel.PlannedBudget,
+                UsedBudget = TravelRepository.GetUsedBudget(Travel.TravelId),
                 FlagUrl = FlagRepository.GetFlag(Country.FlagId).Result,
                 CountryAlerts = Mapper.Map<List<AllAlertsDTO>>(Alerts)
             };
