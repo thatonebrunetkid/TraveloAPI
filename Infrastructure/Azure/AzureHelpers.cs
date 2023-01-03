@@ -34,6 +34,11 @@ namespace Infrastructure.Azure
                         Template.AzureVaultSecret = Configuration.GetValue<string>("AzureKeyVault:AzureConnectionString");
                         break;
                     }
+                case AzureKeyVaultConfigType.Redis:
+                    {
+                        Template.AzureVaultSecret = Configuration.GetValue<string>("AzureKeyVault:Redis");
+                        break;
+                    }
             }
 
         }

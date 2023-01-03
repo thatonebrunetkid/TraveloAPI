@@ -13,7 +13,7 @@ namespace Application.AlertTypes.Handlers.Queries
 {
     public class GetAllAlertsQuerieRequest : IRequest<List<AllAlertsDTO>>
     {
-
+        public int CountryId { get; set; }
     }
 
     public class GetAllAlertsQuerieHandler : IRequestHandler<GetAllAlertsQuerieRequest, List<AllAlertsDTO>>
@@ -29,7 +29,7 @@ namespace Application.AlertTypes.Handlers.Queries
 
         public async Task<List<AllAlertsDTO>> Handle(GetAllAlertsQuerieRequest request, CancellationToken cancellationToken)
         {
-            var alerts = await Repository.GetAllAlerts();
+            var alerts = await Repository.GetAlertsByContryId(request.CountryId);
             return Mapper.Map<List<AllAlertsDTO>>(alerts);
         }
     }

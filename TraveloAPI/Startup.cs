@@ -37,6 +37,7 @@ namespace TraveloAPI
             services.ConfigureInfrastructureServices(Configuration);
             Configuration["EmailSettings:ApiKey"] = new AzureHelpers(Configuration, AzureKeyVaultConfigType.TwilioApiKey).GetKeyVaultValueFromAzure().Result;
             Configuration["ConnectionStrings:AzureConnectionString"] = new AzureHelpers(Configuration, AzureKeyVaultConfigType.AzureConnectionString).GetKeyVaultValueFromAzure().Result;
+            Configuration["Redis:ApiKey"] = new AzureHelpers(Configuration, AzureKeyVaultConfigType.Redis).GetKeyVaultValueFromAzure().Result;
 
             var AuthenticationSettings = new AuthenticationSettings();
             Configuration.GetSection("Authentication").Bind(AuthenticationSettings);

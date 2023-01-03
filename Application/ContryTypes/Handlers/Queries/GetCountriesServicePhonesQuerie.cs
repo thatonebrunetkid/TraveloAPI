@@ -32,14 +32,14 @@ namespace Application.ContryTypes.Handlers.Queries
         public async Task<List<GetCountryServicePhonesDTO>> Handle(GetCountriesServicePhonesQuerieRequest request, CancellationToken cancellationToken)
         {
             var Countries = await CountryRepository.GetAllCountries();
+            var ServicePhones = await ServicePhoneRepository.GetAll();
             List<GetCountryServicePhonesDTO> Result = new List<GetCountryServicePhonesDTO>();
             foreach(var Country in Countries)
             {
-                var ServiceTemp = await ServicePhoneRepository.GetServicePhone(Country.ServicePhoneId);
                 GetCountryServicePhonesDTO temp = new GetCountryServicePhonesDTO
                 {
                     Name = Country.Name,
-                    Number = new GetServicePhoneDTO { Number = ServiceTemp.Number}
+                    Number = new GetServicePhoneDTO { Number = ServicePhones.First(e => e.ServicePhoneId == Country.ServicePhoneId).Number}
                 };
                 Result.Add(temp);
             }

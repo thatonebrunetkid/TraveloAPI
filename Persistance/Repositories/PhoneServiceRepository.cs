@@ -1,4 +1,5 @@
 ﻿using Application.ServicePhoneTypes.Contracts;
+using Domain.Country.Entities;
 using Domain.ServicePhone.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,6 +22,11 @@ namespace Persistance.Repositories
         public async Task<ServicePhone> GetServicePhone(int Id)
         {
             return await DbContext.ServicePhone.FirstAsync(e => e.ServicePhoneId == Id);
+        }
+
+        public async Task<List<ServicePhone>> GetAll()
+        {
+            return await DbContext.ServicePhone.ToListAsync();
         }
     }
 }

@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Application.Common;
+using Microsoft.Extensions.Configuration;
 using StackExchange.Redis;
 
 namespace Infrastructure.Cache
 {
     public class Redis : IRedisHandler
     {
-        private static readonly ConnectionMultiplexer RedisMultiplexer = ConnectionMultiplexer.Connect("redis-14658.c56.east-us.azure.cloud.redislabs.com:14658, password=i6VQUNjKCMgR7TlWCkC8uHgFF0E1UhRr");
+        private readonly ConnectionMultiplexer RedisMultiplexer;
         private IDatabase ConnectionInstance;
+        private readonly IConfiguration Configuration;
 
-        public Redis()
+        public Redis(IConfiguration Configuration)
         {
+            this.Configuration = Configuration;
+            RedisMultiplexer = ConnectionMultiplexer.Connect(Configuration["Redis:ApiKey"]);
             ConnectionInstance = RedisMultiplexer.GetDatabase();
         }
 

@@ -10,6 +10,7 @@ namespace Infrastructure.Azure.Configuration
     {
         JwtToken = 0,
         AzureConnectionString = 1,
-        TwilioApiKey = 2
+        TwilioApiKey = 2,
+        Redis = 3
     }
 }

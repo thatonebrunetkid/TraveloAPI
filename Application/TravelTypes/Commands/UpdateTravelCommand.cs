@@ -81,6 +81,8 @@ namespace Application.TravelTypes.Commands
                     await TravelRepository.UpdateTravel(Travel);
 
                     var VisitDates = await VisitDateRepository.GetVisitDateInfoByTravel(request.TravelId);
+                    if(request.Request.VisitDate.Count > 0)
+                {
                     for (int j = 0; j < request.Request.VisitDate.Count; j++)
                     {
                         var VisitDateUpdate = VisitDates[j];
@@ -90,36 +92,43 @@ namespace Application.TravelTypes.Commands
                         await VisitDateRepository.UpdateVisitDate(VisitDateUpdate);
 
                         var Spots = await SpotRepository.GetSpotInfoByVisitDate(VisitDateUpdate.VisitDateId);
-                        for (int i = 0; i < request.Request.VisitDate[j].Spot.Count; i++)
+                        if (request.Request.VisitDate[j].Spot.Count > 0)
                         {
-                            var SpotUpdate = Spots[i];
-                            SpotUpdate.Note = request.Request.VisitDate[j].Spot[i].Note;
-                            SpotUpdate.Adress = request.Request.VisitDate[j].Spot[i].Adress;
-                            SpotUpdate.CoordinateX = request.Request.VisitDate[j].Spot[i].CoordinateX;
-                            SpotUpdate.CoordinateY = request.Request.VisitDate[j].Spot[i].CoordinateY;
-                            SpotUpdate.Name = request.Request.VisitDate[j].Spot[i].Name;
-
-                            await SpotRepository.UpdateSpot(SpotUpdate);
-
-                            var ExpenseUpdate = await ExpenseRepository.GetExpenseInfo(SpotUpdate.ExpenseId);
-                            ExpenseUpdate.Cost = request.Request.VisitDate[j].Spot[i].Expense.Cost;
-                            await ExpenseRepository.UpdateExpense(ExpenseUpdate);
-
-                            var OweSignlePayments = await SinglePaymentRepository.GetOweSinglePaymentsByExpense(ExpenseUpdate.ExpenseId);
-
-                            for (int z = 0; z < request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment.Count; z++)
+                            for (int i = 0; i < request.Request.VisitDate[j].Spot.Count; i++)
                             {
-                                var OweSinglePaymentUdpate = OweSignlePayments[z];
-                                OweSinglePaymentUdpate.PersonName = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].PersonName;
-                                OweSinglePaymentUdpate.PaymentAmount = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].PaymentAmount;
-                                OweSinglePaymentUdpate.PaymentStatus = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].PaymentStatus;
-                                OweSinglePaymentUdpate.PaymentDate = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].PaymentDate;
-                                OweSinglePaymentUdpate.IsPayer = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].IsPayer;
+                                var SpotUpdate = Spots[i];
+                                SpotUpdate.Note = request.Request.VisitDate[j].Spot[i].Note;
+                                SpotUpdate.Adress = request.Request.VisitDate[j].Spot[i].Adress;
+                                SpotUpdate.CoordinateX = request.Request.VisitDate[j].Spot[i].CoordinateX;
+                                SpotUpdate.CoordinateY = request.Request.VisitDate[j].Spot[i].CoordinateY;
+                                SpotUpdate.Name = request.Request.VisitDate[j].Spot[i].Name;
 
-                                await SinglePaymentRepository.UpdateOweSinglePayment(OweSinglePaymentUdpate);
+                                await SpotRepository.UpdateSpot(SpotUpdate);
+
+                                var ExpenseUpdate = await ExpenseRepository.GetExpenseInfo(SpotUpdate.ExpenseId);
+                                ExpenseUpdate.Cost = request.Request.VisitDate[j].Spot[i].Expense.Cost;
+                                await ExpenseRepository.UpdateExpense(ExpenseUpdate);
+
+                                var OweSignlePayments = await SinglePaymentRepository.GetOweSinglePaymentsByExpense(ExpenseUpdate.ExpenseId);
+
+                                if (request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment.Count > 0)
+                                {
+                                    for (int z = 0; z < request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment.Count; z++)
+                                    {
+                                        var OweSinglePaymentUdpate = OweSignlePayments[z];
+                                        OweSinglePaymentUdpate.PersonName = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].PersonName;
+                                        OweSinglePaymentUdpate.PaymentAmount = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].PaymentAmount;
+                                        OweSinglePaymentUdpate.PaymentStatus = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].PaymentStatus;
+                                        OweSinglePaymentUdpate.PaymentDate = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].PaymentDate;
+                                        OweSinglePaymentUdpate.IsPayer = request.Request.VisitDate[j].Spot[i].Expense.OweSinglePayment[z].IsPayer;
+
+                                        await SinglePaymentRepository.UpdateOweSinglePayment(OweSinglePaymentUdpate);
+                                    }
+                                }
                             }
                         }
                     }
+                }
 
                     response = new BaseCommandResponse
                     {

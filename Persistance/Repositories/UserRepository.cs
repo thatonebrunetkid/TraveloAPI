@@ -41,7 +41,6 @@ namespace Persistance.Repositories
 
         public bool CheckEmail(string Email)
         {
-            //zapytac o get awaiter na konsultacjach
             return DbContext.User.Any(e => e.Email == Email);
         }
 

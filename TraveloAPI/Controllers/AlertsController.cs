@@ -18,11 +18,11 @@ namespace TraveloAPI.Controllers
             this.Mediator = Mediator;
         }
 
-        [Route("All")]
+        [Route("{CountryId}")]
         [HttpGet]
-        public async Task<ActionResult<List<AllAlertsDTO>>> GetAllAlerts()
+        public async Task<ActionResult<List<AllAlertsDTO>>> GetAllAlerts(int CountryId)
         {
-            var alerts = await Mediator.Send(new GetAllAlertsQuerieRequest());
+            var alerts = await Mediator.Send(new GetAllAlertsQuerieRequest { CountryId = CountryId});
             if (alerts.Count == 0) return NotFound();
             return alerts;
         }
