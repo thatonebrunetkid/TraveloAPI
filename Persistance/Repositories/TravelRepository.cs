@@ -1,6 +1,8 @@
 ﻿using Application.TravelTypes.Contracts;
 using Domain.Travels.DTO;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +65,11 @@ namespace Persistance.Repositories
 
         public int GetUsedBudget(int TravelId)
         {
-            return DbContext.Database.ExecuteSqlRaw($"exec dbo.CheckBudget {TravelId}");
+            int? result = 0;
+            var travelId = new SqlParameter("TravelId", TravelId);
+            var resultParameter = new SqlParameter("Result", result) { Direction = System.Data.ParameterDirection.Output };
+            DbContext.Database.ExecuteSqlRaw($"exec dbo.CheckBudget @TravelId, @Result output", new[] { travelId, resultParameter });
+            return Convert.ToInt32(resultParameter.Value);
         }
     }
 }
